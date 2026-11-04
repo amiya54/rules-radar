@@ -1,0 +1,65 @@
+name: Rules Radar
+
+# 规范雷达：定期抓取船级社规范改版与 IMO 强制文件生效动态，产出静态报告并归档
+# 每周一、周四 UTC 00:30（北京时间周一、周四 08:30）运行一次
+# 手动触发：Actions 页面 "Run workflow"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * 1,4"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Pages 同一时间只允许一个部署
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run radar
+        run: python scripts/radar.py
+
+      - name: Commit report and ledger
+        run: |
+          git config user.name "rules-radar-bot"
+          git config user.email "actions@localhost"
+          git add output/ data/
+          if git diff --cached --quiet; then
+            echo "本次无变化，跳过提交"
+          else
+            git commit -m "规范雷达报告 $(date -u +%F)"
+            git push
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
