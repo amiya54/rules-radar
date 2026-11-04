@@ -1,0 +1,171 @@
+{
+  "_说明": "规范雷达数据源。type=rss 走 RSS/Atom；type=html 走列表页链接抽取。enabled=false 可临时停用。",
+  "sources": [
+    {
+      "id": "gnews-ccs",
+      "org": "CCS",
+      "org_cn": "中国船级社",
+      "name": "Google News · 中国船级社",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%E4%B8%AD%E5%9B%BD%E8%88%B9%E7%BA%A7%E7%A4%BE%20(%E8%A7%84%E8%8C%83%20OR%20%E8%A7%84%E5%88%99%20OR%20%E4%BF%AE%E8%AE%A2%20OR%20%E6%8A%80%E6%9C%AF%E9%80%9A%E5%91%8A%20OR%20%E7%94%9F%E6%95%88)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+    },
+    {
+      "id": "gnews-dnv",
+      "org": "DNV",
+      "org_cn": "挪威船级社",
+      "name": "Google News · DNV",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%22DNV%22%20(rules%20OR%20%22rule%20set%22%20OR%20%22entry%20into%20force%22%20OR%20amendment%20OR%20%22statutory%22)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-abs",
+      "org": "ABS",
+      "org_cn": "美国船级社",
+      "name": "Google News · ABS",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%22American%20Bureau%20of%20Shipping%22%20OR%20%22ABS%22%20(%22regulatory%20news%22%20OR%20%22rules%20and%20guides%22%20OR%20%22entry%20into%20force%22)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-lr",
+      "org": "LR",
+      "org_cn": "劳氏船级社",
+      "name": "Google News · Lloyd's Register",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%22Lloyd%27s%20Register%22%20(rules%20OR%20%22statutory%20alert%22%20OR%20amendment%20OR%20%22entry%20into%20force%22)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-bv",
+      "org": "BV",
+      "org_cn": "法国船级社",
+      "name": "Google News · Bureau Veritas",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%22Bureau%20Veritas%22%20(marine%20OR%20maritime)%20(rules%20OR%20regulation%20OR%20%22NR%20547%22%20OR%20amendment)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-imo",
+      "org": "IMO",
+      "org_cn": "国际海事组织",
+      "name": "Google News · IMO 强制文件",
+      "type": "rss",
+      "official": false,
+      "limit": 18,
+      "url": "https://news.google.com/rss/search?q=(IMO%20OR%20MSC%20OR%20MEPC)%20(%22entry%20into%20force%22%20OR%20amendment%20OR%20resolution%20OR%20circular)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-cn-reg",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 中文规范动态",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%E8%88%B9%E7%BA%A7%E7%A4%BE%20OR%20%E8%88%B9%E8%88%B6%20%E8%A7%84%E8%8C%83)%20(%E7%94%9F%E6%95%88%20OR%20%E4%BF%AE%E8%AE%A2%20OR%20%E6%96%B0%E8%A7%84%20OR%20%E6%89%A7%E8%A1%8C)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+    },
+    {
+      "id": "gnews-reg-note",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 法规通报",
+      "type": "rss",
+      "official": false,
+      "limit": 18,
+      "url": "https://news.google.com/rss/search?q=(%22class%20society%22%20OR%20classed)%20(rules%20update%20OR%20%22regulatory%20update%22%20OR%20%22new%20rules%22)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "abs-regulatory",
+      "org": "ABS",
+      "org_cn": "美国船级社",
+      "name": "ABS Regulatory News（官方列表）",
+      "type": "html",
+      "official": true,
+      "limit": 20,
+      "url": "https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/regulatory-news.html",
+      "href_include": [
+        "regulatory",
+        ".pdf"
+      ],
+      "keyword_gate": [
+        "regulatory",
+        "regulation",
+        "convention",
+        "amendment",
+        "matrix",
+        "requirement"
+      ]
+    },
+    {
+      "id": "dnv-news",
+      "org": "DNV",
+      "org_cn": "挪威船级社",
+      "name": "DNV 新闻（官方列表）",
+      "type": "html",
+      "official": true,
+      "limit": 25,
+      "url": "https://www.dnv.com/news/",
+      "href_include": [
+        "/news/"
+      ],
+      "keyword_gate": [
+        "rule",
+        "regulation",
+        "statutory",
+        "amendment",
+        "entry into force",
+        "compliance",
+        "decarbon"
+      ]
+    },
+    {
+      "id": "lr-news",
+      "org": "LR",
+      "org_cn": "劳氏船级社",
+      "name": "LR 最新动态（官方列表）",
+      "type": "html",
+      "official": true,
+      "limit": 25,
+      "url": "https://www.lr.org/en/latest-news/",
+      "href_include": [
+        "/en/"
+      ],
+      "keyword_gate": [
+        "rule",
+        "regulation",
+        "statutory",
+        "amendment",
+        "compliance",
+        "solas",
+        "marpol"
+      ]
+    },
+    {
+      "id": "gnews-eif-en",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 生效日期（英文）",
+      "type": "rss",
+      "official": false,
+      "limit": 18,
+      "url": "https://news.google.com/rss/search?q=(%22entry%20into%20force%22%20OR%20%22enters%20into%20force%22)%20(shipping%20OR%20maritime%20OR%20IMO%20OR%20vessel%20OR%20%22class%20society%22)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-eif-cn",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 生效日期（中文）",
+      "type": "rss",
+      "official": false,
+      "limit": 18,
+      "url": "https://news.google.com/rss/search?q=(%E7%94%9F%E6%95%88%20OR%20%E6%96%BD%E8%A1%8C)%20(%E8%88%B9%E8%88%B6%20OR%20%E6%B5%B7%E4%BA%8B%20OR%20%E8%88%B9%E7%BA%A7%E7%A4%BE%20OR%20%E8%88%AA%E8%BF%90)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+    }
+  ]
+}
