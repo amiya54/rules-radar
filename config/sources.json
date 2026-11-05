@@ -109,6 +109,8 @@
       "org_cn": "挪威船级社",
       "name": "DNV 新闻（官方列表）",
       "type": "html",
+      "enabled": false,
+      "note": "官网反爬(403)，本地与 Actions 均失败；DNV 动态由 gnews-dnv 覆盖",
       "official": true,
       "limit": 25,
       "url": "https://www.dnv.com/news/",
