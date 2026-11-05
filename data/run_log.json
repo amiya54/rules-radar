@@ -292,5 +292,103 @@
     "note": ""
    }
   ]
+ },
+ {
+  "date": "2026-11-05",
+  "ts": "2026-11-05T06:52:17+00:00",
+  "collected": 19,
+  "sources": [
+   {
+    "id": "gnews-ccs",
+    "name": "Google News · 中国船级社",
+    "status": "OK",
+    "count": 20,
+    "note": ""
+   },
+   {
+    "id": "gnews-dnv",
+    "name": "Google News · DNV",
+    "status": "OK",
+    "count": 32,
+    "note": ""
+   },
+   {
+    "id": "gnews-abs",
+    "name": "Google News · ABS",
+    "status": "OK",
+    "count": 9,
+    "note": ""
+   },
+   {
+    "id": "gnews-lr",
+    "name": "Google News · Lloyd's Register",
+    "status": "OK",
+    "count": 29,
+    "note": ""
+   },
+   {
+    "id": "gnews-bv",
+    "name": "Google News · Bureau Veritas",
+    "status": "OK",
+    "count": 14,
+    "note": ""
+   },
+   {
+    "id": "gnews-imo",
+    "name": "Google News · IMO 强制文件",
+    "status": "OK",
+    "count": 32,
+    "note": ""
+   },
+   {
+    "id": "gnews-cn-reg",
+    "name": "Google News · 中文规范动态",
+    "status": "OK",
+    "count": 15,
+    "note": ""
+   },
+   {
+    "id": "gnews-reg-note",
+    "name": "Google News · 法规通报",
+    "status": "OK",
+    "count": 18,
+    "note": ""
+   },
+   {
+    "id": "abs-regulatory",
+    "name": "ABS Regulatory News（官方列表）",
+    "status": "OK",
+    "count": 7,
+    "note": ""
+   },
+   {
+    "id": "dnv-news",
+    "name": "DNV 新闻（官方列表）",
+    "status": "失败(0)",
+    "count": 0,
+    "note": ""
+   },
+   {
+    "id": "lr-news",
+    "name": "LR 最新动态（官方列表）",
+    "status": "OK",
+    "count": 4,
+    "note": ""
+   },
+   {
+    "id": "gnews-eif-en",
+    "name": "Google News · 生效日期（英文）",
+    "status": "OK",
+    "count": 20,
+    "note": ""
+   },
+   {
+    "id": "gnews-eif-cn",
+    "name": "Google News · 生效日期（中文）",
+    "status": "OK",
+    "count": 18,
+    "note": ""
+   }
+  ]
  }
 ]

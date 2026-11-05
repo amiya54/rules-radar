@@ -127,6 +127,27 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 .foot-meta dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
 .empty{padding:30px;text-align:center;color:var(--ink3);font-size:13px}
 
+.zh{margin-top:2px;font-size:12px;color:var(--ink2)}
+.eif-card .tz{margin-top:2px;font-size:12px;color:var(--ink2)}
+.eif-card .tz:empty{display:none}
+
+.ai-card{padding:18px 20px}
+.ai-overall{font-size:13.5px;line-height:1.8;color:var(--ink);border-left:3px solid var(--accent);
+padding:2px 0 2px 14px;margin-bottom:14px}
+.ai-points{display:grid;gap:10px}
+.ai-point{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
+background:#fbfcff;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
+.ai-point:hover{border-color:#cfdcf0;background:#f6f9ff}
+.ai-no{flex:none;width:24px;height:24px;border-radius:8px;background:var(--accent-bg);color:var(--accent);
+font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ai-body{min-width:0;display:flex;flex-direction:column;gap:3px}
+.ai-org{align-self:flex-start;font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;
+padding:1px 7px;border-radius:6px}
+.ai-zh{font-size:13px;font-weight:500;color:var(--ink)}
+.ai-title{font-size:12px;color:var(--ink3);line-height:1.5}
+.ai-why{font-size:12.5px;color:var(--ink2);line-height:1.7}
+.ai-note{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--ink3)}
+
 @media(max-width:760px){
   .wrap{padding:18px 14px 56px}
   .hero{padding:22px 18px;border-radius:16px}
@@ -150,7 +171,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
     <h1>规范雷达 · 船级社规范与强制文件改版动态</h1>
     <p class="hero-sub">覆盖 CCS / DNV / ABS / LR / BV / IMO 六方公开信息 · 自动采集 · 只做线索整理，不做法律判断</p>
     <div class="stats">
-      <div class="stat"><i>本期新增</i><b>18<small>条</small></b></div>
+      <div class="stat"><i>本期新增</i><b>19<small>条</small></b></div>
       <div class="stat"><i>90 天内生效</i><b>1<small>条</small></b></div>
       <div class="stat"><i>一年内生效</i><b>2<small>条</small></b></div>
       <div class="stat"><i>台账累计</i><b>34<small>条</small></b></div>
@@ -159,6 +180,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 
   <nav class="nav">
     <a href="#eif">生效倒计时</a>
+    <a href="#ai">AI 解读</a>
     <a href="#fresh">本期新增</a>
     <a href="#track">持续跟踪</a>
     <a href="#health">抓取状态</a>
@@ -174,6 +196,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="dn warn"><b>57</b><i>天后</i></div>
         <div class="body">
           <div class="t">国际海事组织关于有害和有毒货物的条约将于 2027 年生效</div>
+          <div class="tz">IMO有害和有毒货物条约将于2027年生效</div>
           <div class="m"><span class="badge" style="--c:#475569">行业</span><span>2027 年</span></div>
         </div>
       </a>
@@ -181,14 +204,60 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="dn ok"><b>299</b><i>天后</i></div>
         <div class="body">
           <div class="t">DNV: New EU marine equipment rules to enter into force on 31 August</div>
+          <div class="tz">DNV：欧盟船用设备新规将于8月31日生效</div>
           <div class="m"><span class="badge" style="--c:#1d4ed8">DNV</span><span>2027-08-31</span></div>
         </div>
       </a>
     </div>
   </section>
 
+  <section class="sec" id="ai">
+    <div class="sec-h"><span class="num">02</span><h2>AI 本期解读</h2><span class="note">DeepSeek 生成 · 仅供参考</span></div>
+    <p class="lead">由 AI 基于本期条目自动归纳主线并挑出值得注意的改动，帮助快速定位重点；结论务必回原文核对。</p>
+    <div class="card ai-card">
+      <div class="ai-overall">本期动态以IMO/SOLAS修正案与强制生效节点为主线：ro-ro客船消防安全、引水梯强制新规、有害有毒货物公约及赔偿机制相继落地；同时DNV发布2026年7月版船级社规范并关注欧盟船用设备新规，ABS就MARPOL/BWM电子记录簿与起重设备SOLAS要求发布指南。国内方面，CCS粘流非线性波浪载荷计算指南与绿色智能船舶技术规范体系行动计划值得跟踪。</div>
+        <a class="ai-point" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QMHJOQVFqOFNKd29SS1YtcU5UeTJKcjk5czg3RDBvaWZRNkN6YW9IcHFzYlNZVHVVdkF0aHZEaTA4M2lHY2JBVnJlZW5wb1IwUmJPNUlOQnZPa2RjeVE?oc=5" target="_blank" rel="noopener">
+          <span class="ai-no">1</span>
+          <span class="ai-body"><span class="ai-org" style="background:#7c3aed">LR</span>
+            <span class="ai-zh">LR Class News 07/2026：SOLAS修正案——ro-ro客船消防安全要求</span><span class="ai-title">Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships</span>
+            <span class="ai-why">SOLAS对ro-ro客船消防要求的修正案直接影响客滚船/客船设计与布置，涉及防火分隔与探火灭火系统，需在后续新造船与改装项目中提前核对。</span></span>
+        </a>
+        <a class="ai-point" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5Fc29xUG80akJMTjZMQ3Jac0VJSWVJSERJLVM1TkFrdGctdi12bllFanBkRUFxYVl0eW4yTDc1TTlzZ1Q5RDhadXN0MG5PWVVrV2dtUFpXYlZ0cjFuMU1rQ3JRWXY3WHNQRThBRkJNTEc?oc=5" target="_blank" rel="noopener">
+          <span class="ai-no">2</span>
+          <span class="ai-body"><span class="ai-org" style="background:#475569">行业</span>
+            <span class="ai-zh">IMO引水梯强制新规2028年生效</span><span class="ai-title">IMO引水梯强制新规2028年生效</span>
+            <span class="ai-why">IMO引水梯强制新规2028-01-01生效，涉及所有船舶引水员登乘设施的设计、检验与维护，影响面广且需提前安排图纸与实船整改。</span></span>
+        </a>
+        <a class="ai-point" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPQjB1dXVERk9GTzRrNklGRk1BOTNpbVhDbUNGS2dTS3BrRWlMVDRCLXNYOGJVaWN2MlVaX3FlaGVSdTlYMmxpd053UTdMQ3p3S2VmcE9NSVpoVkxJV3ZaUWlKanZfYlEwVjZMQmkyNEoxVFZjSTdHQ2JQa1FUc3EwQjc0aUVaUDc4dlJFOGVRVzdxTEVXMUg2U0RNdXI5T0VEQzliWlZQcw?oc=5" target="_blank" rel="noopener">
+          <span class="ai-no">3</span>
+          <span class="ai-body"><span class="ai-org" style="background:#475569">行业</span>
+            <span class="ai-zh">IMO有害和有毒货物条约将于2027年生效</span><span class="ai-title">国际海事组织关于有害和有毒货物的条约将于 2027 年生效</span>
+            <span class="ai-why">IMO有害有毒货物公约2027-01-01生效，涉及相关船型（化学品船等）的证书、责任与操作要求，需提前评估合规与保险安排。</span></span>
+        </a>
+        <a class="ai-point" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMlNrSkMwSUczeDNrWEx4bml2NnZDUXNfMUprMVpPTHlxSUMxZjZBSmNDTjVhcnpvN1pkUTY4TFRRbVgyWFktUktQeFJxWGdfM2w0cU9ReEpITnlOUmNNVktlV3ZOMUp0bDVKX21pVW85cUZiVFhEcHk1ejE1czJEbk1PSHQtdzBzVWs4TGUwck9aNmN4MVF4b05GWTNURDl5RVZqRTZ0R0ZKOTUyMjZZdEY2N1VPeXdSOGJZU1VYa0o?oc=5" target="_blank" rel="noopener">
+          <span class="ai-no">4</span>
+          <span class="ai-body"><span class="ai-org" style="background:#1d4ed8">DNV</span>
+            <span class="ai-zh">DNV 2026年7月版船舶与海工船级社规范与标准</span><span class="ai-title">The July 2026 edition of the DNV class rules and standards for ship and offshore</span>
+            <span class="ai-why">DNV 2026年7月版船级社规范与海工标准整体改版，入级DNV船型需核对新版本条款差异并更新设计与审图依据。</span></span>
+        </a>
+        <a class="ai-point" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNOW03ZnlaRFB4SDZRVmxWdDNnV0xEenJfcjNrMHp1Rm5sc1FuckVvMVJLeGpJZ0NLS1RwRXB5RDhkQUdUMnQxVV9RMTIyTWpkS0EwMDBwRFJQclVnVF9YeUJha1pmaXR5R2dmQ1RPWmF2MzlNWkpWY2xuS2pIay1ObzN3R1BjSlB0ZHlST2hUVFc3Qi10?oc=5" target="_blank" rel="noopener">
+          <span class="ai-no">5</span>
+          <span class="ai-body"><span class="ai-org" style="background:#1d4ed8">DNV</span>
+            <span class="ai-zh">DNV：欧盟船用设备新规将于8月31日生效</span><span class="ai-title">DNV: New EU marine equipment rules to enter into force on 31 August</span>
+            <span class="ai-why">欧盟船用设备新规2027-08-31生效，涉及船用设备型式认可与装船合规，出口欧盟或在欧盟旗船舶上安装设备的项目需提前规划。</span></span>
+        </a>
+        <a class="ai-point" href="https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/electronic-record-books-under-marpol-and-bwm-conventions.html" target="_blank" rel="noopener">
+          <span class="ai-no">6</span>
+          <span class="ai-body"><span class="ai-org" style="background:#0f766e">ABS</span>
+            <span class="ai-zh">MARPOL与BWM公约下的电子记录簿</span><span class="ai-title">Electronic Record Books Under MARPOL and BWM Conventions</span>
+            <span class="ai-why">ABS发布MARPOL与BWM公约下电子记录簿要求指南，涉及油类记录簿、垃圾记录簿及压载水记录簿的电子化替代，影响全船队记录管理方式。</span></span>
+        </a>
+      <div class="ai-note">解读由 DeepSeek（deepseek-chat）自动生成，可能存在误读，不构成规范解释或合规结论。</div>
+    </div>
+  </section>
+
   <section class="sec" id="fresh">
-    <div class="sec-h"><span class="num">02</span><h2>本期新增</h2><span class="note">共 18 条 · 按机构分组</span></div>
+    <div class="sec-h"><span class="num">03</span><h2>本期新增</h2><span class="note">共 19 条 · 按机构分组</span></div>
     <p class="lead">每条标注机构、类型、生效日与涉及领域；点标题跳原文。列表只做线索整理，具体条款需回原文核对。</p>
     <div class="card">
       <div class="tools">
@@ -202,6 +271,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="row" style="--c:#b91c1c" data-org="CCS" data-text="中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE12YmJOWWQ1NmpNcmhNV3plb3lmQ05QR1lRY0NSMXNsS195bmZhNzVpdm43aTh0V1FaZmwxSldEYmRnREtodUJxRWpaRi0tRFIzOXB6RlNzQ0FSOUQ5OXY4Yg?oc=5" target="_blank" rel="noopener">中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效</a>
+            <div class="zh">CCS《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#b91c1c">CCS</span>
               <span class="kind">生效提醒</span>
@@ -222,6 +292,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv: new eu marine equipment rules to enter into force on 31 august ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNOW03ZnlaRFB4SDZRVmxWdDNnV0xEenJfcjNrMHp1Rm5sc1FuckVvMVJLeGpJZ0NLS1RwRXB5RDhkQUdUMnQxVV9RMTIyTWpkS0EwMDBwRFJQclVnVF9YeUJha1pmaXR5R2dmQ1RPWmF2MzlNWkpWY2xuS2pIay1ObzN3R1BjSlB0ZHlST2hUVFc3Qi10?oc=5" target="_blank" rel="noopener">DNV: New EU marine equipment rules to enter into force on 31 August</a>
+            <div class="zh">DNV：欧盟船用设备新规将于8月31日生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -237,6 +308,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv launches ai tool to cut through 30,000 pages of maritime rules ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPYmJ1Ui12Z2JvbTI3OHBjWjFya2N1T2F6T05rY3lNOGt0SVM0SzJvdTVoa2xsa3BOaS10VlZPdmc4cGp4N0twa0tlbmZwQTZTNUdjbkZpeFNHaDlrblNmX2FvQ05FVFhCa0FjQ1ZHQXZ4VU5HR1FlcWw0eEt0RjNTMHl4T2JkUjlyUFJ1Y3REV00yUQ?oc=5" target="_blank" rel="noopener">DNV launches AI tool to cut through 30,000 pages of maritime rules</a>
+            <div class="zh">DNV推出AI工具以梳理3万页海事规则</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -252,6 +324,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv ruleagent improves digital compliance ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNYkpGR3dfVzYtcE1EczZ2ZGVuZENqeHpSeDhVRVVhUTFLVXRRRVQyajhTZERCelJmbGlqbUFiNnpob0dyQ1RYSHBvb0JnM3JZUVVteWM1WEZaSW1EU1hJRUpMZ2JRUFRVYjZybkhoNVdlR0Z3TGZmYUVzSFhQMUt5MWIwMmVhYXRmaTdmelFwbUZ2NXVBRUow?oc=5" target="_blank" rel="noopener">DNV RuleAgent improves digital compliance</a>
+            <div class="zh">DNV RuleAgent提升数字化合规能力</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -267,6 +340,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="the july 2026 edition of the dnv class rules and standards for ship and offshore ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMlNrSkMwSUczeDNrWEx4bml2NnZDUXNfMUprMVpPTHlxSUMxZjZBSmNDTjVhcnpvN1pkUTY4TFRRbVgyWFktUktQeFJxWGdfM2w0cU9ReEpITnlOUmNNVktlV3ZOMUp0bDVKX21pVW85cUZiVFhEcHk1ejE1czJEbk1PSHQtdzBzVWs4TGUwck9aNmN4MVF4b05GWTNURDl5RVZqRTZ0R0ZKOTUyMjZZdEY2N1VPeXdSOGJZU1VYa0o?oc=5" target="_blank" rel="noopener">The July 2026 edition of the DNV class rules and standards for ship and offshore</a>
+            <div class="zh">DNV 2026年7月版船舶与海工船级社规范与标准</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -282,6 +356,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="uncertainty rules: dnv urges shipowners to plan for multiple regulatory futures ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM3NIdzZUa0JMZDNYU3gyNzJsVG5CWXlrRXFiYUYtblZlTWV5R2lmdEZTRDFZNWJJb1hmdjRXUUFjZWpUWFFMaGpDb0dtTXZ4NXc0cXNQNG9tTlhic0RlQWdicVZNRTV5VjR4RVJYNllPTFNTWTlBbGkzbkNzYVRMZmlzQ2pRY05QZVhGM1l0QmhZZzlkREpUUjRUcUsxVjcyLVRIaXNCZS0ySU5aQWFDWXJmaDRIUFdUMmxxQndWa1BLQ3o1aVlWM3BBY2ZzcTdSRzBYUkNSZTRvYjJx?oc=5" target="_blank" rel="noopener">Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures</a>
+            <div class="zh">不确定性主导：DNV敦促船东为多种监管前景做规划</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -297,6 +372,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv becomes first non-japanese body authorized for floating offshore wind rules in japan ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQVGN3ZXdmWXB4NWRIYUlEM0NZLXd5MGtzX0JaZ2FnY2NyMVJ4SF9uVzZ6cGFVcnRLSVJJYjQyS3FlekduZ3BBVlZkeVRicW55N0hKR0FNR3ZwQUEzVGlheHNnMTF4bEFTWlZrSVZ2NF82dG84Z2N4dVRLVkxlZnRsOHh5Zjh3czlvX0t2ZEVqdHJQWEx5SHhaRVRoTVN2WktHekxpVS1SN2U5bGF2RnNTVVhJWm1ocHVBb3R2ZDdaeGVaVFR3V2c?oc=5" target="_blank" rel="noopener">DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan</a>
+            <div class="zh">DNV成为日本首个获授权开展浮式海上风电规范的境外机构</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -312,6 +388,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv receives authorisation for floating offshore wind rules in japan ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNMkx4WlNjZjhWUWhWbnZGbkpPSThkV1lKeEc2MWdZUjg3UkFWck5xZ0tHZHRJaXZBNmdBM2NIT3BaeXZFcjBkZUlIY0d5RnpYUVdESVZ0WXZLcVVJOEVsRGItNXl1aGpoLUJvM2c0d3lrbTdXRndkUXIwR0Y0c2dFMVY5c2lGVkYzRi1RVVc4ZXNldnNiUHZsN21lTmNWbFFaSUUzLUJxaVVYSWRWRGNUSg?oc=5" target="_blank" rel="noopener">DNV receives authorisation for floating offshore wind rules in Japan</a>
+            <div class="zh">DNV获得日本浮式海上风电规范授权</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -332,6 +409,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="row" style="--c:#0f766e" data-org="ABS" data-text="electronic record books under marpol and bwm conventions 防污染">
           <div class="row-main">
             <a class="row-title" href="https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/electronic-record-books-under-marpol-and-bwm-conventions.html" target="_blank" rel="noopener">Electronic Record Books Under MARPOL and BWM Conventions</a>
+            <div class="zh">MARPOL与BWM公约下的电子记录簿</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0f766e">ABS</span>
               <span class="kind">要求/指南</span>
@@ -347,6 +425,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#0f766e" data-org="ABS" data-text="solas requirements for lifting appliances and anchor handling winches ">
           <div class="row-main">
             <a class="row-title" href="https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/SOLAS-requirements-on-board-ships.html" target="_blank" rel="noopener">SOLAS Requirements for Lifting Appliances and Anchor Handling Winches</a>
+            <div class="zh">SOLAS对起重设备与起锚绞车的要求</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0f766e">ABS</span>
               <span class="kind">要求/指南</span>
@@ -367,6 +446,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="row" style="--c:#7c3aed" data-org="LR" data-text="class news 07/2026: solas amendments fire safety requirements for ro-ro passenger ships 客船/邮轮 消防">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QMHJOQVFqOFNKd29SS1YtcU5UeTJKcjk5czg3RDBvaWZRNkN6YW9IcHFzYlNZVHVVdkF0aHZEaTA4M2lHY2JBVnJlZW5wb1IwUmJPNUlOQnZPa2RjeVE?oc=5" target="_blank" rel="noopener">Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships</a>
+            <div class="zh">LR Class News 07/2026：SOLAS修正案——ro-ro客船消防安全要求</div>
             <div class="row-meta">
               <span class="badge" style="--c:#7c3aed">LR</span>
               <span class="kind">修正案</span>
@@ -387,6 +467,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         <div class="row" style="--c:#0369a1" data-org="IMO" data-text="hazardous cargo compensation regime moves to entry into force ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5" target="_blank" rel="noopener">Hazardous cargo compensation regime moves to entry into force</a>
+            <div class="zh">有害货物赔偿机制进入生效阶段</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">生效提醒</span>
@@ -403,10 +484,11 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
       </div>
       <div class="group">
         <div class="group-h"><span class="org" style="background:#475569">行业</span>
-          <span class="cn">行业媒体</span><span class="n">6 条</span></div>
+          <span class="cn">行业媒体</span><span class="n">7 条</span></div>
         <div class="row" style="--c:#475569" data-org="行业" data-text="国际海事组织关于有害和有毒货物的条约将于 2027 年生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPQjB1dXVERk9GTzRrNklGRk1BOTNpbVhDbUNGS2dTS3BrRWlMVDRCLXNYOGJVaWN2MlVaX3FlaGVSdTlYMmxpd053UTdMQ3p3S2VmcE9NSVpoVkxJV3ZaUWlKanZfYlEwVjZMQmkyNEoxVFZjSTdHQ2JQa1FUc3EwQjc0aUVaUDc4dlJFOGVRVzdxTEVXMUg2U0RNdXI5T0VEQzliWlZQcw?oc=5" target="_blank" rel="noopener">国际海事组织关于有害和有毒货物的条约将于 2027 年生效</a>
+            <div class="zh">IMO有害和有毒货物条约将于2027年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -422,6 +504,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="hazardous cargo compensation regime moves to entry into force ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5" target="_blank" rel="noopener">Hazardous cargo compensation regime moves to entry into force</a>
+            <div class="zh">有害货物赔偿机制进入生效阶段</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -437,6 +520,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="绿色智能船舶将有全新技术规范体系 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNU3JxTTlXdm9Rb2MyWk5OLWhPNldSamY4d2piSlM4V3VXRkQyVW5ZSFhPSGRWRDcwUEQ4clNLOU1tX2dlRTFOQ0J5QzFvcGNwSnNmVHQ1ellNT3BZLXRuQTJidjZQUHJQUDZyUWpXZ3FoQWdyZjNDRFlPeXdZNVBoUQ?oc=5" target="_blank" rel="noopener">绿色智能船舶将有全新技术规范体系</a>
+            <div class="zh">绿色智能船舶将建立全新技术规范体系</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">规则改版</span>
@@ -449,9 +533,26 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
             <span class="pub">2026-04-15</span>
             <span class="st ">持续跟踪</span>
           </div>
+        </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知 ">
+          <div class="row-main">
+            <a class="row-title" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1hQW5DcXZXcmtTSkdabGhpTlJ1RDdyZ2ItR3J3YkFhdkpUMzJDdkk4U1dfcVJxZXRNSzBsYmQ2NmJSeDY2YTMwLVNiRGROT0h0dVZwQlVEVUJkVlplWVJtR1NSdEQ0UlptaURj?oc=5" target="_blank" rel="noopener">交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知</a>
+            <div class="zh">交通运输部海事局印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》</div>
+            <div class="row-meta">
+              <span class="badge" style="--c:#475569">行业</span>
+              <span class="kind">规则改版</span>
+              
+              
+              <span class="src">Google News · 中文规范动态 · 财富号</span>
+            </div>
+          </div>
+          <div class="row-side">
+            <span class="pub">2026-04-16</span>
+            <span class="st new">本期新增</span>
+          </div>
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="国际海事组织（imo）通过首个全球自动驾驶船舶规范 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUTJ0YzdndHVuQ2hNdk5Ld1NwNTh1b2N2V3hlUU1wXzBqUmdnTmZCSUNHeGFadUYwWGtBYnRhYlMwUWpyenZmV1hiNHR6R0dxckV3WkxzRGloUldWY1piN1doRW13Z1FJaWkyM19abGQwS2NHSW1WMU8tcWZISGJGSE45OWhtR1N2?oc=5" target="_blank" rel="noopener">国际海事组织（IMO）通过首个全球自动驾驶船舶规范</a>
+            <div class="zh">IMO通过首个全球自动驾驶船舶规范</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">规则改版</span>
@@ -467,6 +568,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="imo treaty on hazardous and noxious cargo to enter into force in 2027 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQM21OVGF5TnRuek5GeXo0X213cml0ZkYwLVhkWjNCekI5SmNGaTI0VVY1aVhyUzhGRkljeUxOTk44QkY5T2JVa2VCaDE5c1NrYUpueE0wMnpVMHdxdXVmbXBPOE9JMVZqUzdkZ3pkcmVORkRCWjBTRGxRSUF5SFF3XzUzOTVZd2ZCOWY5MEhGdktrZVZRaVhCOWE5UmpHWlF1WldhVTVBRQ?oc=5" target="_blank" rel="noopener">IMO treaty on hazardous and noxious cargo to enter into force in 2027</a>
+            <div class="zh">IMO有害和有毒货物条约将于2027年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">行业动态</span>
@@ -482,6 +584,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="imo引水梯强制新规2028年生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5Fc29xUG80akJMTjZMQ3Jac0VJSWVJSERJLVM1TkFrdGctdi12bllFanBkRUFxYVl0eW4yTDc1TTlzZ1Q5RDhadXN0MG5PWVVrV2dtUFpXYlZ0cjFuMU1rQ3JRWXY3WHNQRThBRkJNTEc?oc=5" target="_blank" rel="noopener">IMO引水梯强制新规2028年生效</a>
+            <div class="zh">IMO引水梯强制新规2028年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -502,12 +605,13 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
   </section>
 
   <section class="sec" id="track">
-    <div class="sec-h"><span class="num">03</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
+    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
     <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
     <div class="card">
         <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv: new eu marine equipment rules to enter into force on 31 august ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNOW03ZnlaRFB4SDZRVmxWdDNnV0xEenJfcjNrMHp1Rm5sc1FuckVvMVJLeGpJZ0NLS1RwRXB5RDhkQUdUMnQxVV9RMTIyTWpkS0EwMDBwRFJQclVnVF9YeUJha1pmaXR5R2dmQ1RPWmF2MzlNWkpWY2xuS2pIay1ObzN3R1BjSlB0ZHlST2hUVFc3Qi10?oc=5" target="_blank" rel="noopener">DNV: New EU marine equipment rules to enter into force on 31 August</a>
+            <div class="zh">DNV：欧盟船用设备新规将于8月31日生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -523,6 +627,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#0f766e" data-org="ABS" data-text="electronic record books under marpol and bwm conventions 防污染">
           <div class="row-main">
             <a class="row-title" href="https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/electronic-record-books-under-marpol-and-bwm-conventions.html" target="_blank" rel="noopener">Electronic Record Books Under MARPOL and BWM Conventions</a>
+            <div class="zh">MARPOL与BWM公约下的电子记录簿</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0f766e">ABS</span>
               <span class="kind">要求/指南</span>
@@ -538,6 +643,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#7c3aed" data-org="LR" data-text="class news 07/2026: solas amendments fire safety requirements for ro-ro passenger ships 客船/邮轮 消防">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QMHJOQVFqOFNKd29SS1YtcU5UeTJKcjk5czg3RDBvaWZRNkN6YW9IcHFzYlNZVHVVdkF0aHZEaTA4M2lHY2JBVnJlZW5wb1IwUmJPNUlOQnZPa2RjeVE?oc=5" target="_blank" rel="noopener">Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships</a>
+            <div class="zh">LR Class News 07/2026：SOLAS修正案——ro-ro客船消防安全要求</div>
             <div class="row-meta">
               <span class="badge" style="--c:#7c3aed">LR</span>
               <span class="kind">修正案</span>
@@ -553,6 +659,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="国际海事组织关于有害和有毒货物的条约将于 2027 年生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPQjB1dXVERk9GTzRrNklGRk1BOTNpbVhDbUNGS2dTS3BrRWlMVDRCLXNYOGJVaWN2MlVaX3FlaGVSdTlYMmxpd053UTdMQ3p3S2VmcE9NSVpoVkxJV3ZaUWlKanZfYlEwVjZMQmkyNEoxVFZjSTdHQ2JQa1FUc3EwQjc0aUVaUDc4dlJFOGVRVzdxTEVXMUg2U0RNdXI5T0VEQzliWlZQcw?oc=5" target="_blank" rel="noopener">国际海事组织关于有害和有毒货物的条约将于 2027 年生效</a>
+            <div class="zh">IMO有害和有毒货物条约将于2027年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -568,6 +675,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#0f766e" data-org="ABS" data-text="solas requirements for lifting appliances and anchor handling winches ">
           <div class="row-main">
             <a class="row-title" href="https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/SOLAS-requirements-on-board-ships.html" target="_blank" rel="noopener">SOLAS Requirements for Lifting Appliances and Anchor Handling Winches</a>
+            <div class="zh">SOLAS对起重设备与起锚绞车的要求</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0f766e">ABS</span>
               <span class="kind">要求/指南</span>
@@ -583,6 +691,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#b91c1c" data-org="CCS" data-text="dnv：imo mass规则推动船舶远程控制与自主航行迈向规范化 自主船">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNUmQ4dTVidkZfVFZuRGI3c0pnTkR2V1BmVjBJVmsxdEdtOTlkOXNyRm0zZE9rM1NHTWZfSkMzaUNEYUVlYWJRV1hld2F0N2p3dTc5M3V2UEdIWVE3V0hldS05Y2EteW1QU21uTUhTX2t3VzQ5clZxMDBUZFRtaGNGdXlB?oc=5" target="_blank" rel="noopener">DNV：IMO MASS规则推动船舶远程控制与自主航行迈向规范化</a>
+            
             <div class="row-meta">
               <span class="badge" style="--c:#b91c1c">CCS</span>
               <span class="kind">规则改版</span>
@@ -598,6 +707,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#b91c1c" data-org="CCS" data-text="中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE12YmJOWWQ1NmpNcmhNV3plb3lmQ05QR1lRY0NSMXNsS195bmZhNzVpdm43aTh0V1FaZmwxSldEYmRnREtodUJxRWpaRi0tRFIzOXB6RlNzQ0FSOUQ5OXY4Yg?oc=5" target="_blank" rel="noopener">中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效</a>
+            <div class="zh">CCS《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#b91c1c">CCS</span>
               <span class="kind">生效提醒</span>
@@ -613,6 +723,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv becomes first non-japanese body authorized for floating offshore wind rules in japan ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQVGN3ZXdmWXB4NWRIYUlEM0NZLXd5MGtzX0JaZ2FnY2NyMVJ4SF9uVzZ6cGFVcnRLSVJJYjQyS3FlekduZ3BBVlZkeVRicW55N0hKR0FNR3ZwQUEzVGlheHNnMTF4bEFTWlZrSVZ2NF82dG84Z2N4dVRLVkxlZnRsOHh5Zjh3czlvX0t2ZEVqdHJQWEx5SHhaRVRoTVN2WktHekxpVS1SN2U5bGF2RnNTVVhJWm1ocHVBb3R2ZDdaeGVaVFR3V2c?oc=5" target="_blank" rel="noopener">DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan</a>
+            <div class="zh">DNV成为日本首个获授权开展浮式海上风电规范的境外机构</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -628,6 +739,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv receives authorisation for floating offshore wind rules in japan ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNMkx4WlNjZjhWUWhWbnZGbkpPSThkV1lKeEc2MWdZUjg3UkFWck5xZ0tHZHRJaXZBNmdBM2NIT3BaeXZFcjBkZUlIY0d5RnpYUVdESVZ0WXZLcVVJOEVsRGItNXl1aGpoLUJvM2c0d3lrbTdXRndkUXIwR0Y0c2dFMVY5c2lGVkYzRi1RVVc4ZXNldnNiUHZsN21lTmNWbFFaSUUzLUJxaVVYSWRWRGNUSg?oc=5" target="_blank" rel="noopener">DNV receives authorisation for floating offshore wind rules in Japan</a>
+            <div class="zh">DNV获得日本浮式海上风电规范授权</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -643,6 +755,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv ruleagent improves digital compliance ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNYkpGR3dfVzYtcE1EczZ2ZGVuZENqeHpSeDhVRVVhUTFLVXRRRVQyajhTZERCelJmbGlqbUFiNnpob0dyQ1RYSHBvb0JnM3JZUVVteWM1WEZaSW1EU1hJRUpMZ2JRUFRVYjZybkhoNVdlR0Z3TGZmYUVzSFhQMUt5MWIwMmVhYXRmaTdmelFwbUZ2NXVBRUow?oc=5" target="_blank" rel="noopener">DNV RuleAgent improves digital compliance</a>
+            <div class="zh">DNV RuleAgent提升数字化合规能力</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -658,6 +771,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="dnv launches ai tool to cut through 30,000 pages of maritime rules ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPYmJ1Ui12Z2JvbTI3OHBjWjFya2N1T2F6T05rY3lNOGt0SVM0SzJvdTVoa2xsa3BOaS10VlZPdmc4cGp4N0twa0tlbmZwQTZTNUdjbkZpeFNHaDlrblNmX2FvQ05FVFhCa0FjQ1ZHQXZ4VU5HR1FlcWw0eEt0RjNTMHl4T2JkUjlyUFJ1Y3REV00yUQ?oc=5" target="_blank" rel="noopener">DNV launches AI tool to cut through 30,000 pages of maritime rules</a>
+            <div class="zh">DNV推出AI工具以梳理3万页海事规则</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -673,6 +787,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="the july 2026 edition of the dnv class rules and standards for ship and offshore ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMlNrSkMwSUczeDNrWEx4bml2NnZDUXNfMUprMVpPTHlxSUMxZjZBSmNDTjVhcnpvN1pkUTY4TFRRbVgyWFktUktQeFJxWGdfM2w0cU9ReEpITnlOUmNNVktlV3ZOMUp0bDVKX21pVW85cUZiVFhEcHk1ejE1czJEbk1PSHQtdzBzVWs4TGUwck9aNmN4MVF4b05GWTNURDl5RVZqRTZ0R0ZKOTUyMjZZdEY2N1VPeXdSOGJZU1VYa0o?oc=5" target="_blank" rel="noopener">The July 2026 edition of the DNV class rules and standards for ship and offshore</a>
+            <div class="zh">DNV 2026年7月版船舶与海工船级社规范与标准</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -688,6 +803,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#1d4ed8" data-org="DNV" data-text="uncertainty rules: dnv urges shipowners to plan for multiple regulatory futures ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM3NIdzZUa0JMZDNYU3gyNzJsVG5CWXlrRXFiYUYtblZlTWV5R2lmdEZTRDFZNWJJb1hmdjRXUUFjZWpUWFFMaGpDb0dtTXZ4NXc0cXNQNG9tTlhic0RlQWdicVZNRTV5VjR4RVJYNllPTFNTWTlBbGkzbkNzYVRMZmlzQ2pRY05QZVhGM1l0QmhZZzlkREpUUjRUcUsxVjcyLVRIaXNCZS0ySU5aQWFDWXJmaDRIUFdUMmxxQndWa1BLQ3o1aVlWM3BBY2ZzcTdSRzBYUkNSZTRvYjJx?oc=5" target="_blank" rel="noopener">Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures</a>
+            <div class="zh">不确定性主导：DNV敦促船东为多种监管前景做规划</div>
             <div class="row-meta">
               <span class="badge" style="--c:#1d4ed8">DNV</span>
               <span class="kind">规则改版</span>
@@ -703,6 +819,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="hazardous cargo compensation regime moves to entry into force ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5" target="_blank" rel="noopener">Hazardous cargo compensation regime moves to entry into force</a>
+            <div class="zh">有害货物赔偿机制进入生效阶段</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">生效提醒</span>
@@ -718,6 +835,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="国际海事组织（imo）通过首个全球自动驾驶船舶规范 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUTJ0YzdndHVuQ2hNdk5Ld1NwNTh1b2N2V3hlUU1wXzBqUmdnTmZCSUNHeGFadUYwWGtBYnRhYlMwUWpyenZmV1hiNHR6R0dxckV3WkxzRGloUldWY1piN1doRW13Z1FJaWkyM19abGQwS2NHSW1WMU8tcWZISGJGSE45OWhtR1N2?oc=5" target="_blank" rel="noopener">国际海事组织（IMO）通过首个全球自动驾驶船舶规范</a>
+            <div class="zh">IMO通过首个全球自动驾驶船舶规范</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">规则改版</span>
@@ -733,6 +851,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="绿色智能船舶将有全新技术规范体系 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNU3JxTTlXdm9Rb2MyWk5OLWhPNldSamY4d2piSlM4V3VXRkQyVW5ZSFhPSGRWRDcwUEQ4clNLOU1tX2dlRTFOQ0J5QzFvcGNwSnNmVHQ1ellNT3BZLXRuQTJidjZQUHJQUDZyUWpXZ3FoQWdyZjNDRFlPeXdZNVBoUQ?oc=5" target="_blank" rel="noopener">绿色智能船舶将有全新技术规范体系</a>
+            <div class="zh">绿色智能船舶将建立全新技术规范体系</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">规则改版</span>
@@ -748,6 +867,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="imo引水梯强制新规2028年生效 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5Fc29xUG80akJMTjZMQ3Jac0VJSWVJSERJLVM1TkFrdGctdi12bllFanBkRUFxYVl0eW4yTDc1TTlzZ1Q5RDhadXN0MG5PWVVrV2dtUFpXYlZ0cjFuMU1rQ3JRWXY3WHNQRThBRkJNTEc?oc=5" target="_blank" rel="noopener">IMO引水梯强制新规2028年生效</a>
+            <div class="zh">IMO引水梯强制新规2028年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -763,6 +883,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="imo treaty on hazardous and noxious cargo to enter into force in 2027 ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQM21OVGF5TnRuek5GeXo0X213cml0ZkYwLVhkWjNCekI5SmNGaTI0VVY1aVhyUzhGRkljeUxOTk44QkY5T2JVa2VCaDE5c1NrYUpueE0wMnpVMHdxdXVmbXBPOE9JMVZqUzdkZ3pkcmVORkRCWjBTRGxRSUF5SFF3XzUzOTVZd2ZCOWY5MEhGdktrZVZRaVhCOWE5UmpHWlF1WldhVTVBRQ?oc=5" target="_blank" rel="noopener">IMO treaty on hazardous and noxious cargo to enter into force in 2027</a>
+            <div class="zh">IMO有害和有毒货物条约将于2027年生效</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">行业动态</span>
@@ -778,6 +899,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
         </div>        <div class="row" style="--c:#475569" data-org="行业" data-text="hazardous cargo compensation regime moves to entry into force ">
           <div class="row-main">
             <a class="row-title" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5" target="_blank" rel="noopener">Hazardous cargo compensation regime moves to entry into force</a>
+            <div class="zh">有害货物赔偿机制进入生效阶段</div>
             <div class="row-meta">
               <span class="badge" style="--c:#475569">行业</span>
               <span class="kind">生效提醒</span>
@@ -795,11 +917,11 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
   </section>
 
   <section class="sec" id="health">
-    <div class="sec-h"><span class="num">04</span><h2>抓取状态</h2><span class="note">每期公开 · 失败不隐藏</span></div>
+    <div class="sec-h"><span class="num">05</span><h2>抓取状态</h2><span class="note">每期公开 · 失败不隐藏</span></div>
     <div class="card">
       <table>
         <thead><tr><th>数据源</th><th>状态</th><th>条目</th></tr></thead>
-        <tbody><tr><td><span class="dot ok"></span>Google News · 中国船级社</td><td class='ok-s'>OK</td><td>21</td></tr><tr><td><span class="dot ok"></span>Google News · DNV</td><td class='ok-s'>OK</td><td>32</td></tr><tr><td><span class="dot ok"></span>Google News · ABS</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>Google News · Lloyd's Register</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · Bureau Veritas</td><td class='ok-s'>OK</td><td>14</td></tr><tr><td><span class="dot ok"></span>Google News · IMO 强制文件</td><td class='ok-s'>OK</td><td>32</td></tr><tr><td><span class="dot ok"></span>Google News · 中文规范动态</td><td class='ok-s'>OK</td><td>16</td></tr><tr><td><span class="dot ok"></span>Google News · 法规通报</td><td class='ok-s'>OK</td><td>16</td></tr><tr><td><span class="dot ok"></span>ABS Regulatory News（官方列表）</td><td class='ok-s'>OK</td><td>7</td></tr><tr><td><span class="dot bad"></span>DNV 新闻（官方列表）</td><td class='bad-s'>失败(0)</td><td>0</td></tr><tr><td><span class="dot ok"></span>LR 最新动态（官方列表）</td><td class='ok-s'>OK</td><td>4</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（英文）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（中文）</td><td class='ok-s'>OK</td><td>18</td></tr></tbody>
+        <tbody><tr><td><span class="dot ok"></span>Google News · 中国船级社</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · DNV</td><td class='ok-s'>OK</td><td>32</td></tr><tr><td><span class="dot ok"></span>Google News · ABS</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>Google News · Lloyd's Register</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · Bureau Veritas</td><td class='ok-s'>OK</td><td>14</td></tr><tr><td><span class="dot ok"></span>Google News · IMO 强制文件</td><td class='ok-s'>OK</td><td>32</td></tr><tr><td><span class="dot ok"></span>Google News · 中文规范动态</td><td class='ok-s'>OK</td><td>15</td></tr><tr><td><span class="dot ok"></span>Google News · 法规通报</td><td class='ok-s'>OK</td><td>18</td></tr><tr><td><span class="dot ok"></span>ABS Regulatory News（官方列表）</td><td class='ok-s'>OK</td><td>7</td></tr><tr><td><span class="dot bad"></span>DNV 新闻（官方列表）</td><td class='bad-s'>失败(0)</td><td>0</td></tr><tr><td><span class="dot ok"></span>LR 最新动态（官方列表）</td><td class='ok-s'>OK</td><td>4</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（英文）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（中文）</td><td class='ok-s'>OK</td><td>18</td></tr></tbody>
       </table>
     </div>
   </section>
@@ -815,7 +937,7 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
       <h3>本期信息</h3>
       <dl>
         <dt>期次</dt><dd>2026-11-05</dd>
-        <dt>新增条目</dt><dd>18</dd>
+        <dt>新增条目</dt><dd>19</dd>
         <dt>台账累计</dt><dd>34</dd>
         <dt>数据源</dt><dd>12/13</dd>
       </dl>
