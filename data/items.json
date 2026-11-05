@@ -4,7 +4,7 @@
   "org_cn": "挪威船级社",
   "title": "DNV: New EU marine equipment rules to enter into force on 31 August",
   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOW03ZnlaRFB4SDZRVmxWdDNnV0xEenJfcjNrMHp1Rm5sc1FuckVvMVJLeGpJZ0NLS1RwRXB5RDhkQUdUMnQxVV9RMTIyTWpkS0EwMDBwRFJQclVnVF9YeUJha1pmaXR5R2dmQ1RPWmF2MzlNWkpWY2xuS2pIay1ObzN3R1BjSlB0ZHlST2hUVFc3Qi10?oc=5",
-  "summary": "DNV: New EU marine equipment rules to enter into force on 31 August   safety4sea",
+  "summary": "DNV: New EU marine equipment rules to enter into force on 31 August    safety4sea",
   "pub": "2026-08-24",
   "eif": "2027-08-31",
   "eif_prec": "day",
@@ -17,8 +17,8 @@
   "score": 71,
   "key": "50dab424f6fdc46d",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "6053039b33a0e8bc": {
   "org": "ABS",
@@ -40,15 +40,15 @@
   "score": 71,
   "key": "6053039b33a0e8bc",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "48a9a86531f3634a": {
   "org": "LR",
   "org_cn": "劳氏船级社",
   "title": "Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships",
   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QMHJOQVFqOFNKd29SS1YtcU5UeTJKcjk5czg3RDBvaWZRNkN6YW9IcHFzYlNZVHVVdkF0aHZEaTA4M2lHY2JBVnJlZW5wb1IwUmJPNUlOQnZPa2RjeVE?oc=5",
-  "summary": "Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships   Lloyd's Register",
+  "summary": "Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships    Lloyd's Register",
   "pub": "2026-04-01",
   "eif": "",
   "eif_prec": "",
@@ -64,15 +64,15 @@
   "score": 69,
   "key": "48a9a86531f3634a",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "f9770a098fc4ab14": {
   "org": "行业",
   "org_cn": "行业媒体",
   "title": "国际海事组织关于有害和有毒货物的条约将于 2027 年生效",
   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPQjB1dXVERk9GTzRrNklGRk1BOTNpbVhDbUNGS2dTS3BrRWlMVDRCLXNYOGJVaWN2MlVaX3FlaGVSdTlYMmxpd053UTdMQ3p3S2VmcE9NSVpoVkxJV3ZaUWlKanZfYlEwVjZMQmkyNEoxVFZjSTdHQ2JQa1FUc3EwQjc0aUVaUDc4dlJFOGVRVzdxTEVXMUg2U0RNdXI5T0VEQzliWlZQcw?oc=5",
-  "summary": "国际海事组织关于有害和有毒货物的条约将于 2027 年生效   International Maritime Organization",
+  "summary": "国际海事组织关于有害和有毒货物的条约将于 2027 年生效    International Maritime Organization",
   "pub": "2026-06-01",
   "eif": "2027-01-01",
   "eif_prec": "year",
@@ -85,8 +85,8 @@
   "score": 67,
   "key": "f9770a098fc4ab14",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "0e288dcfc9994dac": {
   "org": "ABS",
@@ -106,8 +106,8 @@
   "score": 65,
   "key": "0e288dcfc9994dac",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "776f29fb957f79f2": {
   "org": "CCS",
@@ -137,7 +137,7 @@
   "org_cn": "中国船级社",
   "title": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效",
   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE12YmJOWWQ1NmpNcmhNV3plb3lmQ05QR1lRY0NSMXNsS195bmZhNzVpdm43aTh0V1FaZmwxSldEYmRnREtodUJxRWpaRi0tRFIzOXB6RlNzQ0FSOUQ5OXY4Yg?oc=5",
-  "summary": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效   ThePaper.cn",
+  "summary": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效    ThePaper.cn",
   "pub": "2026-09-20",
   "eif": "2026-10-01",
   "eif_prec": "day",
@@ -150,15 +150,15 @@
   "score": 61,
   "key": "e319602a0ffc3e57",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "84e40f9100359bc7": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan",
   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVGN3ZXdmWXB4NWRIYUlEM0NZLXd5MGtzX0JaZ2FnY2NyMVJ4SF9uVzZ6cGFVcnRLSVJJYjQyS3FlekduZ3BBVlZkeVRicW55N0hKR0FNR3ZwQUEzVGlheHNnMTF4bEFTWlZrSVZ2NF82dG84Z2N4dVRLVkxlZnRsOHh5Zjh3czlvX0t2ZEVqdHJQWEx5SHhaRVRoTVN2WktHekxpVS1SN2U5bGF2RnNTVVhJWm1ocHVBb3R2ZDdaeGVaVFR3V2c?oc=5",
-  "summary": "DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan   Ocean News & Technology",
+  "summary": "DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan    Ocean News & Technology",
   "pub": "2026-10-21",
   "eif": "",
   "eif_prec": "",
@@ -171,15 +171,15 @@
   "score": 57,
   "key": "84e40f9100359bc7",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "052f897fa1225105": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "DNV receives authorisation for floating offshore wind rules in Japan",
   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMkx4WlNjZjhWUWhWbnZGbkpPSThkV1lKeEc2MWdZUjg3UkFWck5xZ0tHZHRJaXZBNmdBM2NIT3BaeXZFcjBkZUlIY0d5RnpYUVdESVZ0WXZLcVVJOEVsRGItNXl1aGpoLUJvM2c0d3lrbTdXRndkUXIwR0Y0c2dFMVY5c2lGVkYzRi1RVVc4ZXNldnNiUHZsN21lTmNWbFFaSUUzLUJxaVVYSWRWRGNUSg?oc=5",
-  "summary": "DNV receives authorisation for floating offshore wind rules in Japan   Cyprus Shipping News",
+  "summary": "DNV receives authorisation for floating offshore wind rules in Japan    Cyprus Shipping News",
   "pub": "2026-10-29",
   "eif": "",
   "eif_prec": "",
@@ -192,15 +192,15 @@
   "score": 57,
   "key": "052f897fa1225105",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "7bebb8809533a6be": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "DNV RuleAgent improves digital compliance",
   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNYkpGR3dfVzYtcE1EczZ2ZGVuZENqeHpSeDhVRVVhUTFLVXRRRVQyajhTZERCelJmbGlqbUFiNnpob0dyQ1RYSHBvb0JnM3JZUVVteWM1WEZaSW1EU1hJRUpMZ2JRUFRVYjZybkhoNVdlR0Z3TGZmYUVzSFhQMUt5MWIwMmVhYXRmaTdmelFwbUZ2NXVBRUow?oc=5",
-  "summary": "DNV RuleAgent improves digital compliance   Digital Ship",
+  "summary": "DNV RuleAgent improves digital compliance    Digital Ship",
   "pub": "2026-03-24",
   "eif": "",
   "eif_prec": "",
@@ -213,15 +213,15 @@
   "score": 57,
   "key": "7bebb8809533a6be",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "d2854b2d7078a038": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "DNV launches AI tool to cut through 30,000 pages of maritime rules",
   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYmJ1Ui12Z2JvbTI3OHBjWjFya2N1T2F6T05rY3lNOGt0SVM0SzJvdTVoa2xsa3BOaS10VlZPdmc4cGp4N0twa0tlbmZwQTZTNUdjbkZpeFNHaDlrblNmX2FvQ05FVFhCa0FjQ1ZHQXZ4VU5HR1FlcWw0eEt0RjNTMHl4T2JkUjlyUFJ1Y3REV00yUQ?oc=5",
-  "summary": "DNV launches AI tool to cut through 30,000 pages of maritime rules   Splash247",
+  "summary": "DNV launches AI tool to cut through 30,000 pages of maritime rules    Splash247",
   "pub": "2026-03-23",
   "eif": "",
   "eif_prec": "",
@@ -234,15 +234,15 @@
   "score": 57,
   "key": "d2854b2d7078a038",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "36c7967fa2d41cab": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "The July 2026 edition of the DNV class rules and standards for ship and offshore",
   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMlNrSkMwSUczeDNrWEx4bml2NnZDUXNfMUprMVpPTHlxSUMxZjZBSmNDTjVhcnpvN1pkUTY4TFRRbVgyWFktUktQeFJxWGdfM2w0cU9ReEpITnlOUmNNVktlV3ZOMUp0bDVKX21pVW85cUZiVFhEcHk1ejE1czJEbk1PSHQtdzBzVWs4TGUwck9aNmN4MVF4b05GWTNURDl5RVZqRTZ0R0ZKOTUyMjZZdEY2N1VPeXdSOGJZU1VYa0o?oc=5",
-  "summary": "The July 2026 edition of the DNV class rules and standards for ship and offshore   Cyprus Shipping News",
+  "summary": "The July 2026 edition of the DNV class rules and standards for ship and offshore    Cyprus Shipping News",
   "pub": "2026-07-08",
   "eif": "",
   "eif_prec": "",
@@ -255,15 +255,15 @@
   "score": 57,
   "key": "36c7967fa2d41cab",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "5736fd9dc66fc241": {
   "org": "DNV",
   "org_cn": "挪威船级社",
   "title": "Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures",
   "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM3NIdzZUa0JMZDNYU3gyNzJsVG5CWXlrRXFiYUYtblZlTWV5R2lmdEZTRDFZNWJJb1hmdjRXUUFjZWpUWFFMaGpDb0dtTXZ4NXc0cXNQNG9tTlhic0RlQWdicVZNRTV5VjR4RVJYNllPTFNTWTlBbGkzbkNzYVRMZmlzQ2pRY05QZVhGM1l0QmhZZzlkREpUUjRUcUsxVjcyLVRIaXNCZS0ySU5aQWFDWXJmaDRIUFdUMmxxQndWa1BLQ3o1aVlWM3BBY2ZzcTdSRzBYUkNSZTRvYjJx?oc=5",
-  "summary": "News Content Hub - Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures   Riviera Maritime Media",
+  "summary": "News Content Hub - Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures    Riviera Maritime Media",
   "pub": "2026-09-02",
   "eif": "",
   "eif_prec": "",
@@ -276,15 +276,15 @@
   "score": 57,
   "key": "5736fd9dc66fc241",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "409c5ca53e9d4d48": {
   "org": "IMO",
   "org_cn": "国际海事组织",
   "title": "Hazardous cargo compensation regime moves to entry into force",
   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5",
-  "summary": "Hazardous cargo compensation regime moves to entry into force   International Maritime Organization",
+  "summary": "Hazardous cargo compensation regime moves to entry into force    International Maritime Organization",
   "pub": "2026-04-14",
   "eif": "",
   "eif_prec": "",
@@ -297,8 +297,8 @@
   "score": 57,
   "key": "409c5ca53e9d4d48",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 3
+  "status": "持续跟踪",
+  "times_seen": 4
  },
  "ca1495ca2bc6de9e": {
   "org": "行业",
@@ -328,7 +328,7 @@
   "org_cn": "行业媒体",
   "title": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范",
   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUTJ0YzdndHVuQ2hNdk5Ld1NwNTh1b2N2V3hlUU1wXzBqUmdnTmZCSUNHeGFadUYwWGtBYnRhYlMwUWpyenZmV1hiNHR6R0dxckV3WkxzRGloUldWY1piN1doRW13Z1FJaWkyM19abGQwS2NHSW1WMU8tcWZISGJGSE45OWhtR1N2?oc=5",
-  "summary": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范   International Maritime Organization",
+  "summary": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范    International Maritime Organization",
   "pub": "2026-05-22",
   "eif": "",
   "eif_prec": "",
@@ -341,15 +341,15 @@
   "score": 45,
   "key": "729ae803003224ed",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "359e20615c5d135a": {
   "org": "行业",
   "org_cn": "行业媒体",
   "title": "绿色智能船舶将有全新技术规范体系",
   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNU3JxTTlXdm9Rb2MyWk5OLWhPNldSamY4d2piSlM4V3VXRkQyVW5ZSFhPSGRWRDcwUEQ4clNLOU1tX2dlRTFOQ0J5QzFvcGNwSnNmVHQ1ellNT3BZLXRuQTJidjZQUHJQUDZyUWpXZ3FoQWdyZjNDRFlPeXdZNVBoUQ?oc=5",
-  "summary": "绿色智能船舶将有全新技术规范体系   人民日报",
+  "summary": "绿色智能船舶将有全新技术规范体系    人民日报",
   "pub": "2026-04-15",
   "eif": "",
   "eif_prec": "",
@@ -362,8 +362,8 @@
   "score": 45,
   "key": "359e20615c5d135a",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "d23a54d4987bc60e": {
   "org": "行业",
@@ -391,7 +391,7 @@
   "org_cn": "行业媒体",
   "title": "IMO引水梯强制新规2028年生效",
   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Fc29xUG80akJMTjZMQ3Jac0VJSWVJSERJLVM1TkFrdGctdi12bllFanBkRUFxYVl0eW4yTDc1TTlzZ1Q5RDhadXN0MG5PWVVrV2dtUFpXYlZ0cjFuMU1rQ3JRWXY3WHNQRThBRkJNTEc?oc=5",
-  "summary": "IMO引水梯强制新规2028年生效   航运在线",
+  "summary": "IMO引水梯强制新规2028年生效    航运在线",
   "pub": "2026-08-10",
   "eif": "2028-01-01",
   "eif_prec": "year",
@@ -404,8 +404,8 @@
   "score": 45,
   "key": "36174960c0596632",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 4
+  "status": "持续跟踪",
+  "times_seen": 5
  },
  "cc448daec7047790": {
   "org": "IMO",
@@ -561,7 +561,7 @@
   "org_cn": "行业媒体",
   "title": "IMO treaty on hazardous and noxious cargo to enter into force in 2027",
   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM21OVGF5TnRuek5GeXo0X213cml0ZkYwLVhkWjNCekI5SmNGaTI0VVY1aVhyUzhGRkljeUxOTk44QkY5T2JVa2VCaDE5c1NrYUpueE0wMnpVMHdxdXVmbXBPOE9JMVZqUzdkZ3pkcmVORkRCWjBTRGxRSUF5SFF3XzUzOTVZd2ZCOWY5MEhGdktrZVZRaVhCOWE5UmpHWlF1WldhVTVBRQ?oc=5",
-  "summary": "IMO treaty on hazardous and noxious cargo to enter into force in 2027   International Maritime Organization",
+  "summary": "IMO treaty on hazardous and noxious cargo to enter into force in 2027    International Maritime Organization",
   "pub": "2026-06-01",
   "eif": "",
   "eif_prec": "",
@@ -574,8 +574,8 @@
   "score": 45,
   "key": "249579b92bb59c76",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 3
+  "status": "持续跟踪",
+  "times_seen": 4
  },
  "62f72f91c629e6a8": {
   "org": "行业",
@@ -645,7 +645,7 @@
   "org_cn": "行业媒体",
   "title": "Hazardous cargo compensation regime moves to entry into force",
   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5",
-  "summary": "Hazardous cargo compensation regime moves to entry into force   International Maritime Organization",
+  "summary": "Hazardous cargo compensation regime moves to entry into force    International Maritime Organization",
   "pub": "2026-04-14",
   "eif": "",
   "eif_prec": "",
@@ -658,8 +658,8 @@
   "score": 45,
   "key": "a85f2e41e59993ca",
   "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 3
+  "status": "持续跟踪",
+  "times_seen": 4
  },
  "9a386774824e4089": {
   "org": "行业",
@@ -702,6 +702,27 @@
   "score": 63,
   "key": "ddac135cd2f7979f",
   "first_seen": "2026-11-04",
+  "status": "本期新增",
+  "times_seen": 1
+ },
+ "924883bfc48bc94d": {
+  "org": "行业",
+  "org_cn": "行业媒体",
+  "title": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知",
+  "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hQW5DcXZXcmtTSkdabGhpTlJ1RDdyZ2ItR3J3YkFhdkpUMzJDdkk4U1dfcVJxZXRNSzBsYmQ2NmJSeDY2YTMwLVNiRGROT0h0dVZwQlVEVUJkVlplWVJtR1NSdEQ0UlptaURj?oc=5",
+  "summary": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知    财富号",
+  "pub": "2026-04-16",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [],
+  "source": "Google News · 中文规范动态",
+  "origin": "财富号",
+  "official": false,
+  "favicon": "",
+  "score": 45,
+  "key": "924883bfc48bc94d",
+  "first_seen": "2026-11-05",
   "status": "本期新增",
   "times_seen": 1
  }
