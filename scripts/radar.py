@@ -30,7 +30,6 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta, timezone
 from html import unescape
 from pathlib import Path
-
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "sources.json"
 DATA = ROOT / "data"
@@ -54,6 +53,7 @@ REG_STRONG = [
     "规范", "规则", "修正案", "修正", "通函", "决议", "生效", "新规", "技术通告", "强制性",
 ]
 REG_ASYNC = ["update", "revised", "revision", "draft", "consultation", "修订", "征求意见"]
+
 # 噪声：导航文字、企业动态、会议/签约类，不算规范改版
 NOISE_PAT = [
     "our ", "solutions", "learn more", "read more", "contact us", "book a", "get in touch",
@@ -71,7 +71,6 @@ NOISE_EXACT = {
     "class news", "latest news", "news", "media centre", "media center", "imo regulatory news & trends",
     "eu regulatory news", "shipping decarbonization regulations", "regulatory updates",
 }
-
 DOMAIN_TAGS = [
     ("氨燃料", ["ammonia", "氨"]),
     ("甲醇燃料", ["methanol", "甲醇"]),
@@ -117,7 +116,6 @@ def is_noise(title):
     return any(p in t for p in NOISE_PAT)
 
 
-
 # ----------------------------------------------------------------------------
 # 网络
 # ----------------------------------------------------------------------------
@@ -130,7 +128,7 @@ def proxies():
 
 
 def fetch(url, timeout=25, retries=2):
-    """返回 (status, bytes)。失败重试，最终返回 (0, b"")。"""
+    """返回 (status, bytes)。失败重试，最终返回 (0, b\"\")。"""
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -154,6 +152,7 @@ def fetch(url, timeout=25, retries=2):
         time.sleep(1.2 * (i + 1))
     print(f"    ! 抓取失败 {last} -> {url[:90]}")
     return 0, b""
+
 
 # ----------------------------------------------------------------------------
 # 解析
@@ -300,6 +299,7 @@ def find_eif(text, ref=None):
         if TODAY.year - 1 <= y <= TODAY.year + 3:
             return date(y, 1, 1), "year"
     return None, ""
+
 
 
 def eif_precision(text, d):
@@ -465,6 +465,7 @@ def collect(cfg, offline=False):
     return merged, health
 
 
+
 def merge_ledger(fresh):
     ledger = load_json(ITEMS_FILE, {})
     today_s = TODAY.isoformat()
@@ -499,6 +500,7 @@ def merge_ledger(fresh):
 # ----------------------------------------------------------------------------
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
 
 TOPIC_WORDS = ["ship", "ships", "shipping", "vessel", "maritime", "marine", "imo", "msc", "mepc",
                "class society", "classification society", "classed", "flag state", "port state",
@@ -536,15 +538,17 @@ def item_row(it):
         label = "已生效" if d < 0 else f"{d} 天后生效"
         eif = f'<span class="eif {eta_class(d)}">{label} · {it["eif"]}</span>'
     src = esc(it.get("origin") or "")
-    return f"""        <div class="row" data-org="{esc(it['org'])}" data-text="{esc((it['title'] + ' ' + ' '.join(it['tags'])).lower())}">
+    srcline = esc(it["source"]) + (f" · {src}" if src and src != it["org"] else "")
+    color = ORG_COLOR.get(it["org"], "#475569")
+    return f"""        <div class="row" style="--c:{color}" data-org="{esc(it['org'])}" data-text="{esc((it['title'] + ' ' + ' '.join(it['tags'])).lower())}">
           <div class="row-main">
             <a class="row-title" href="{esc(it['link'])}" target="_blank" rel="noopener">{esc(it['title'])}</a>
             <div class="row-meta">
-              <span class="badge" style="--c:{ORG_COLOR.get(it['org'], '#475569')}">{esc(it['org'])}</span>
+              <span class="badge" style="--c:{color}">{esc(it['org'])}</span>
               <span class="kind">{esc(it['type'])}</span>
               {eif}
               {tags}
-              <span class="src">{esc(it['source'])}{(' · ' + src) if src and src != it['org'] else ''}</span>
+              <span class="src">{srcline}</span>
             </div>
           </div>
           <div class="row-side">
@@ -555,93 +559,174 @@ def item_row(it):
 
 
 CSS = """
-:root{--bg:#f5f7fa;--card:#fff;--ink:#0f172a;--ink2:#475569;--ink3:#94a3b8;--line:#e6ebf2;--line2:#eff3f8;
---hot:#b91c1c;--hotbg:#fef2f2;--warn:#b45309;--warnbg:#fffbeb;--ok:#047857;--okbg:#ecfdf5;--blue:#1d4ed8;--bluebg:#eff6ff}
+:root{--bg:#eef2f7;--panel:#fff;--ink:#0b1220;--ink2:#3d4a5c;--ink3:#7c8a9c;
+--line:#e3e9f1;--line2:#eef2f7;--accent:#1d4ed8;--accent-bg:#eaf0fe;
+--hot:#c2410c;--hotbg:#fff4ed;--warn:#a16207;--warnbg:#fffaeb;--okc:#0f766e;--okbg:#effcf8;
+--sh-sm:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.05);
+--sh-md:0 14px 34px -18px rgba(16,24,40,.3),0 2px 6px rgba(16,24,40,.05)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.65}
-.wrap{max-width:1120px;margin:0 auto;padding:26px 18px 64px}
-.head{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
-.head h1{margin:0;font-size:21px;font-weight:500;letter-spacing:.2px}
-.head .sub{margin-top:5px;font-size:12.5px;color:var(--ink3)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.stat{background:#f8fafc;border-radius:10px;padding:12px 14px}
-.stat i{display:block;font-style:normal;font-size:11.5px;color:var(--ink3);margin-bottom:2px}
-.stat b{font-size:22px;font-weight:500;line-height:1.3}
-.stat b small{font-size:12px;color:var(--ink3);font-weight:400;margin-left:3px}
-h2{font-size:15px;font-weight:500;margin:28px 0 4px;display:flex;align-items:center;gap:8px}
-h2 em{font-style:normal;font-size:11.5px;color:var(--ink3);font-weight:400;margin-left:auto}
-.lead{font-size:12.5px;color:var(--ink2);margin:0 0 12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.eif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
-.eif-card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
-.eif-card .d{font-size:12px;color:var(--ink3)}
-.eif-card .t{font-size:13px;margin:4px 0 8px;line-height:1.5}
-.eif-card .n{font-size:12px;padding:1px 8px;border-radius:8px;display:inline-block}
-.n.hot{background:var(--hotbg);color:var(--hot);border:1px solid #fecaca}
-.n.warn{background:var(--warnbg);color:var(--warn);border:1px solid #fde68a}
-.n.ok{background:var(--okbg);color:var(--ok);border:1px solid #a7f3d0}
-.n.past{background:#f1f5f9;color:var(--ink3);border:1px solid var(--line)}
-.group{border-top:1px solid var(--line)}
-.group:first-child{border-top:0}
-.group-h{display:flex;align-items:center;gap:8px;padding:11px 18px;background:#fafcff}
-.group-h .org{font-size:12.5px;font-weight:500;padding:1px 9px;border-radius:8px;color:#fff}
-.group-h .n{font-size:12px;color:var(--ink3)}
-.row{display:flex;gap:14px;padding:12px 18px;border-top:1px solid var(--line2);align-items:flex-start}
-.row:hover{background:#fcfdff}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.65;
+font-family:"Inter","Segoe UI",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 72px}
+
+.hero{position:relative;overflow:hidden;border-radius:20px;padding:26px 28px 24px;color:#e8eefb;
+background:radial-gradient(120% 150% at 6% 0%,#1e3a8a 0%,#111c33 44%,#0a1120 100%);box-shadow:var(--sh-md)}
+.hero::after{content:"";position:absolute;right:-14%;top:-45%;width:70%;height:220%;pointer-events:none;
+background:radial-gradient(closest-side,rgba(56,189,248,.22),transparent 72%)}
+.hero-top{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,238,251,.55)}
+.hero-top .issue{margin-left:auto;letter-spacing:0;text-transform:none;font-size:11.5px;padding:2px 10px;
+border:1px solid rgba(232,238,251,.22);border-radius:999px;color:rgba(232,238,251,.8)}
+.hero h1{margin:12px 0 0;font-size:clamp(20px,2.6vw,27px);font-weight:600;line-height:1.35;letter-spacing:.01em}
+.hero-sub{margin:6px 0 0;font-size:12.5px;color:rgba(232,238,251,.62);max-width:64ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.stat{padding:11px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}
+.stat i{display:block;font-style:normal;font-size:11px;color:rgba(232,238,251,.55);margin-bottom:3px}
+.stat b{font-size:24px;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat b small{font-size:11.5px;font-weight:400;color:rgba(232,238,251,.55);margin-left:3px}
+
+.nav{position:sticky;top:12px;z-index:30;display:flex;align-items:center;gap:4px;margin-top:16px;padding:7px;
+border-radius:13px;background:rgba(255,255,255,.9);border:1px solid var(--line);box-shadow:var(--sh-sm);
+backdrop-filter:blur(10px) saturate(140%);overflow-x:auto}
+.nav a{font-size:12.5px;color:var(--ink2);text-decoration:none;padding:6px 12px;border-radius:9px;white-space:nowrap;transition:.15s}
+.nav a:hover{background:#f1f5fb;color:var(--ink)}
+.nav-sp{flex:1}
+.nav-meta{font-size:11.5px;color:var(--ink3);padding-right:8px;white-space:nowrap}
+
+.sec{margin-top:32px;scroll-margin-top:78px}
+.sec-h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sec-h .num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
+color:var(--accent);background:var(--accent-bg);border:1px solid #d6e2fd;border-radius:6px;padding:3px 7px}
+.sec-h h2{margin:0;font-size:16px;font-weight:600}
+.sec-h .note{margin-left:auto;font-size:11.5px;color:var(--ink3)}
+.lead{margin:0 0 14px;font-size:12.5px;color:var(--ink3);max-width:78ch}
+
+.eif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:12px}
+.eif-card{display:flex;gap:14px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+text-decoration:none;color:inherit;box-shadow:var(--sh-sm);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.eif-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md);border-color:#cfdcf0}
+.dn{flex:none;width:64px;padding:8px 0;border-radius:10px;text-align:center;background:#f5f8fc}
+.dn b{display:block;font-size:22px;font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums}
+.dn i{font-style:normal;font-size:10.5px;color:var(--ink3)}
+.dn.hot{background:var(--hotbg)}.dn.hot b{color:var(--hot)}
+.dn.warn{background:var(--warnbg)}.dn.warn b{color:var(--warn)}
+.dn.ok{background:var(--okbg)}.dn.ok b{color:var(--okc)}
+.dn.past b{font-size:15px;color:var(--ink3);padding:5px 0}
+.eif-card .body{min-width:0;flex:1}
+.eif-card .t{font-size:13px;font-weight:500;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;
+-webkit-box-orient:vertical;overflow:hidden}
+.eif-card .m{margin-top:7px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:11px;color:var(--ink3)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh-sm);overflow:hidden}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);
+background:linear-gradient(#fbfcff,#f7f9fd)}
+.chip{font:inherit;font-size:12px;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;
+padding:4px 12px;cursor:pointer;transition:.15s}
+.chip:hover{border-color:#c9d6ea;color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 6px 14px -8px rgba(11,18,32,.7)}
+.search{flex:1;min-width:190px;font:inherit;font-size:12.5px;color:var(--ink);background:#fff;border:1px solid var(--line);
+border-radius:9px;padding:6px 11px;outline:none;transition:.15s}
+.search:focus{border-color:#b9cdf0;box-shadow:0 0 0 3px rgba(29,78,216,.09)}
+
+.group+.group{border-top:1px solid var(--line)}
+.group-h{display:flex;align-items:center;gap:8px;padding:10px 18px;background:#fafcff;border-bottom:1px solid var(--line2)}
+.group-h .org{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#fff;padding:2px 9px;border-radius:7px}
+.group-h .cn{font-size:12px;color:var(--ink2)}
+.group-h .n{margin-left:auto;font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+
+.row{position:relative;display:flex;gap:14px;padding:13px 18px 13px 20px;border-top:1px solid var(--line2);
+align-items:flex-start;transition:background .15s}
+.group-h+.row,.card>.row:first-child{border-top:0}
+.row::before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:3px;border-radius:0 3px 3px 0;
+background:var(--c,#cbd5e1);opacity:0;transition:opacity .15s}
+.row:hover{background:#fafcff}
+.row:hover::before{opacity:1}
 .row-main{flex:1;min-width:0}
-.row-title{color:var(--ink);text-decoration:none;font-size:13.5px;display:block;line-height:1.55}
-.row-title:hover{color:var(--blue);text-decoration:underline}
-.row-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px}
-.badge{font-size:11px;color:#fff;background:var(--c);padding:0 7px;border-radius:6px;line-height:1.7}
-.kind{font-size:11.5px;color:var(--ink2);background:#f1f5f9;border:1px solid var(--line);padding:0 7px;border-radius:6px}
-.eif{font-size:11.5px;padding:0 7px;border-radius:6px;border:1px solid}
-.eif.hot{background:var(--hotbg);color:var(--hot);border-color:#fecaca}
-.eif.warn{background:var(--warnbg);color:var(--warn);border-color:#fde68a}
-.eif.ok{background:var(--okbg);color:var(--ok);border-color:#a7f3d0}
-.eif.past,.eif.n{background:#f1f5f9;color:var(--ink3);border-color:var(--line)}
-.tag{font-size:11px;color:var(--ink2);border:1px solid var(--line);background:#fff;padding:0 7px;border-radius:6px}
+.row-title{display:block;font-size:13.5px;font-weight:500;line-height:1.55;color:var(--ink);text-decoration:none}
+.row-title:hover{color:var(--accent)}
+.row-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--c);padding:1px 7px;border-radius:6px}
+.kind{font-size:11.5px;color:var(--ink2);background:#f4f7fb;border:1px solid var(--line);padding:0 7px;border-radius:6px}
+.tag{font-size:11px;color:var(--ink3);border:1px solid var(--line);background:#fff;padding:0 7px;border-radius:6px}
+.eif{font-size:11.5px;padding:0 7px;border-radius:6px;border:1px solid;font-variant-numeric:tabular-nums}
+.eif.hot{background:var(--hotbg);color:var(--hot);border-color:#fbd7c2}
+.eif.warn{background:var(--warnbg);color:var(--warn);border-color:#f6e3ab}
+.eif.ok{background:var(--okbg);color:var(--okc);border-color:#b7ece0}
+.eif.past,.eif.n{background:#f4f7fb;color:var(--ink3);border-color:var(--line)}
 .src{font-size:11.5px;color:var(--ink3)}
-.row-side{width:118px;text-align:right;flex:none}
-.pub{display:block;font-size:11.5px;color:var(--ink3)}
-.st{display:inline-block;margin-top:3px;font-size:11px;color:var(--ink3);border:1px solid var(--line);border-radius:6px;padding:0 6px}
-.st.new{color:var(--blue);background:var(--bluebg);border-color:#bfdbfe}
-.tools{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px;background:#fafcff;border-bottom:1px solid var(--line)}
-.chip{font-size:12px;color:var(--ink2);border:1px solid var(--line);background:#fff;border-radius:999px;padding:2px 11px;cursor:pointer}
-.chip.on{background:#0f172a;color:#fff;border-color:#0f172a}
-.search{flex:1;min-width:180px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:12.5px;outline:none}
+.row-side{flex:none;width:112px;text-align:right}
+.pub{display:block;font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.st{display:inline-block;margin-top:4px;font-size:11px;color:var(--ink3);border:1px solid var(--line);
+border-radius:6px;padding:0 6px;background:#fff}
+.st.new{color:var(--accent);background:var(--accent-bg);border-color:#d6e2fd}
+
 table{width:100%;border-collapse:collapse}
-th{text-align:left;font-size:11.5px;color:var(--ink3);font-weight:500;background:#f8fafc;padding:8px 14px;border-bottom:1px solid var(--line)}
-td{padding:8px 14px;border-top:1px solid var(--line2);font-size:12.5px}
-.ok-s{color:var(--ok)}.bad-s{color:var(--hot)}
-.foot{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:13px 18px;font-size:12px;color:var(--ink2);line-height:1.7;margin-top:24px}
-.empty{padding:26px;text-align:center;color:var(--ink3);font-size:13px}
-@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.row-side{display:none}}
+th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);
+background:#fafcff;padding:9px 18px;border-bottom:1px solid var(--line)}
+td{padding:9px 18px;border-top:1px solid var(--line2);font-size:12.5px;color:var(--ink2)}
+td:last-child{text-align:right;width:84px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.dot.ok{background:#10b981}.dot.bad{background:#ef4444}.dot.mid{background:#f59e0b}
+.ok-s{color:var(--okc)}.bad-s{color:#b91c1c}
+
+.foot{margin-top:26px;display:grid;grid-template-columns:1.55fr 1fr;gap:12px}
+.foot-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
+.foot-box h3{margin:0 0 6px;font-size:12px;font-weight:600;color:var(--ink)}
+.foot-box b{color:var(--ink)}
+.foot-meta dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:12px}
+.foot-meta dt{color:var(--ink3)}
+.foot-meta dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.empty{padding:30px;text-align:center;color:var(--ink3);font-size:13px}
+
+@media(max-width:760px){
+  .wrap{padding:18px 14px 56px}
+  .hero{padding:22px 18px;border-radius:16px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .sec-h .note{display:none}
+  .row-side{display:none}
+  .foot{grid-template-columns:1fr}
+  .nav{top:8px}
+}
+@media print{body{background:#fff}.nav{display:none}.hero{box-shadow:none}.card,.eif-card,.foot-box{box-shadow:none}}
 """
 
 JS = """
 (function(){
-  var chips=[].slice.call(document.querySelectorAll('.chip[data-org]'));
-  var rows=[].slice.call(document.querySelectorAll('.row'));
+  var box=document.getElementById('fresh')||document;
+  var chips=[].slice.call(box.querySelectorAll('.chip[data-org]'));
+  var rows=[].slice.call(box.querySelectorAll('.row[data-org]'));
   var q=document.getElementById('q');
+  var hint=document.getElementById('fempty');
   var cur='ALL';
   function apply(){
     var kw=(q&&q.value||'').trim().toLowerCase();
+    var shown=0;
     rows.forEach(function(r){
       var okOrg = cur==='ALL' || r.dataset.org===cur;
       var okKw = !kw || (r.dataset.text||'').indexOf(kw)>=0;
-      r.style.display = (okOrg&&okKw)?'':'none';
+      var vis = okOrg&&okKw;
+      r.style.display = vis?'':'none';
+      if(vis) shown++;
     });
-    document.querySelectorAll('.group').forEach(function(g){
+    [].slice.call(box.querySelectorAll('.group')).forEach(function(g){
       var vis=[].slice.call(g.querySelectorAll('.row')).some(function(r){return r.style.display!=='none';});
       g.style.display=vis?'':'none';
     });
+    if(hint) hint.style.display=(!shown&&rows.length)?'':'none';
   }
   chips.forEach(function(c){c.addEventListener('click',function(){
     chips.forEach(function(x){x.classList.remove('on')});c.classList.add('on');cur=c.dataset.org;apply();});});
-  if(q) q.addEventListener('input',apply);
+  if(q){
+    q.addEventListener('input',apply);
+    document.addEventListener('keydown',function(e){
+      if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}
+      else if(e.key==='Escape'&&document.activeElement===q){q.value='';apply();q.blur();}
+    });
+  }
 })();
 """
-
 
 def render(ledger, fresh, health):
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
@@ -663,7 +748,7 @@ def render(ledger, fresh, health):
         label = by_org[org][0]["org_cn"]
         groups_html += f"""      <div class="group">
         <div class="group-h"><span class="org" style="background:{ORG_COLOR.get(org,'#475569')}">{esc(org)}</span>
-          <span>{esc(label)}</span><span class="n">{len(by_org[org])} 条</span></div>
+          <span class="cn">{esc(label)}</span><span class="n">{len(by_org[org])} 条</span></div>
 {rows}
       </div>
 """
@@ -671,11 +756,16 @@ def render(ledger, fresh, health):
     eif_html = ""
     for it in upcoming[:8]:
         d = (date.fromisoformat(it["eif"]) - TODAY).days
-        eif_html += f"""      <div class="eif-card">
-        <div class="d">{esc(it['org'])} · {it['eif'][:4] + ' 年' if it.get('eif_prec') == 'year' else (it['eif'][:7] if it.get('eif_prec') == 'month' else it['eif'])}</div>
-        <div class="t"><a href="{esc(it['link'])}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">{esc(it['title'][:92])}</a></div>
-        <span class="n {eta_class(d)}">{'已生效' if d < 0 else str(d) + ' 天后生效'}</span>
-      </div>
+        prec = it.get("eif_prec")
+        day_txt = it["eif"][:4] + " 年" if prec == "year" else (it["eif"][:7] if prec == "month" else it["eif"])
+        color = ORG_COLOR.get(it["org"], "#475569")
+        eif_html += f"""      <a class="eif-card" href="{esc(it['link'])}" target="_blank" rel="noopener">
+        <div class="dn {eta_class(d)}"><b>{d}</b><i>天后</i></div>
+        <div class="body">
+          <div class="t">{esc(it['title'][:100])}</div>
+          <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span></div>
+        </div>
+      </a>
 """
     if not eif_html:
         eif_html = '<div class="empty">本期没有从公开信息中识别出明确的生效日期，见下方条目。</div>'
@@ -688,70 +778,107 @@ def render(ledger, fresh, health):
     for h in health:
         ok = h["status"] == "OK"
         cls = "ok-s" if ok else ("bad-s" if "失败" in h["status"] else "")
-        health_rows += (f"<tr><td>{esc(h['name'])}</td><td class='{cls}'>{esc(h['status'])}</td>"
+        dot = "ok" if ok else ("bad" if "失败" in h["status"] else "mid")
+        health_rows += (f'<tr><td><span class="dot {dot}"></span>{esc(h["name"])}</td>'
+                        f"<td class='{cls}'>{esc(h['status'])}</td>"
                         f"<td>{h['count']}</td></tr>")
 
     orgs = [o for o in ORG_ORDER if o in by_org]
     chips = "".join(f'<button class="chip" data-org="{o}">{o}</button>' for o in orgs)
+    ok_src = sum(1 for h in health if h["status"] == "OK")
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>规范雷达 · {TODAY.isoformat()} 期</title>
 <style>{CSS}</style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="top">
 
-  <div class="head">
+  <header class="hero">
+    <div class="hero-top">
+      <span>Class Rules Radar</span>
+      <span class="issue">第 {TODAY.isoformat()} 期</span>
+    </div>
     <h1>规范雷达 · 船级社规范与强制文件改版动态</h1>
-    <div class="sub">第 {TODAY.strftime('%Y-%m-%d')} 期 · 覆盖 CCS / DNV / ABS / LR / BV / IMO · 公开信息自动采集</div>
+    <p class="hero-sub">覆盖 CCS / DNV / ABS / LR / BV / IMO 六方公开信息 · 自动采集 · 只做线索整理，不做法律判断</p>
     <div class="stats">
-      <div class="stat"><i>本期新增</i><b>{len(fresh)} <small>条</small></b></div>
-      <div class="stat"><i>90 天内生效</i><b>{len(soon90)} <small>条</small></b></div>
-      <div class="stat"><i>一年内生效</i><b>{len(upcoming)} <small>条</small></b></div>
-      <div class="stat"><i>台账累计</i><b>{len(ledger)} <small>条</small></b></div>
+      <div class="stat"><i>本期新增</i><b>{len(fresh)}<small>条</small></b></div>
+      <div class="stat"><i>90 天内生效</i><b>{len(soon90)}<small>条</small></b></div>
+      <div class="stat"><i>一年内生效</i><b>{len(upcoming)}<small>条</small></b></div>
+      <div class="stat"><i>台账累计</i><b>{len(ledger)}<small>条</small></b></div>
     </div>
-  </div>
+  </header>
 
-  <h2>一、生效倒计时 <em>按生效日期排序，含已识别生效日的在跟踪条目</em></h2>
-  <p class="lead">规范改版真正需要动作的是「哪天开始适用」，这一栏把识别到生效日期的条目按剩余天数排开，30 天内红、90 天内黄。</p>
-  <div class="eif-grid">
-{eif_html}
-  </div>
+  <nav class="nav">
+    <a href="#eif">生效倒计时</a>
+    <a href="#fresh">本期新增</a>
+    <a href="#track">持续跟踪</a>
+    <a href="#health">抓取状态</a>
+    <span class="nav-sp"></span>
+    <span class="nav-meta">{ok_src}/{len(health)} 源正常</span>
+  </nav>
 
-  <h2>二、本期新增 <em>共 {len(fresh)} 条，按机构分组</em></h2>
-  <p class="lead">每条标注机构、类型、生效日与涉及领域；点标题跳原文。列表只做线索整理，具体条款需回原文核对。</p>
-  <div class="card">
-    <div class="tools">
-      <button class="chip on" data-org="ALL">全部</button>
-      {chips}
-      <input class="search" id="q" placeholder="按关键词筛选，例：ammonia / 消防 / entry into force">
-    </div>
+  <section class="sec" id="eif">
+    <div class="sec-h"><span class="num">01</span><h2>生效倒计时</h2><span class="note">按生效日期排序</span></div>
+    <p class="lead">规范改版真正需要动作的是「哪天开始适用」。识别到生效日期的条目按剩余天数排开：30 天内标红、90 天内标黄。</p>
+    <div class="eif-grid">
+{eif_html}    </div>
+  </section>
+
+  <section class="sec" id="fresh">
+    <div class="sec-h"><span class="num">02</span><h2>本期新增</h2><span class="note">共 {len(fresh)} 条 · 按机构分组</span></div>
+    <p class="lead">每条标注机构、类型、生效日与涉及领域；点标题跳原文。列表只做线索整理，具体条款需回原文核对。</p>
+    <div class="card">
+      <div class="tools">
+        <button class="chip on" data-org="ALL">全部</button>
+        {chips}
+        <input class="search" id="q" placeholder="筛选关键词，例：ammonia / 消防 / entry into force">
+      </div>
 {groups_html if groups_html else '<div class="empty">本期未采到有效条目，见文末抓取状态。</div>'}
-  </div>
+      <div class="empty" id="fempty" style="display:none">没有匹配的条目，换个关键词试试。</div>
+    </div>
+  </section>
 
-  <h2>三、持续跟踪 <em>往期已收录、本期仍有余温</em></h2>
-  <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
-  <div class="card">
+  <section class="sec" id="track">
+    <div class="sec-h"><span class="num">03</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
+    <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
+    <div class="card">
 {rows_tracked}
-  </div>
+    </div>
+  </section>
 
-  <h2>四、抓取状态 <em>每期公开，失败不隐藏</em></h2>
-  <div class="card">
-    <table>
-      <thead><tr><th>数据源</th><th>状态</th><th>条目</th></tr></thead>
-      <tbody>{health_rows}</tbody>
-    </table>
-  </div>
+  <section class="sec" id="health">
+    <div class="sec-h"><span class="num">04</span><h2>抓取状态</h2><span class="note">每期公开 · 失败不隐藏</span></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>数据源</th><th>状态</th><th>条目</th></tr></thead>
+        <tbody>{health_rows}</tbody>
+      </table>
+    </div>
+  </section>
 
-  <div class="foot">
-    <b>使用说明：</b>本报告为<b>公开信息线索汇总</b>，自动采集自船级社官网与公开新闻源，不构成规范解释或合规结论。
-    生效日期由标题/摘要正则识别，可能存在偏差，<b>执行前必须以船级社原文或通函为准</b>。
-    不涉及任何公司内部资料；条目链接均指向公开发布页面。
-  </div>
+  <footer class="foot">
+    <div class="foot-box">
+      <h3>使用说明</h3>
+      本报告为<b>公开信息线索汇总</b>，自动采集自船级社官网与公开新闻源，不构成规范解释或合规结论。
+      生效日期由标题/摘要正则识别，可能存在偏差，<b>执行前必须以船级社原文或通函为准</b>。
+      不涉及任何公司内部资料；条目链接均指向公开发布页面。
+    </div>
+    <div class="foot-box foot-meta">
+      <h3>本期信息</h3>
+      <dl>
+        <dt>期次</dt><dd>{TODAY.isoformat()}</dd>
+        <dt>新增条目</dt><dd>{len(fresh)}</dd>
+        <dt>台账累计</dt><dd>{len(ledger)}</dd>
+        <dt>数据源</dt><dd>{ok_src}/{len(health)}</dd>
+      </dl>
+    </div>
+  </footer>
 
 </div>
 <script>{JS}</script>
