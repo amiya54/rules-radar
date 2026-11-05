@@ -508,7 +508,7 @@ def ai_enhance(fresh, ledger):
     if not key:
         print("[AI] 未配置 DEEPSEEK_API_KEY，跳过 AI 增强")
         return None
-    targets = sorted(fresh, key=lambda x: -x["score"])[:24]
+    targets = sorted(fresh, key=lambda x: -x["score"])[:40]
     if not targets:
         return None
 
@@ -518,12 +518,15 @@ def ai_enhance(fresh, ledger):
         lines.append(f"[{i}] org={it['org']} | type={it['type']} | eif={it.get('eif') or '-'}\n"
                      f"title: {it['title']}\nsummary: {summ}")
     listing = "\n".join(lines)
-    user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序）。请完成两件事：
+    user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序）。请完成三件事：
 
 1. 给每个条目的英文标题写一个简洁的中文映照标题（zh）。要求：机构缩写（CCS/DNV/ABS/LR/BV/IMO）与文件编号保留原文；
    只翻译标题本身，不要加解释。
 2. 从中挑出 3~6 条最值得船厂技术部门注意的条目（优先：即将生效的强制要求、影响船型广的规范改版、
    涉及新燃料/安全的修正案），写 1~2 句理由（落到具体条款、船型、时间点或影响面）。不要选纯新闻类条目。
+3. 从条目的标题/摘要中提取明确的生效/施行日期（dates）。【只允许提取原文中明确写出的日期】，
+   原文没有具体日期就绝对不要输出该条目，禁止推测或编造。eif 已有日期的条目（eif != '-'）跳过。
+   日期格式 YYYY-MM-DD，年份缺失时按上下文合理补全；只输出今天之后、5 年以内的日期。
 
 条目列表：
 {listing}
@@ -531,7 +534,8 @@ def ai_enhance(fresh, ledger):
 只输出 JSON，格式：
 {{"overall": "2~3 句中文总述，概括本期规范动态主线",
  "highlights": [{{"i": 0, "why": "理由"}}],
- "translations": [{{"i": 0, "zh": "中文映照标题"}}]}}"""
+ "translations": [{{"i": 0, "zh": "中文映照标题"}}],
+ "dates": [{{"i": 5, "date": "2027-01-01"}}]}}"""
 
     payload = {
         "model": AI_MODEL,
@@ -542,7 +546,7 @@ def ai_enhance(fresh, ledger):
         ],
         "response_format": {"type": "json_object"},
         "temperature": 0.3,
-        "max_tokens": 4000,
+        "max_tokens": 6000,
     }
     req = urllib.request.Request(
         AI_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
@@ -588,6 +592,38 @@ def ai_enhance(fresh, ledger):
     if not obj.get("overall") and not points:
         print("[AI] 返回内容为空，本期跳过")
         return None
+
+    # AI 挖出的生效日期：严格校验后写回台账，并重算相关度分
+    n_date = 0
+    for dv in obj.get("dates", []):
+        try:
+            i, ds = int(dv.get("i")), str(dv.get("date") or "").strip()
+        except (TypeError, ValueError):
+            continue
+        if not (0 <= i < len(targets)) or not re.fullmatch(r"20\d{2}-\d{2}-\d{2}", ds):
+            continue
+        it = targets[i]
+        if it.get("eif"):
+            continue
+        try:
+            d = date.fromisoformat(ds)
+        except ValueError:
+            continue
+        if not (TODAY < d <= TODAY + timedelta(days=1850)):
+            continue
+        it["eif"] = ds
+        it["eif_prec"] = "day"
+        it["eif_src"] = "ai"
+        it["score"] = score({**it, "eif": d})
+        k = it["key"]
+        if k in ledger:
+            ledger[k].update({"eif": ds, "eif_prec": "day", "eif_src": "ai",
+                              "score": it["score"]})
+        n_date += 1
+    if n_date:
+        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"[AI] 挖出生效日期 {n_date} 条，已写入台账")
+
     print(f"[AI] 完成：重点 {len(points)} 条")
     return {"model": AI_MODEL, "overall": (obj.get("overall") or "").strip(), "points": points}
 
@@ -746,6 +782,7 @@ background:var(--c,#cbd5e1);opacity:0;transition:opacity .15s}
 .row-title:hover{color:var(--accent)}
 .row-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
 .badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--c);padding:1px 7px;border-radius:6px}
+.ai-tag{font-size:10.5px;color:#7c3aed;background:#f3efff;border:1px solid #e2d8fb;padding:0 6px;border-radius:6px}
 .kind{font-size:11.5px;color:var(--ink2);background:#f4f7fb;border:1px solid var(--line);padding:0 7px;border-radius:6px}
 .tag{font-size:11px;color:var(--ink3);border:1px solid var(--line);background:#fff;padding:0 7px;border-radius:6px}
 .eif{font-size:11.5px;padding:0 7px;border-radius:6px;border:1px solid;font-variant-numeric:tabular-nums}
@@ -879,12 +916,13 @@ def render(ledger, fresh, health, ai=None):
         prec = it.get("eif_prec")
         day_txt = it["eif"][:4] + " 年" if prec == "year" else (it["eif"][:7] if prec == "month" else it["eif"])
         color = ORG_COLOR.get(it["org"], "#475569")
+        ai_tag = '<span class="ai-tag">AI 识别</span>' if it.get("eif_src") == "ai" else ""
         eif_html += f"""      <a class="eif-card" href="{esc(it['link'])}" target="_blank" rel="noopener">
         <div class="dn {eta_class(d)}"><b>{d}</b><i>天后</i></div>
         <div class="body">
           <div class="t">{esc(it['title'][:100])}</div>
           <div class="tz">{esc(it.get('title_zh') or '')}</div>
-          <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span></div>
+          <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span>{ai_tag}</div>
         </div>
       </a>
 """

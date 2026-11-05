@@ -166,6 +166,46 @@
       "official": false,
       "limit": 18,
       "url": "https://news.google.com/rss/search?q=(%E7%94%9F%E6%95%88%20OR%20%E6%96%BD%E8%A1%8C)%20(%E8%88%B9%E8%88%B6%20OR%20%E6%B5%B7%E4%BA%8B%20OR%20%E8%88%B9%E7%BA%A7%E7%A4%BE%20OR%20%E8%88%AA%E8%BF%90)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+    },
+    {
+      "id": "gnews-eif-future",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 未来生效节点 2027/2028",
+      "type": "rss",
+      "official": false,
+      "limit": 18,
+      "url": "https://news.google.com/rss/search?q=(%22enters%20into%20force%22%20OR%20%22entry%20into%20force%22)%20(2027%20OR%202028)%20(IMO%20OR%20maritime%20OR%20shipping%20OR%20ship)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-statutory",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · Statutory Alert / 技术通函",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%22statutory%20alert%22%20OR%20%22technical%20circular%22)%20(shipping%20OR%20maritime%20OR%20vessel)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-classnk",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · ClassNK",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=%22ClassNK%22%20(rules%20OR%20circular%20OR%20amendment%20OR%20guidance)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-msa-cn",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · 中国海事局通告",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%E4%B8%AD%E5%9B%BD%E6%B5%B7%E4%BA%8B%E5%B1%80%20OR%20%E6%B5%B7%E4%BA%8B%E5%B1%80)%20(%E9%80%9A%E5%91%8A%20OR%20%E8%A7%84%E5%AE%9A%20OR%20%E7%94%9F%E6%95%88)%20(%E8%88%B9%E8%88%B6%20OR%20%E8%88%AA%E8%BF%90)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
     }
   ]
 }
