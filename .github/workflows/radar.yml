@@ -18,7 +18,6 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   radar:
     runs-on: ubuntu-latest
@@ -42,6 +41,8 @@ jobs:
         run: |
           git config user.name "rules-radar-bot"
           git config user.email "actions@localhost"
+          # 同步远端（重跑/并发时远端可能已有新提交，避免 push 被拒）
+          git pull --rebase --autostash origin main
           git add output/ data/
           if git diff --cached --quiet; then
             echo "本次无变化，跳过提交"
@@ -63,3 +64,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
