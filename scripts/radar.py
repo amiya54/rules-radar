@@ -496,6 +496,103 @@ def merge_ledger(fresh):
 
 
 # ----------------------------------------------------------------------------
+# AI 增强（DeepSeek）：中文映照标题 + 本期重点解读；失败不阻塞出报
+# ----------------------------------------------------------------------------
+AI_URL = "https://api.deepseek.com/chat/completions"
+AI_MODEL = "deepseek-chat"
+
+
+def ai_enhance(fresh, ledger):
+    """返回 ai 字典（overall/points/model），失败或未配置时返回 None。"""
+    key = (os.environ.get("DEEPSEEK_API_KEY") or "").strip()
+    if not key:
+        print("[AI] 未配置 DEEPSEEK_API_KEY，跳过 AI 增强")
+        return None
+    targets = sorted(fresh, key=lambda x: -x["score"])[:24]
+    if not targets:
+        return None
+
+    lines = []
+    for i, it in enumerate(targets):
+        summ = (it.get("summary") or "")[:160]
+        lines.append(f"[{i}] org={it['org']} | type={it['type']} | eif={it.get('eif') or '-'}\n"
+                     f"title: {it['title']}\nsummary: {summ}")
+    listing = "\n".join(lines)
+    user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序）。请完成两件事：
+
+1. 给每个条目的英文标题写一个简洁的中文映照标题（zh）。要求：机构缩写（CCS/DNV/ABS/LR/BV/IMO）与文件编号保留原文；
+   只翻译标题本身，不要加解释。
+2. 从中挑出 3~6 条最值得船厂技术部门注意的条目（优先：即将生效的强制要求、影响船型广的规范改版、
+   涉及新燃料/安全的修正案），写 1~2 句理由（落到具体条款、船型、时间点或影响面）。不要选纯新闻类条目。
+
+条目列表：
+{listing}
+
+只输出 JSON，格式：
+{{"overall": "2~3 句中文总述，概括本期规范动态主线",
+ "highlights": [{{"i": 0, "why": "理由"}}],
+ "translations": [{{"i": 0, "zh": "中文映照标题"}}]}}"""
+
+    payload = {
+        "model": AI_MODEL,
+        "messages": [
+            {"role": "system",
+             "content": "你是船舶行业规范情报分析员，为船厂技术部门服务。输出必须是严格合法的 JSON，不要输出多余文字。"},
+            {"role": "user", "content": user_prompt},
+        ],
+        "response_format": {"type": "json_object"},
+        "temperature": 0.3,
+        "max_tokens": 4000,
+    }
+    req = urllib.request.Request(
+        AI_URL, data=json.dumps(payload).encode("utf-8"), method="POST",
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+    try:
+        print(f"[AI] 调用 {AI_MODEL} 分析 {len(targets)} 条…")
+        with urllib.request.urlopen(req, timeout=180) as r:
+            resp = json.loads(r.read())
+        content = resp["choices"][0]["message"]["content"].strip()
+        m = re.search(r"\{.*\}", content, re.S)
+        obj = json.loads(m.group(0) if m else content)
+    except Exception as e:  # noqa: BLE001
+        print(f"[AI] 调用失败，本期跳过：{type(e).__name__}: {str(e)[:120]}")
+        return None
+
+    zh_map = {}
+    for tr in obj.get("translations", []):
+        try:
+            i, zh = int(tr.get("i")), (tr.get("zh") or "").strip()
+        except (TypeError, ValueError):
+            continue
+        if 0 <= i < len(targets) and zh:
+            zh_map[i] = zh
+            it = targets[i]
+            it["title_zh"] = zh
+            k = it["key"]
+            if k in ledger:
+                ledger[k]["title_zh"] = zh
+    if zh_map:
+        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"[AI] 中文映照 {len(zh_map)}/{len(targets)} 条，已写入台账")
+
+    points = []
+    for h in obj.get("highlights", []):
+        try:
+            i, why = int(h.get("i")), (h.get("why") or "").strip()
+        except (TypeError, ValueError):
+            continue
+        if 0 <= i < len(targets) and why:
+            it = targets[i]
+            points.append({"why": why, "title": it["title"], "title_zh": it.get("title_zh", ""),
+                           "link": it["link"], "org": it["org"]})
+    if not obj.get("overall") and not points:
+        print("[AI] 返回内容为空，本期跳过")
+        return None
+    print(f"[AI] 完成：重点 {len(points)} 条")
+    return {"model": AI_MODEL, "overall": (obj.get("overall") or "").strip(), "points": points}
+
+
+# ----------------------------------------------------------------------------
 # 渲染
 # ----------------------------------------------------------------------------
 def esc(s):
@@ -540,9 +637,11 @@ def item_row(it):
     src = esc(it.get("origin") or "")
     srcline = esc(it["source"]) + (f" · {src}" if src and src != it["org"] else "")
     color = ORG_COLOR.get(it["org"], "#475569")
+    zh = f'<div class="zh">{esc(it["title_zh"])}</div>' if it.get("title_zh") else ""
     return f"""        <div class="row" style="--c:{color}" data-org="{esc(it['org'])}" data-text="{esc((it['title'] + ' ' + ' '.join(it['tags'])).lower())}">
           <div class="row-main">
             <a class="row-title" href="{esc(it['link'])}" target="_blank" rel="noopener">{esc(it['title'])}</a>
+            {zh}
             <div class="row-meta">
               <span class="badge" style="--c:{color}">{esc(it['org'])}</span>
               <span class="kind">{esc(it['type'])}</span>
@@ -680,6 +779,27 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 .foot-meta dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
 .empty{padding:30px;text-align:center;color:var(--ink3);font-size:13px}
 
+.zh{margin-top:2px;font-size:12px;color:var(--ink2)}
+.eif-card .tz{margin-top:2px;font-size:12px;color:var(--ink2)}
+.eif-card .tz:empty{display:none}
+
+.ai-card{padding:18px 20px}
+.ai-overall{font-size:13.5px;line-height:1.8;color:var(--ink);border-left:3px solid var(--accent);
+padding:2px 0 2px 14px;margin-bottom:14px}
+.ai-points{display:grid;gap:10px}
+.ai-point{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
+background:#fbfcff;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
+.ai-point:hover{border-color:#cfdcf0;background:#f6f9ff}
+.ai-no{flex:none;width:24px;height:24px;border-radius:8px;background:var(--accent-bg);color:var(--accent);
+font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ai-body{min-width:0;display:flex;flex-direction:column;gap:3px}
+.ai-org{align-self:flex-start;font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;
+padding:1px 7px;border-radius:6px}
+.ai-zh{font-size:13px;font-weight:500;color:var(--ink)}
+.ai-title{font-size:12px;color:var(--ink3);line-height:1.5}
+.ai-why{font-size:12.5px;color:var(--ink2);line-height:1.7}
+.ai-note{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--ink3)}
+
 @media(max-width:760px){
   .wrap{padding:18px 14px 56px}
   .hero{padding:22px 18px;border-radius:16px}
@@ -728,7 +848,7 @@ JS = """
 })();
 """
 
-def render(ledger, fresh, health):
+def render(ledger, fresh, health, ai=None):
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
     with_eif.sort(key=lambda x: x["eif"])
@@ -763,6 +883,7 @@ def render(ledger, fresh, health):
         <div class="dn {eta_class(d)}"><b>{d}</b><i>天后</i></div>
         <div class="body">
           <div class="t">{esc(it['title'][:100])}</div>
+          <div class="tz">{esc(it['title_zh'])}</div>
           <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span></div>
         </div>
       </a>
@@ -786,6 +907,32 @@ def render(ledger, fresh, health):
     orgs = [o for o in ORG_ORDER if o in by_org]
     chips = "".join(f'<button class="chip" data-org="{o}">{o}</button>' for o in orgs)
     ok_src = sum(1 for h in health if h["status"] == "OK")
+
+    ai_section = ""
+    if ai:
+        points_html = ""
+        for n, p in enumerate(ai.get("points", []), 1):
+            zh = f'<span class="ai-zh">{esc(p["title_zh"])}</span>' if p.get("title_zh") else ""
+            points_html += f"""        <a class="ai-point" href="{esc(p['link'])}" target="_blank" rel="noopener">
+          <span class="ai-no">{n}</span>
+          <span class="ai-body"><span class="ai-org" style="background:{ORG_COLOR.get(p['org'], '#475569')}">{esc(p['org'])}</span>
+            {zh}<span class="ai-title">{esc(p['title'])}</span>
+            <span class="ai-why">{esc(p['why'])}</span></span>
+        </a>
+"""
+        if not points_html:
+            points_html = '<div class="empty">本期没有选出重点条目。</div>'
+        overall = esc(ai.get("overall") or "")
+        ai_section = f"""
+  <section class="sec" id="ai">
+    <div class="sec-h"><span class="num">02</span><h2>AI 本期解读</h2><span class="note">DeepSeek 生成 · 仅供参考</span></div>
+    <p class="lead">由 AI 基于本期条目自动归纳主线并挑出值得注意的改动，帮助快速定位重点；结论务必回原文核对。</p>
+    <div class="card ai-card">
+      <div class="ai-overall">{overall}</div>
+{points_html}      <div class="ai-note">解读由 DeepSeek（{esc(ai.get('model', ''))}）自动生成，可能存在误读，不构成规范解释或合规结论。</div>
+    </div>
+  </section>
+"""
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -816,6 +963,7 @@ def render(ledger, fresh, health):
 
   <nav class="nav">
     <a href="#eif">生效倒计时</a>
+    <a href="#ai">AI 解读</a>
     <a href="#fresh">本期新增</a>
     <a href="#track">持续跟踪</a>
     <a href="#health">抓取状态</a>
@@ -829,9 +977,9 @@ def render(ledger, fresh, health):
     <div class="eif-grid">
 {eif_html}    </div>
   </section>
-
+{ai_section}
   <section class="sec" id="fresh">
-    <div class="sec-h"><span class="num">02</span><h2>本期新增</h2><span class="note">共 {len(fresh)} 条 · 按机构分组</span></div>
+    <div class="sec-h"><span class="num">03</span><h2>本期新增</h2><span class="note">共 {len(fresh)} 条 · 按机构分组</span></div>
     <p class="lead">每条标注机构、类型、生效日与涉及领域；点标题跳原文。列表只做线索整理，具体条款需回原文核对。</p>
     <div class="card">
       <div class="tools">
@@ -845,7 +993,7 @@ def render(ledger, fresh, health):
   </section>
 
   <section class="sec" id="track">
-    <div class="sec-h"><span class="num">03</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
+    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
     <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
     <div class="card">
 {rows_tracked}
@@ -853,7 +1001,7 @@ def render(ledger, fresh, health):
   </section>
 
   <section class="sec" id="health">
-    <div class="sec-h"><span class="num">04</span><h2>抓取状态</h2><span class="note">每期公开 · 失败不隐藏</span></div>
+    <div class="sec-h"><span class="num">05</span><h2>抓取状态</h2><span class="note">每期公开 · 失败不隐藏</span></div>
     <div class="card">
       <table>
         <thead><tr><th>数据源</th><th>状态</th><th>条目</th></tr></thead>
@@ -908,10 +1056,11 @@ def main():
     print(f"[规范雷达] {TODAY} 开始采集，{len(cfg['sources'])} 个数据源")
     fresh, health = collect(cfg, offline=args.offline_test)
     ledger, fresh = merge_ledger(fresh)
+    ai = None if args.offline_test else ai_enhance(fresh, ledger)
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     ARCHIVE.mkdir(parents=True, exist_ok=True)
-    html = render(ledger, fresh, health)
+    html = render(ledger, fresh, health, ai)
     (OUTPUT / "index.html").write_text(html, encoding="utf-8")
     (ARCHIVE / f"{TODAY.isoformat()}.html").write_text(html, encoding="utf-8")
     write_runlog(health, fresh)
