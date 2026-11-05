@@ -851,12 +851,9 @@ JS = """
 def render(ledger, fresh, health, ai=None):
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
-    future = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
-                    key=lambda x: x["eif"])
-    past = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days < 0),
-                  key=lambda x: x["eif"], reverse=True)
-    upcoming = future + past
-    soon90 = [i for i in future if (date.fromisoformat(i["eif"]) - TODAY).days <= 90]
+    upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
+                      key=lambda x: x["eif"])
+    soon90 = [i for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 90]
     tracked = [i for i in ledger.values() if i["status"] != "本期新增"]
     tracked.sort(key=lambda x: (-x["score"], x.get("last_seen", "")))
 
@@ -882,14 +879,8 @@ def render(ledger, fresh, health, ai=None):
         prec = it.get("eif_prec")
         day_txt = it["eif"][:4] + " 年" if prec == "year" else (it["eif"][:7] if prec == "month" else it["eif"])
         color = ORG_COLOR.get(it["org"], "#475569")
-        if d < 0:
-            dn = f'<b>已生效</b><i>· {-d} 天前</i>'
-            dn_cls = "past"
-        else:
-            dn = f"<b>{d}</b><i>天后</i>"
-            dn_cls = eta_class(d)
         eif_html += f"""      <a class="eif-card" href="{esc(it['link'])}" target="_blank" rel="noopener">
-        <div class="dn {dn_cls}">{dn}</div>
+        <div class="dn {eta_class(d)}"><b>{d}</b><i>天后</i></div>
         <div class="body">
           <div class="t">{esc(it['title'][:100])}</div>
           <div class="tz">{esc(it.get('title_zh') or '')}</div>
@@ -965,7 +956,7 @@ def render(ledger, fresh, health, ai=None):
     <div class="stats">
       <div class="stat"><i>本期新增</i><b>{len(fresh)}<small>条</small></b></div>
       <div class="stat"><i>90 天内生效</i><b>{len(soon90)}<small>条</small></b></div>
-      <div class="stat"><i>一年内生效</i><b>{sum(1 for i in future if (date.fromisoformat(i["eif"]) - TODAY).days <= 365)}<small>条</small></b></div>
+      <div class="stat"><i>一年内生效</i><b>{sum(1 for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 365)}<small>条</small></b></div>
       <div class="stat"><i>台账累计</i><b>{len(ledger)}<small>条</small></b></div>
     </div>
   </header>
@@ -982,7 +973,7 @@ def render(ledger, fresh, health, ai=None):
 
   <section class="sec" id="eif">
     <div class="sec-h"><span class="num">01</span><h2>生效倒计时</h2><span class="note">按生效日期排序</span></div>
-    <p class="lead">规范改版真正需要动作的是「哪天开始适用」。识别到生效日期的条目按剩余天数排开：30 天内标红、90 天内标黄、已生效的灰显置末。未识别到明确日期的条目不进入本区，见下方各章节。</p>
+    <p class="lead">规范改版真正需要动作的是「哪天开始适用」。尚未生效的条目按剩余天数排开：30 天内标红、90 天内标黄。已生效或无法确认明确日期的条目不进本区，见下方各章节。</p>
     <div class="eif-grid">
 {eif_html}    </div>
   </section>
