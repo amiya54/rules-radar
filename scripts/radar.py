@@ -116,6 +116,66 @@ def is_noise(title):
     return any(p in t for p in NOISE_PAT)
 
 
+# 与「船舶设计/建造规范」无关的题材：地方通航管制、天气预警、贸易协定、社会新闻。
+# 这些能通过海事门（因为有"港/船"字样），但对船厂技术中心没有参考价值。
+OFFTOPIC_PAT = [
+    "禁限航", "定线制", "航行警告", "大风", "台风", "寒潮", "橙警", "黄色预警",
+    "蓝色预警", "红色预警", "能见度不良", "渔船管控", "三无船舶",
+    "tariff", "export ban", "trade deal",
+    "plastic pellet", "crackdown", "smuggl", "human traffick",
+    "ferry accident", "capsiz", "rescue operation", "oil spill clean",
+]
+OFFTOPIC_RE = re.compile(r"\bfta\b|\bnurdles?\b|\bsanctions?\b", re.I)
+
+
+def is_offtopic(text):
+    low = text.lower()
+    if any(p in low for p in OFFTOPIC_PAT):
+        return True
+    return bool(OFFTOPIC_RE.search(text))
+
+
+# 机构名识别：标题里明确点名了谁，就归谁。
+# 起因：Google News 按查询抓取，"CCS 规范"查询会命中 DNV 的新闻，导致 DNV 内容挂在 CCS 栏目下。
+ORG_HINTS = [
+    ("CCS", ["中国船级社", "ccs ", "ccs:", "ccs（", "chinese classification society"]),
+    ("DNV", ["dnv", "det norske veritas"]),
+    ("ABS", ["american bureau of shipping", "abs rules", "abs class", "eagle.org"]),
+    ("LR", ["lloyd's register", "lloyds register", "lloyd’s register", "lr class"]),
+    ("BV", ["bureau veritas", "bv marine"]),
+    ("IMO", ["imo ", "imo:", "国际海事组织", "international maritime organization",
+             "msc ", "mepc ", "msc.", "mepc."]),
+]
+
+
+def org_mentions(text):
+    """返回标题中明确点名的机构 → 首次出现位置（按位置排序，越靠前越是标题主语）。"""
+    low = " " + text.lower() + " "
+    hits = {}
+    for org, keys in ORG_HINTS:
+        pos = [low.find(k) for k in keys if k in low]
+        if pos:
+            hits[org] = min(pos)
+    # 单独出现的 ABS 极易误撞（"abs" 是常用词），必须带船级社语境
+    if "ABS" not in hits and re.search(r"\babs\b", low) and any(
+            w in low for w in ("class", "bureau", "rule", "guide", "requirement")):
+        hits["ABS"] = low.find("abs")
+    return hits
+
+
+def normalize_org(src_org, text):
+    """按标题内容校正机构归属。
+
+    - 标题点名的机构包含源机构 → 保持（联合发布时各自栏目出现都合理）；
+    - 标题只点名了别家 → 改归标题主语那一家（取最靠前出现的）；
+    - 标题未点名任何机构 → 保持源机构。
+    """
+    hits = org_mentions(text)
+    if not hits or src_org in hits:
+        return src_org
+    return min(hits, key=hits.get)
+
+
 # ----------------------------------------------------------------------------
 # 网络
 # ----------------------------------------------------------------------------
@@ -430,8 +490,11 @@ def collect(cfg, offline=False):
             eif, eif_prec = find_eif(title + " " + r.get("summary", ""), ref=pub)
             if not is_maritime(title + " " + r.get("summary", "")):
                 continue
+            if is_offtopic(title + " " + r.get("summary", "")):
+                continue
+            org = normalize_org(src["org"], title)
             rec = {
-                "org": src["org"], "org_cn": src["org_cn"],
+                "org": org, "org_cn": src["org_cn"] if org == src["org"] else ORG_CN.get(org, org),
                 "title": title, "link": r["link"], "summary": r.get("summary", ""),
                 "pub": pub.isoformat() if pub else "",
                 "eif": eif.isoformat() if eif else "",
@@ -455,11 +518,21 @@ def collect(cfg, offline=False):
     uniq = sorted(best.values(), key=lambda x: -x["score"])
     merged = []
     for it in uniq:
-        dup = next((m for m in merged if m["org"] == it["org"] and similar(m["title"], it["title"])), None)
+        # 跨机构也要合并：同一条新闻常被多家媒体转述，落进不同查询源就会重复出现
+        dup = next((m for m in merged if similar(m["title"], it["title"])), None)
         if dup:
             dup["tags"] = sorted(set(dup["tags"]) | set(it["tags"]))
             if not dup.get("eif") and it.get("eif"):
                 dup["eif"] = it["eif"]
+                dup["eif_prec"] = it.get("eif_prec", "")
+            dup["score"] = max(dup.get("score", 0), it.get("score", 0))
+            # 官方源优先：官方条目替换掉媒体转述的说法
+            if it.get("official") and not dup.get("official"):
+                for f in ("org", "org_cn", "title", "link", "summary", "source", "official"):
+                    dup[f] = it[f]
+            others = dup.setdefault("also", [])
+            if it["link"] != dup["link"] and it["link"] not in [a["link"] for a in others]:
+                others.append({"org": it["org"], "source": it["source"], "link": it["link"]})
             continue
         merged.append(it)
     return merged, health
@@ -487,6 +560,34 @@ def merge_ledger(fresh):
             it["status"] = "本期新增"
             it["times_seen"] = 1
         ledger[k] = it
+    # 现行规则复核：过滤规则每期都在收紧，老条目必须跟着重判，否则报告里会一直挂着早期漏网的内容
+    dropped, rekeyed = [], 0
+    for k, v in list(ledger.items()):
+        txt = v.get("title", "") + " " + v.get("summary", "")
+        reason = ("噪声" if is_noise(v.get("title", "")) else
+                  "海事无关" if not is_maritime(txt) else
+                  "题材无关" if is_offtopic(txt) else "")
+        if reason:
+            dropped.append({"title": v.get("title", ""), "org": v.get("org", ""),
+                            "reason": reason, "first_seen": v.get("first_seen", "")})
+            del ledger[k]
+            continue
+        # 机构归属同样要回溯校正（早期按查询源分错了机构）
+        new_org = normalize_org(v.get("org", ""), v.get("title", ""))
+        if new_org != v.get("org"):
+            v["org"] = new_org
+            v["org_cn"] = ORG_CN.get(new_org, new_org)
+            nk = key_of(new_org, v.get("title", ""))
+            if nk != k:
+                del ledger[k]
+                ledger[nk] = v
+                rekeyed += 1
+    if dropped:
+        print(f"[台账] 复核剔除 {len(dropped)} 条：")
+        for d in dropped:
+            print(f"    - ({d['reason']}) {d['title'][:70]}")
+    if rekeyed:
+        print(f"[台账] 校正机构归属 {rekeyed} 条")
     # 清理 120 天没再出现的
     cut = (TODAY - timedelta(days=120)).isoformat()
     ledger = {k: v for k, v in ledger.items() if v.get("last_seen", today_s) >= cut}
@@ -647,6 +748,9 @@ def is_maritime(text):
 
 
 ORG_ORDER = ["CCS", "DNV", "ABS", "LR", "BV", "IMO", "行业"]
+ORG_CN = {"CCS": "中国船级社", "DNV": "挪威船级社", "ABS": "美国船级社",
+          "LR": "英国劳氏船级社", "BV": "法国必维船级社", "IMO": "国际海事组织",
+          "行业": "行业媒体"}
 ORG_COLOR = {"CCS": "#b91c1c", "DNV": "#1d4ed8", "ABS": "#0f766e",
              "LR": "#7c3aed", "BV": "#c2410c", "IMO": "#0369a1", "行业": "#475569"}
 
@@ -668,10 +772,14 @@ def item_row(it):
     eif = ""
     if it.get("eif"):
         d = (date.fromisoformat(it["eif"]) - TODAY).days
-        label = "已生效" if d < 0 else f"{d} 天后生效"
-        eif = f'<span class="eif {eta_class(d)}">{label} · {it["eif"]}</span>'
+        prec = it.get("eif_prec", "day")
+        when = it["eif"][:4] + " 年" if prec == "year" else (it["eif"][:7] if prec == "month" else it["eif"])
+        label = "已生效" if d < 0 else (f"{d} 天后生效" if prec == "day" else f"约 {d} 天后生效")
+        eif = f'<span class="eif {eta_class(d)}">{label} · {when}</span>'
     src = esc(it.get("origin") or "")
     srcline = esc(it["source"]) + (f" · {src}" if src and src != it["org"] else "")
+    if it.get("also"):
+        srcline += f' · 另 {len(it["also"])} 源同报'
     color = ORG_COLOR.get(it["org"], "#475569")
     zh = f'<div class="zh">{esc(it["title_zh"])}</div>' if it.get("title_zh") else ""
     return f"""        <div class="row" style="--c:{color}" data-org="{esc(it['org'])}" data-text="{esc((it['title'] + ' ' + ' '.join(it['tags'])).lower())}">
