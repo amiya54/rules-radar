@@ -103,6 +103,7 @@ RE_EN_MY = re.compile(r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]
 RE_CN = re.compile(r"(20\d{2})\s*年\s*(\d{1,2})\s*月(?:\s*(\d{1,2})\s*日)?")
 RE_CN_MD = re.compile(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日")
 RE_YEAR_CN = re.compile(r"(20\d{2})\s*年(?=[^。；;]{0,10}(?:生效|施行|实施))")
+RE_YEAR_EN = re.compile(r"(?:\bin\b|\bfrom\b|\buntil\b|\bby\b|\bduring\b|as of|at least|early|late|mid|effective)[\s-]+(20\d{2})\b", re.I)
 RE_EN_D = re.compile(r"(?<!\d)(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b", re.I)
 MON_IDX = {m[:3]: i for m, i in MONTHS.items()}
 
@@ -307,6 +308,11 @@ def find_eif(text, ref=None):
                                   "生效", "施行", "applicable from")):
         if "生效" not in text:
             return None, ""
+    if isinstance(ref, str):
+        try:
+            ref = date.fromisoformat(ref[:10])
+        except ValueError:
+            ref = None
     ref_year = (ref or TODAY).year
     cands = []
     for m in RE_ISO.finditer(text):
@@ -357,6 +363,11 @@ def find_eif(text, ref=None):
     if m:
         y = int(m.group(1))
         if TODAY.year - 1 <= y <= TODAY.year + 3:
+            return date(y, 1, 1), "year"
+    # 英文只写年份（"in 2027" / "until at least 2028" / "from 2029"）
+    for m in RE_YEAR_EN.finditer(text):
+        y = int(m.group(1))
+        if TODAY.year <= y <= TODAY.year + 5:
             return date(y, 1, 1), "year"
     return None, ""
 
@@ -624,24 +635,33 @@ def ai_enhance(fresh, ledger):
     if not key:
         print("[AI] 未配置 DEEPSEEK_API_KEY，跳过 AI 增强")
         return None
-    targets = sorted(fresh, key=lambda x: -x["score"])[:40]
+    targets = sorted(fresh, key=lambda x: -x["score"])[:30]
     if not targets:
         return None
+    # 旧条目回溯：台账里还没识别到生效日期的条目每期补 15 条，逐期把倒计时区补全
+    seen = {it["key"] for it in targets}
+    undated = [v for k, v in ledger.items() if k not in seen and not v.get("eif")]
+    undated.sort(key=lambda x: -x.get("score", 0))
+    targets += undated[:15]
 
     lines = []
+    fresh_keys = {it["key"] for it in fresh}
     for i, it in enumerate(targets):
         summ = (it.get("summary") or "")[:160]
-        lines.append(f"[{i}] org={it['org']} | type={it['type']} | eif={it.get('eif') or '-'}\n"
+        tag = " | fresh=1" if it["key"] in fresh_keys else " | fresh=0(旧条目，仅挖日期/翻译)"
+        lines.append(f"[{i}] org={it['org']} | type={it['type']} | eif={it.get('eif') or '-'}{tag}\n"
                      f"title: {it['title']}\nsummary: {summ}")
     listing = "\n".join(lines)
-    user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序）。请完成三件事：
+    user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序，fresh=1 为本期新增，fresh=0 为往期跟踪条目）。请完成三件事：
 
 1. 给每个条目的英文标题写一个简洁的中文映照标题（zh）。要求：机构缩写（CCS/DNV/ABS/LR/BV/IMO）与文件编号保留原文；
    只翻译标题本身，不要加解释。
 2. 从中挑出 3~6 条最值得船厂技术部门注意的条目（优先：即将生效的强制要求、影响船型广的规范改版、
    涉及新燃料/安全的修正案），写 1~2 句理由（落到具体条款、船型、时间点或影响面）。不要选纯新闻类条目。
+   【highlights 只能从 fresh=1 的条目里选】，不要选往期条目。
 3. 从条目的标题/摘要中提取明确的生效/施行日期（dates）。【只允许提取原文中明确写出的日期】，
    原文没有具体日期就绝对不要输出该条目，禁止推测或编造。eif 已有日期的条目（eif != '-'）跳过。
+   若原文只写年份（如 "in 2027" / "2028年生效"），日期填该年 01-01 即可。
    日期格式 YYYY-MM-DD，年份缺失时按上下文合理补全；只输出今天之后、5 年以内的日期。
 
 条目列表：
@@ -728,12 +748,13 @@ def ai_enhance(fresh, ledger):
         if not (TODAY < d <= TODAY + timedelta(days=1850)):
             continue
         it["eif"] = ds
-        it["eif_prec"] = "day"
+        prec = "year" if ds.endswith("-01-01") else "day"
+        it["eif_prec"] = prec
         it["eif_src"] = "ai"
         it["score"] = score({**it, "eif": d})
         k = it["key"]
         if k in ledger:
-            ledger[k].update({"eif": ds, "eif_prec": "day", "eif_src": "ai",
+            ledger[k].update({"eif": ds, "eif_prec": prec, "eif_src": "ai",
                               "score": it["score"]})
         n_date += 1
     if n_date:
@@ -1011,11 +1032,27 @@ JS = """
 })();
 """
 
+def _same_event(x, y):
+    """同一事件判定：中英文标题两两比对（标题/中文映照各取一种组合）。"""
+    xs = [t for t in (x.get("title"), x.get("title_zh")) if t]
+    ys = [t for t in (y.get("title"), y.get("title_zh")) if t]
+    return any(similar(a, b) for a in xs for b in ys)
+
+
 def render(ledger, fresh, health, ai=None):
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
     upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
                       key=lambda x: x["eif"])
+    # 同一事件多源收录时只保留一张卡（否则同一条约中英文两条会各占一格）
+    _shown = []
+    deduped = []
+    for it in upcoming:
+        if any(_same_event(it, s) for s in _shown):
+            continue
+        _shown.append(it)
+        deduped.append(it)
+    upcoming = deduped
     soon90 = [i for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 90]
     tracked = [i for i in ledger.values() if i["status"] != "本期新增"]
     tracked.sort(key=lambda x: (-x["score"], x.get("last_seen", "")))
@@ -1223,6 +1260,24 @@ def write_runlog(health, fresh):
     RUNLOG_FILE.write_text(json.dumps(log[-90:], ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+def backfill_eif(ledger):
+    """对台账里还没有生效日期的条目重跑一遍正则（规则改进后老条目自动受益，零成本）。"""
+    n = 0
+    for v in ledger.values():
+        if v.get("eif"):
+            continue
+        eif, prec = find_eif((v.get("title") or "") + " " + (v.get("summary") or ""), ref=v.get("pub"))
+        if eif:
+            v["eif"] = eif.isoformat()
+            v["eif_prec"] = prec
+            v["eif_src"] = "re2"
+            v["score"] = score({**v, "eif": eif})
+            n += 1
+    if n:
+        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"[回填] 正则补出生效日期 {n} 条")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline-test", action="store_true")
@@ -1236,6 +1291,7 @@ def main():
     print(f"[规范雷达] {TODAY} 开始采集，{len(cfg['sources'])} 个数据源")
     fresh, health = collect(cfg, offline=args.offline_test)
     ledger, fresh = merge_ledger(fresh)
+    backfill_eif(ledger)
     ai = None if args.offline_test else ai_enhance(fresh, ledger)
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
