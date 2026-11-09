@@ -1288,6 +1288,20 @@ def write_runlog(health, fresh):
 def backfill_eif(ledger):
     """对台账里还没有生效日期的条目重跑一遍正则（规则改进后老条目自动受益，零成本）。"""
     n = 0
+    # 先复核历史上"正文抓取"写进来的日期：早于发布日附近的一律是文章发布日期，剔掉
+    fixed = 0
+    for v in ledger.values():
+        if v.get("eif_src") != "page" or not v.get("eif"):
+            continue
+        try:
+            if v.get("pub") and date.fromisoformat(v["eif"]) <= date.fromisoformat(v["pub"][:10]) + timedelta(days=3):
+                for f in ("eif", "eif_prec", "eif_src"):
+                    v.pop(f, None)
+                fixed += 1
+        except ValueError:
+            continue
+    if fixed:
+        print(f"[校验] 剔除 {fixed} 条误判为生效日期的文章发布日期")
     for v in ledger.values():
         if v.get("eif"):
             continue
@@ -1301,6 +1315,33 @@ def backfill_eif(ledger):
     if n:
         ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"[回填] 正则补出生效日期 {n} 条")
+
+
+RE_TRIG = re.compile(r"(enters?\s+into\s+force|entry\s+into\s+force|take[s]?\s+effect|effective|"
+                     r"will\s+apply|applicable\s+from|生效|施行|实施)", re.I)
+
+
+def find_eif_scoped(text, ref=None):
+    """正文专用：只在含生效触发词的句子里找日期。
+
+    文章页里散落着发布日、评论时间、版权年份，直接全文找必然误判；
+    改成逐句判定后，只有 "enters into force on 1 January 2027" 这类句子才算数。
+    """
+    best = (None, "")
+    pub = ref if isinstance(ref, date) else None
+    for s in re.split(r"(?<=[\.!\?。！？;；])\s+", text):
+        if len(s) > 500:
+            s = s[:500]
+        if not RE_TRIG.search(s):
+            continue
+        eif, prec = find_eif(s, ref)
+        if not eif:
+            continue
+        if pub and eif <= pub + timedelta(days=3):
+            continue
+        if best[0] is None or eif > best[0]:
+            best = (eif, prec)
+    return best
 
 
 def _page_text(raw):
@@ -1338,17 +1379,19 @@ def deep_fetch_dates(ledger, limit=10):
     """
     cands = [v for v in ledger.values() if not v.get("eif")]
     cands.sort(key=lambda x: -x.get("score", 0))
-    n = 0
+    n = tried = skipped = 0
     for v in cands[:limit]:
         try:
             link = resolve_link(v.get("link") or "")
             if "news.google.com" in link:
+                skipped += 1
                 continue
+            tried += 1
             st, raw = fetch(link, timeout=20, retries=0)
             if st != 200 or not raw:
                 continue
             text = _page_text(raw)
-            eif, prec = find_eif(text, ref=v.get("pub"))
+            eif, prec = find_eif_scoped(text, ref=v.get("pub"))
             if not eif:
                 continue
             v.update({"eif": eif.isoformat(), "eif_prec": prec, "eif_src": "page"})
@@ -1360,7 +1403,7 @@ def deep_fetch_dates(ledger, limit=10):
             continue
     if n:
         ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
-        print(f"[正文] 挖出生效日期 {n} 条")
+    print(f"[正文] 尝试抓正文 {tried} 篇（Google News 编码链接跳过 {skipped} 条），挖出生效日期 {n} 条")
     return n
 
 
