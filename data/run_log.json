@@ -1069,5 +1069,166 @@
     "note": ""
    }
   ]
+ },
+ {
+  "date": "2026-11-09",
+  "ts": "2026-11-09T01:21:51+00:00",
+  "collected": 23,
+  "sources": [
+   {
+    "id": "gnews-ccs",
+    "name": "Google News · 中国船级社",
+    "status": "OK",
+    "count": 24,
+    "note": ""
+   },
+   {
+    "id": "gnews-dnv",
+    "name": "Google News · DNV",
+    "status": "OK",
+    "count": 31,
+    "note": ""
+   },
+   {
+    "id": "gnews-abs",
+    "name": "Google News · ABS",
+    "status": "OK",
+    "count": 9,
+    "note": ""
+   },
+   {
+    "id": "gnews-lr",
+    "name": "Google News · Lloyd's Register",
+    "status": "OK",
+    "count": 29,
+    "note": ""
+   },
+   {
+    "id": "gnews-bv",
+    "name": "Google News · Bureau Veritas",
+    "status": "OK",
+    "count": 14,
+    "note": ""
+   },
+   {
+    "id": "gnews-imo",
+    "name": "Google News · IMO 强制文件",
+    "status": "OK",
+    "count": 31,
+    "note": ""
+   },
+   {
+    "id": "gnews-cn-reg",
+    "name": "Google News · 中文规范动态",
+    "status": "OK",
+    "count": 13,
+    "note": ""
+   },
+   {
+    "id": "gnews-reg-note",
+    "name": "Google News · 法规通报",
+    "status": "OK",
+    "count": 12,
+    "note": ""
+   },
+   {
+    "id": "abs-regulatory",
+    "name": "ABS Regulatory News（官方列表）",
+    "status": "OK",
+    "count": 7,
+    "note": ""
+   },
+   {
+    "id": "lr-news",
+    "name": "LR 最新动态（官方列表）",
+    "status": "OK",
+    "count": 4,
+    "note": ""
+   },
+   {
+    "id": "gnews-eif-en",
+    "name": "Google News · 生效日期（英文）",
+    "status": "OK",
+    "count": 19,
+    "note": ""
+   },
+   {
+    "id": "gnews-eif-cn",
+    "name": "Google News · 生效日期（中文）",
+    "status": "OK",
+    "count": 18,
+    "note": ""
+   },
+   {
+    "id": "gnews-eif-future",
+    "name": "Google News · 未来生效节点 2027/2028",
+    "status": "OK",
+    "count": 8,
+    "note": ""
+   },
+   {
+    "id": "gnews-statutory",
+    "name": "Google News · Statutory Alert / 技术通函",
+    "status": "OK",
+    "count": 2,
+    "note": ""
+   },
+   {
+    "id": "gnews-classnk",
+    "name": "Google News · ClassNK",
+    "status": "OK",
+    "count": 18,
+    "note": ""
+   },
+   {
+    "id": "gnews-msa-cn",
+    "name": "Google News · 中国海事局通告",
+    "status": "OK",
+    "count": 9,
+    "note": ""
+   },
+   {
+    "id": "imo-official",
+    "name": "IMO 新闻中心（官方列表）",
+    "status": "OK",
+    "count": 1,
+    "note": ""
+   },
+   {
+    "id": "emsa-official",
+    "name": "EMSA 最新动态（官方列表）",
+    "status": "空",
+    "count": 0,
+    "note": ""
+   },
+   {
+    "id": "gnews-solas-marpol",
+    "name": "Google News · SOLAS/MARPOL 公约修正",
+    "status": "OK",
+    "count": 29,
+    "note": ""
+   },
+   {
+    "id": "gnews-eu-carbon",
+    "name": "Google News · FuelEU/EU ETS 航运碳法规",
+    "status": "OK",
+    "count": 35,
+    "note": ""
+   },
+   {
+    "id": "gnews-other-class",
+    "name": "Google News · KR/IRS/RS/RINA 船级社",
+    "status": "OK",
+    "count": 10,
+    "note": ""
+   },
+   {
+    "id": "gnews-uscg",
+    "name": "Google News · USCG 安全通告",
+    "status": "OK",
+    "count": 11,
+    "note": ""
+   }
+  ]
  }
 ]
