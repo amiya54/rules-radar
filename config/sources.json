@@ -297,6 +297,118 @@
       "official": false,
       "limit": 15,
       "url": "https://news.google.com/rss/search?q=(%22coast%20guard%22%20OR%20USCG)%20(%22final%20rule%22%20OR%20%22marine%20safety%20alert%22%20OR%20%22safety%20alert%22)%20(vessel%20OR%20ship%20OR%20maritime)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "rss-splash247",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Splash247（行业 RSS）",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://splash247.com/feed/"
+    },
+    {
+      "id": "rss-gcaptain",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "gCaptain（行业 RSS）",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://gcaptain.com/feed/"
+    },
+    {
+      "id": "rss-offshore-energy",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Offshore Energy（行业 RSS）",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://www.offshore-energy.biz/feed/"
+    },
+    {
+      "id": "rss-hellenic",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Hellenic Shipping News（行业 RSS）",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "http://www.hellenicshippingnews.com/feed/"
+    },
+    {
+      "id": "cn-xinde",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "信德海事（中文站列表）",
+      "type": "html",
+      "official": false,
+      "limit": 30,
+      "url": "https://www.xindemarinenews.com/",
+      "keyword_gate": [
+        "规范",
+        "规则",
+        "生效",
+        "修订",
+        "公约",
+        "修正案",
+        "通函",
+        "新规",
+        "船级社",
+        "检验",
+        "IMO",
+        "法规"
+      ]
+    },
+    {
+      "id": "cn-imarine",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "龙de船人（中文站列表）",
+      "type": "html",
+      "official": false,
+      "limit": 30,
+      "url": "https://www.imarine.cn/",
+      "keyword_gate": [
+        "规范",
+        "规则",
+        "生效",
+        "修订",
+        "公约",
+        "修正案",
+        "通函",
+        "新规",
+        "船级社",
+        "检验",
+        "IMO",
+        "法规"
+      ]
+    },
+    {
+      "id": "cn-shipsh",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "航运界（中文站列表）",
+      "type": "html",
+      "official": false,
+      "limit": 30,
+      "url": "https://www.ship.sh/",
+      "keyword_gate": [
+        "规范",
+        "规则",
+        "生效",
+        "修订",
+        "公约",
+        "修正案",
+        "通函",
+        "新规",
+        "船级社",
+        "检验",
+        "IMO",
+        "法规"
+      ]
     }
   ]
 }
