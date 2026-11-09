@@ -17,7 +17,9 @@
 """
 
 import argparse
+import csv
 import hashlib
+import io
 import json
 import os
 import re
@@ -269,12 +271,130 @@ def parse_html_listing(raw, cfg):
     return out
 
 
+RE_TR = re.compile(r"<tr[^>]*>([\s\S]*?)</tr>", re.I)
+RE_TD = re.compile(r"<t[dh][^>]*>([\s\S]*?)</t[dh]>", re.I)
+
+
+def _plain(s):
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", s))).strip()
+
+
+def _list_date(s):
+    """'1 Jan 2026' / '1 Sept 2026' 这类清单里的日期。"""
+    m = re.match(r"^\s*(\d{1,2})\s+([A-Za-z]{3,4})\.?\s+(\d{4})", s or "")
+    if not m:
+        return None
+    mo = MON_IDX.get(m.group(2).lower()[:3])
+    if not mo:
+        return None
+    try:
+        return date(int(m.group(3)), mo, int(m.group(1)))
+    except ValueError:
+        return None
+
+
+def _table_title(desc, res):
+    """清单表的描述按整段写，取第一个分句做标题，决议号缀在后面保证不撞 key。"""
+    main = re.split(r"\s+[-\u2013\u2014]\s+|\.\s", desc, 1)[0].strip().rstrip(" .;,")
+    if len(main) > 120:
+        main = main[:120].rsplit(" ", 1)[0] + "…"
+    m = re.search(r"(?:MSC|MEPC)\.?\s*\d+\s*\(\s*\d+\s*\)", res or "")
+    tag = " (" + re.sub(r"\s+", "", m.group(0)) + ")" if m else ""
+    return (main + tag).strip()
+
+
+def parse_table_listing(raw, cfg):
+    """官方「生效日期清单」表格：日期列向下继承，第二列文书与描述，第三列决议号。
+
+    IMO 的 Amendments to IMO instruments 页就是这种结构。日期由官方直接给出，
+    不用再从正文里猜——这是把倒计时做准的关键，新闻稿几乎从不写生效日。
+    """
+    html = raw.decode("utf-8", "ignore")
+    m = re.search(r"<table[\s\S]*?</table>", html, re.I)
+    if not m:
+        return []
+    out, cur, seen = [], None, set()
+    for tr in RE_TR.findall(m.group(0)):
+        cells = [_plain(c) for c in RE_TD.findall(tr)]
+        if len(cells) < 3:
+            continue
+        d = _list_date(cells[0])
+        if d:
+            cur = d
+        desc, res = cells[1], cells[2]
+        if not cur or not desc or not re.search(r"[A-Za-z\u4e00-\u9fa5]{3}", desc):
+            continue
+        # 分组标题行（“SOLAS and IGC and IGF Code”这种）：只有类别名、没有决议号
+        if not res and len(desc) < 56:
+            continue
+        title = _table_title(desc, res)
+        if not title or title in seen:
+            continue
+        seen.add(title)
+        out.append({"title": title, "link": cfg["url"], "date_raw": "",
+                    "summary": desc[:280] + ("｜" + res if res else ""),
+                    "eif_hard": cur.isoformat()})
+        if len(out) >= int(cfg.get("limit", 60)):
+            break
+    return out
+
+
+def parse_csv_listing(raw, cfg):
+    """CSV 型清单（政府开放数据，如香港海事处 MSIN）。
+
+    cfg["columns"] 把语义名映射到表头名或列下标，换一家数据源只改配置不动代码。
+    """
+    text = raw.decode("utf-8-sig", "ignore")
+    rows = list(csv.reader(io.StringIO(text)))
+    if not rows:
+        return []
+    head = [c.strip() for c in rows[0]]
+    spec = cfg.get("columns") or {}
+    idx = {}
+    for k, v in spec.items():
+        if isinstance(v, str) and v in head:
+            idx[k] = head.index(v)
+        elif isinstance(v, int):
+            idx[k] = v
+
+    def cell(r, k):
+        i = idx.get(k)
+        return r[i].strip() if isinstance(i, int) and 0 <= i < len(r) else ""
+
+    gate = [k.lower() for k in cfg.get("keyword_gate", [])]
+    deny = [k.lower() for k in cfg.get("deny", [])]
+    out = []
+    for r in rows[1:]:
+        title, note, link = cell(r, "title"), cell(r, "note"), cell(r, "link")
+        no = cell(r, "no")
+        full = (title + " " + note).strip()
+        if not link.startswith("http") or len(full) < 8:
+            continue
+        # 打包下载入口不是通函，别混进条目
+        if re.search(r"\.(zip|xlsx?|docx?|7z)$", link, re.I):
+            continue
+        low = full.lower()
+        if gate and not any(k in low for k in gate):
+            continue
+        if deny and any(k in low for k in deny):
+            continue
+        # 编号缀进标题：同一事项会以不同通函号多次发布，不编号就会在去重时被合并掉
+        head = (title if len(title) >= 12 else full)[:140]
+        if no and no not in head:
+            head = f"{head}（MSIN {no}）"
+        out.append({"title": head, "link": link, "date_raw": cell(r, "date"),
+                    "summary": note[:200]})
+        if len(out) >= int(cfg.get("limit", 40)):
+            break
+    return out
+
+
 def parse_pubdate(s):
     if not s:
         return None
     s = s.strip()
     for fmt in ("%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S %Z",
-                "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d"):
+                "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d", "%Y/%m/%d"):
         try:
             dt = datetime.strptime(s.replace("GMT", "+0000"), fmt)
             return dt.date()
@@ -481,7 +601,14 @@ def collect(cfg, offline=False):
         status, raw = fetch(src["url"])
         rows = []
         if status == 200 and raw:
-            rows = parse_rss(raw) if src["type"] == "rss" else parse_html_listing(raw, src)
+            if src["type"] == "rss":
+                rows = parse_rss(raw)
+            elif src["type"] == "table":
+                rows = parse_table_listing(raw, src)
+            elif src["type"] == "csv":
+                rows = parse_csv_listing(raw, src)
+            else:
+                rows = parse_html_listing(raw, src)
         status_txt = "OK" if rows else ("空" if status == 200 else f"失败({status})")
         health.append({"id": src["id"], "name": src["name"], "status": status_txt,
                        "count": len(rows), "note": ""})
@@ -491,19 +618,27 @@ def collect(cfg, offline=False):
             title = re.sub(r"\s*-\s*船级社\s*$", "", title).strip()
             title = re.sub(r"^(News Content Hub|News)\s*[-–—:]\s*", "", title).strip()
             low = (title + " " + r.get("summary", "")).lower()
+            # 清单型源的条目本身就是规则条文，不走新闻关键词门控，也不再判题材
+            hard = bool(r.get("eif_hard"))
             if src["type"] == "rss" and not any(k in low for k in REG_STRONG):
                 continue
             if is_noise(title):
                 continue
             pub = parse_pubdate(r.get("date_raw", ""))
-            if pub and (TODAY - pub).days > 240:
+            if pub and (TODAY - pub).days > int(src.get("max_age_days", 240)):
                 continue
-            eif, eif_prec = find_eif(title + " " + r.get("summary", ""), ref=pub)
-            if not is_maritime(title + " " + r.get("summary", "")):
-                continue
-            if is_offtopic(title + " " + r.get("summary", "")):
-                continue
-            org = normalize_org(src["org"], title)
+            if hard:
+                eif = date.fromisoformat(r["eif_hard"])
+                eif_prec = "day"
+            else:
+                eif, eif_prec = find_eif(title + " " + r.get("summary", ""), ref=pub)
+                if not is_maritime(title + " " + r.get("summary", "")):
+                    continue
+                if is_offtopic(title + " " + r.get("summary", "")):
+                    continue
+            # 清单型源的归属由配置固定：表格/CSV 里常出现别家机构名，按标题反推会张冠李戴
+            org = (src["org"] if src["type"] in ("table", "csv")
+                   else normalize_org(src["org"], title))
             rec = {
                 "org": org, "org_cn": src["org_cn"] if org == src["org"] else ORG_CN.get(org, org),
                 "title": title, "link": r["link"], "summary": r.get("summary", ""),
@@ -516,8 +651,24 @@ def collect(cfg, offline=False):
                 "official": bool(src.get("official")),
                 "favicon": "",
             }
+            if hard:
+                rec["eif_src"] = "list"
+                rec["fixed_org"] = True
+                # 清单里早已生效的条目是规则索引，不该挤进「本期新增」刷屏
+                if (eif - TODAY).days < -180:
+                    rec["suppress"] = True
+            elif src["type"] == "csv":
+                rec["fixed_org"] = True
             rec["score"] = score({**rec, "eif": eif})
-            rec["key"] = key_of(rec["org"], rec["title"])
+            # 清单条目的差异全在标题末尾（决议号 / 通函编号），而 key_of 只取前 90 字符，
+            # 同系列条目会撞成一个 key 被互相覆盖——所以把日期放在 key 的最前面
+            if hard:
+                seed = rec["eif"] + "|" + rec["title"]
+            elif src["type"] == "csv":
+                seed = (rec["pub"] or "") + "|" + rec["title"]
+            else:
+                seed = rec["title"]
+            rec["key"] = key_of(rec["org"], seed)
             items.append(rec)
         time.sleep(0.4)
     # 去重：先按规范化标题，再做同机构内近似标题合并（"launches new rules" / "released new rules"）
@@ -529,8 +680,13 @@ def collect(cfg, offline=False):
     uniq = sorted(best.values(), key=lambda x: -x["score"])
     merged = []
     for it in uniq:
+        # 官方清单条目逐条对应一条法规，标题长得像也不能合并——并掉就丢规则
+        if it.get("eif_src") == "list":
+            merged.append(it)
+            continue
         # 跨机构也要合并：同一条新闻常被多家媒体转述，落进不同查询源就会重复出现
-        dup = next((m for m in merged if similar(m["title"], it["title"])), None)
+        dup = next((m for m in merged
+                    if m.get("eif_src") != "list" and similar(m["title"], it["title"])), None)
         if dup:
             dup["tags"] = sorted(set(dup["tags"]) | set(it["tags"]))
             if not dup.get("eif") and it.get("eif"):
@@ -555,9 +711,9 @@ def merge_ledger(fresh):
     today_s = TODAY.isoformat()
     for it in fresh:
         k = it["key"]
-        if k not in ledger:
+        if k not in ledger and not it.get("fixed_org"):
             # 跨期近似合并：同一条新闻被不同媒体转述时标题有差异，按相似度挂到台账已有条目上，
-            # 避免"同一事件每周换个标题重新入库"
+            # 避免"同一事件每周换个标题重新入库"。清单条目一条对一条规则，不能这样并。
             old = next((v for v in ledger.values()
                         if similar(v.get("title", ""), it["title"])), None)
             if old:
@@ -569,9 +725,12 @@ def merge_ledger(fresh):
             old["last_seen"] = today_s
             old["times_seen"] = old.get("times_seen", 1) + 1
             old["score"] = max(old.get("score", 0), it["score"])
-            if it.get("eif") and not old.get("eif"):
+            # 官方清单给的日期是硬日期，优先级高于此前从正文里猜出来的
+            if it.get("eif") and (not old.get("eif") or it.get("eif_src") == "list"):
                 old["eif"] = it["eif"]
                 old["eif_prec"] = it.get("eif_prec", "")
+                if it.get("eif_src"):
+                    old["eif_src"] = it["eif_src"]
             old["tags"] = sorted(set(old.get("tags", [])) | set(it["tags"]))
             # 各期采集到的其他来源链接持续归并到同一条目下
             if it.get("also"):
@@ -589,6 +748,9 @@ def merge_ledger(fresh):
     # 现行规则复核：过滤规则每期都在收紧，老条目必须跟着重判，否则报告里会一直挂着早期漏网的内容
     dropped, rekeyed = [], 0
     for k, v in list(ledger.items()):
+        # 清单型源：条目本身就是规则条文，机构由配置固定，不做题材过滤也不按标题反推
+        if v.get("eif_src") == "list" or v.get("fixed_org"):
+            continue
         txt = v.get("title", "") + " " + v.get("summary", "")
         reason = ("噪声" if is_noise(v.get("title", "")) else
                   "海事无关" if not is_maritime(txt) else
@@ -793,12 +955,13 @@ def is_maritime(text):
     return any(k in low for k in TOPIC_WORDS)
 
 
-ORG_ORDER = ["CCS", "DNV", "ABS", "LR", "BV", "IMO", "行业"]
+ORG_ORDER = ["CCS", "DNV", "ABS", "LR", "BV", "IMO", "HKMD", "行业"]
 ORG_CN = {"CCS": "中国船级社", "DNV": "挪威船级社", "ABS": "美国船级社",
           "LR": "英国劳氏船级社", "BV": "法国必维船级社", "IMO": "国际海事组织",
-          "行业": "行业媒体"}
+          "HKMD": "中国香港海事处", "行业": "行业媒体"}
 ORG_COLOR = {"CCS": "#b91c1c", "DNV": "#1d4ed8", "ABS": "#0f766e",
-             "LR": "#7c3aed", "BV": "#c2410c", "IMO": "#0369a1", "行业": "#475569"}
+             "LR": "#7c3aed", "BV": "#c2410c", "IMO": "#0369a1",
+             "HKMD": "#0e7490", "行业": "#475569"}
 
 
 def eta_class(days):
@@ -937,6 +1100,17 @@ background:var(--c,#cbd5e1);opacity:0;transition:opacity .15s}
 .row-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
 .badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--c);padding:1px 7px;border-radius:6px}
 .ai-tag{font-size:10.5px;color:#7c3aed;background:#f3efff;border:1px solid #e2d8fb;padding:0 6px;border-radius:6px}
+.list-tag{font-size:10.5px;color:#0f766e;background:#effcf9;border:1px solid #c8ece4;padding:0 6px;border-radius:6px}
+.cal{overflow:hidden}
+.cal-h,.cal-r{display:grid;grid-template-columns:112px 1fr 128px;gap:14px;align-items:baseline;padding:10px 15px}
+.cal-h{font-size:11.5px;letter-spacing:.04em;color:var(--ink3);background:#f8fafc;border-bottom:1px solid var(--line)}
+.cal-r{border-bottom:1px solid var(--line)}
+.cal-r:last-child{border-bottom:0}
+.cal-d{font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.cal-d small{display:block;margin-top:2px;font-size:11px;font-weight:400;color:var(--ink3)}
+.cal-t{font-size:13px;line-height:1.55;color:var(--ink);text-decoration:none}
+.cal-t:hover{color:#0f766e}
+.cal-res{font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
 .kind{font-size:11.5px;color:var(--ink2);background:#f4f7fb;border:1px solid var(--line);padding:0 7px;border-radius:6px}
 .tag{font-size:11px;color:var(--ink3);border:1px solid var(--line);background:#fff;padding:0 7px;border-radius:6px}
 .eif{font-size:11.5px;padding:0 7px;border-radius:6px;border:1px solid;font-variant-numeric:tabular-nums}
@@ -1000,6 +1174,11 @@ padding:1px 7px;border-radius:6px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .sec-h .note{display:none}
   .row-side{display:none}
+  .cal-h{display:none}
+  .cal-r{grid-template-columns:1fr;gap:3px;padding:11px 14px}
+  .cal-d{display:flex;gap:8px;align-items:baseline}
+  .cal-d small{display:inline;margin:0}
+  .cal-res{font-size:11px}
   .foot{grid-template-columns:1fr}
   .nav{top:8px}
 }
@@ -1065,6 +1244,8 @@ def _same_event(x, y):
 
 
 def render(ledger, fresh, health, ai=None):
+    # 清单里早已生效的条目只做索引，不参与「本期新增」
+    fresh = [i for i in fresh if not i.get("suppress")]
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
     upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
@@ -1104,13 +1285,15 @@ def render(ledger, fresh, health, ai=None):
         prec = it.get("eif_prec")
         day_txt = it["eif"][:4] + " 年" if prec == "year" else (it["eif"][:7] if prec == "month" else it["eif"])
         color = ORG_COLOR.get(it["org"], "#475569")
-        ai_tag = '<span class="ai-tag">AI 识别</span>' if it.get("eif_src") == "ai" else ""
+        src_tag = ('<span class="ai-tag">AI 识别</span>' if it.get("eif_src") == "ai"
+                   else '<span class="list-tag">官方清单</span>' if it.get("eif_src") == "list"
+                   else "")
         eif_html += f"""      <a class="eif-card" href="{esc(it['link'])}" target="_blank" rel="noopener">
         <div class="dn {eta_class(d)}"><b>{d}</b><i>天后</i></div>
         <div class="body">
           <div class="t">{esc(it['title'][:100])}</div>
           <div class="tz">{esc(it.get('title_zh') or '')}</div>
-          <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span>{ai_tag}</div>
+          <div class="m"><span class="badge" style="--c:{color}">{esc(it['org'])}</span><span>{esc(day_txt)}</span>{src_tag}</div>
         </div>
       </a>
 """
@@ -1134,6 +1317,39 @@ def render(ledger, fresh, health, ai=None):
     chips = "".join(f'<button class="chip" data-org="{o}">{o}</button>' for o in orgs)
     ok_src = sum(1 for h in health if h["status"] == "OK")
 
+    # 官方生效日期清单：IMO 这类「日期表」源，日期由官方给定，按生效日整表铺开。
+    # 新闻源里挖出来的日期是单条线索，这里给的是完整年度节奏，两者互补。
+    cal_block = ""
+    cal_items = [i for i in ledger.values() if i.get("eif_src") == "list" and i.get("eif")]
+    if cal_items:
+        cal_items.sort(key=lambda x: (x["eif"], x.get("title", "")), reverse=True)
+        cal_rows = ""
+        for it in cal_items:
+            d = (date.fromisoformat(it["eif"]) - TODAY).days
+            if d >= 0:
+                rel = f"还有 {d} 天"
+            else:
+                rel = f"已生效 {abs(d)} 天"
+            res = ""
+            m = re.search(r"((?:MSC|MEPC)\.?\s*\d+\s*\(\s*\d+\s*\))", it.get("summary", ""))
+            if m:
+                res = re.sub(r"\s+", "", m.group(1))
+            cal_rows += (
+                f'        <div class="cal-r">'
+                f'<div class="cal-d">{esc(it["eif"])}<small>{rel}</small></div>'
+                f'<a class="cal-t" href="{esc(it["link"])}" target="_blank" rel="noopener">{esc(it["title"])}</a>'
+                f'<div class="cal-res">{esc(res)}</div></div>\n')
+        cal_block = (f'  <section class="sec" id="cal">\n'
+                     f'    <div class="sec-h"><span class="num">06</span><h2>官方生效日期清单</h2>'
+                     f'<span class="note">IMO 公约修正案 · 共 {len(cal_items)} 项</span></div>\n'
+                     f'    <p class="lead">来自 IMO「Amendments to IMO instruments」官方表，'
+                     f'日期由组织方直接给出，不经过正文推断。已生效的条目留在这里作为规则索引，'
+                     f'未生效的会同时出现在上方倒计时。</p>\n'
+                     f'    <div class="card cal">\n'
+                     f'      <div class="cal-h"><span>生效日</span><span>修正内容</span><span>决议号</span></div>\n'
+                     f'{cal_rows}    </div>\n'
+                     f'  </section>\n')
+
     # 往期报告入口：扫描归档目录（本期文件在渲染之后才写入，不会出现在链接里）
     arch_block = ""
     try:
@@ -1144,7 +1360,7 @@ def render(ledger, fresh, health, ai=None):
         arch_links = "".join(f'<a class="arch-l" href="archive/{p.name}">{p.stem}</a>'
                              for p in reversed(issues))
         arch_block = (f'  <section class="sec" id="arch">\n'
-                      f'    <div class="sec-h"><span class="num">06</span><h2>往期报告</h2>'
+                      f'    <div class="sec-h"><span class="num">07</span><h2>往期报告</h2>'
                       f'<span class="note">共 {len(issues)} 期存档</span></div>\n'
                       f'    <div class="card arch">{arch_links}</div>\n'
                       f'  </section>\n')
@@ -1207,6 +1423,7 @@ def render(ledger, fresh, health, ai=None):
     <a href="#ai">AI 解读</a>
     <a href="#fresh">本期新增</a>
     <a href="#track">持续跟踪</a>
+    <a href="#cal">生效清单</a>
     <a href="#health">抓取状态</a>
     <span class="nav-sp"></span>
     <span class="nav-meta">{ok_src}/{len(health)} 源正常</span>
@@ -1251,7 +1468,7 @@ def render(ledger, fresh, health, ai=None):
     </div>
   </section>
 
-{arch_block}
+{cal_block}{arch_block}
   <footer class="foot">
     <div class="foot-box">
       <h3>使用说明</h3>
