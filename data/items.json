@@ -18,7 +18,7 @@
   "key": "50dab424f6fdc46d",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "DNV：欧盟船用设备新规将于8月31日生效"
  },
  "6053039b33a0e8bc": {
@@ -42,7 +42,7 @@
   "key": "6053039b33a0e8bc",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 23,
+  "times_seen": 24,
   "title_zh": "MARPOL与BWM公约下的电子记录簿"
  },
  "48a9a86531f3634a": {
@@ -67,8 +67,8 @@
   "key": "48a9a86531f3634a",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
-  "title_zh": "LR Class News 07/2026：SOLAS滚装客船消防安全要求修正案"
+  "times_seen": 23,
+  "title_zh": "Class News 07/2026：SOLAS ro-ro客船消防安全要求修正案"
  },
  "0e288dcfc9994dac": {
   "org": "ABS",
@@ -89,8 +89,8 @@
   "key": "0e288dcfc9994dac",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 23,
-  "title_zh": "SOLAS对起重设备和锚机的要求"
+  "times_seen": 24,
+  "title_zh": "SOLAS关于起重设备与起锚绞车的要求"
  },
  "e319602a0ffc3e57": {
   "org": "CCS",
@@ -133,7 +133,7 @@
   "key": "84e40f9100359bc7",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "DNV成为日本首个获授权的外国浮式海上风电规则机构"
  },
  "052f897fa1225105": {
@@ -156,7 +156,7 @@
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
   "times_seen": 12,
-  "title_zh": "DNV获得日本浮式海上风电规则授权"
+  "title_zh": "DNV获日本浮式海上风电规则授权"
  },
  "7bebb8809533a6be": {
   "org": "DNV",
@@ -177,7 +177,7 @@
   "key": "7bebb8809533a6be",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "DNV RuleAgent提升数字化合规能力"
  },
  "d2854b2d7078a038": {
@@ -199,8 +199,8 @@
   "key": "d2854b2d7078a038",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
-  "title_zh": "DNV推出AI工具以梳理3万页海事规则"
+  "times_seen": 23,
+  "title_zh": "DNV推出AI工具梳理3万页海事规则"
  },
  "36c7967fa2d41cab": {
   "org": "DNV",
@@ -221,7 +221,7 @@
   "key": "36c7967fa2d41cab",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "DNV 2026年7月版船舶与海工入级规则和标准"
  },
  "5736fd9dc66fc241": {
@@ -243,7 +243,7 @@
   "key": "5736fd9dc66fc241",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "不确定性主导：DNV敦促船东为多种监管前景做规划"
  },
  "409c5ca53e9d4d48": {
@@ -285,6 +285,11 @@
     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
    },
    {
+    "org": "IMO",
+    "source": "Google News · IMO 强制文件",
+    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
+   },
+   {
     "org": "行业",
     "source": "Google News · 未来生效节点 2027/2028",
     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcXdiRWd3YXVoRFVzUlZaVVFubTVqNENEYlpMZXpFNFhLSWkwaUZ2Rml0d1dyRWRQR1VzMTNTU0dIbnpLMk5NZlBvUVhmLWZHWG9ZYlI2VUxtV1RkTnY1MXN2UjRiVWZSNDNUa1RSSDNzcnc3aEc4b3ZnNkZ0YzB1REVaaWYwbl8tRTlkN0RUelZtT3Njak5WMWJPbUt4eEtjdmEwSi0ydXQ4LWNobmc?oc=5"
@@ -292,8 +297,8 @@
   ],
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 21,
-  "title_zh": "有害货物赔偿制度将于2027年生效"
+  "times_seen": 22,
+  "title_zh": "有害货物赔偿机制将于2027年生效"
  },
  "ca1495ca2bc6de9e": {
   "org": "行业",
@@ -316,7 +321,7 @@
   "key": "ca1495ca2bc6de9e",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 12,
+  "times_seen": 13,
   "title_zh": "珠海市水上安全监管新规即将施行，“三无”船舶、无人艇监管有法可依"
  },
  "359e20615c5d135a": {
@@ -338,7 +343,7 @@
   "key": "359e20615c5d135a",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "绿色智能船舶将有全新技术规范体系"
  },
  "36174960c0596632": {
@@ -360,7 +365,7 @@
   "key": "36174960c0596632",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "IMO引水梯强制新规2028年生效"
  },
  "cc448daec7047790": {
@@ -406,7 +411,7 @@
   "first_seen": "2026-11-04",
   "status": "本期新增",
   "times_seen": 1,
-  "title_zh": "IMO通过新加坡主导的关于保护重要航道的决议"
+  "title_zh": "IMO通过新加坡主导的保护重要航道的决议"
  },
  "dc5047b4880b358a": {
   "org": "IMO",
@@ -428,7 +433,7 @@
   "first_seen": "2026-11-04",
   "status": "本期新增",
   "times_seen": 1,
-  "title_zh": "IMO通过关于促进海湾地区安全航行的决议"
+  "title_zh": "IMO通过促进海湾地区安全航行的决议"
  },
  "c2ec3f24c2c65b35": {
   "org": "IMO",
@@ -471,8 +476,8 @@
   "key": "62f72f91c629e6a8",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 15,
-  "title_zh": "FuelEU Maritime在挪威的生效推迟至至少2028年"
+  "times_seen": 16,
+  "title_zh": "FuelEU Maritime在挪威生效推迟至至少2028年"
  },
  "d2d4ad52fb62e9d0": {
   "org": "行业",
@@ -516,7 +521,7 @@
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
   "times_seen": 10,
-  "title_zh": "有害货物赔偿制度进入生效阶段"
+  "title_zh": "有害货物赔偿机制进入生效阶段"
  },
  "ddac135cd2f7979f": {
   "org": "LR",
@@ -540,7 +545,7 @@
   "first_seen": "2026-11-04",
   "status": "本期新增",
   "times_seen": 1,
-  "title_zh": "劳氏船级社2026年展望：网络安全规则与新燃料"
+  "title_zh": "劳氏船级社2026年展望：网络规则与新燃料"
  },
  "924883bfc48bc94d": {
   "org": "行业",
@@ -561,7 +566,7 @@
   "key": "924883bfc48bc94d",
   "first_seen": "2026-11-05",
   "status": "持续跟踪",
-  "times_seen": 15,
+  "times_seen": 16,
   "title_zh": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知"
  },
  "c8c13b5424498eb1": {
@@ -583,7 +588,7 @@
   "key": "c8c13b5424498eb1",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
+  "times_seen": 23,
   "title_zh": "国际海事组织关于有害和有毒货物的条约将于2027年生效"
  },
  "092450bd750153aa": {
@@ -629,8 +634,8 @@
   "key": "98fe6c8929054c04",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 22,
-  "title_zh": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范"
+  "times_seen": 23,
+  "title_zh": "IMO通过首个全球自动驾驶船舶规范"
  },
  "eb83ba81d6e02aa5": {
   "org": "IMO",
@@ -651,7 +656,7 @@
   "key": "eb83ba81d6e02aa5",
   "first_seen": "2026-11-04",
   "status": "持续跟踪",
-  "times_seen": 21,
+  "times_seen": 22,
   "title_zh": "IMO有害和有毒货物条约将于2027年生效"
  },
  "ec6a3f5837761cb3": {
@@ -673,8 +678,8 @@
   "key": "ec6a3f5837761cb3",
   "first_seen": "2026-11-06",
   "status": "持续跟踪",
-  "times_seen": 11,
-  "title_zh": "中国船级社《智能船舶规范》(2026) 将于6月1日生效"
+  "times_seen": 12,
+  "title_zh": "中国船级社《智能船舶规范》(2026)将于6月1日生效"
  },
  "ffa6b3994f9ef853": {
   "org": "IMO",
@@ -695,7 +700,7 @@
   "key": "ffa6b3994f9ef853",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 10,
+  "times_seen": 11,
   "title_zh": "海事领导人在釜山呼吁加强全球航运规则行动"
  },
  "79a299cd906a7e60": {
@@ -719,7 +724,7 @@
   "key": "79a299cd906a7e60",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 9,
+  "times_seen": 10,
   "title_zh": "MARPOL附则VI（防止船舶空气污染）——2026年关键动态"
  },
  "c8b3b1a55e5b8f20": {
@@ -741,7 +746,7 @@
   "key": "c8b3b1a55e5b8f20",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 9,
+  "times_seen": 10,
   "title_zh": "FuelEU Maritime：首个合规年的早期经验"
  },
  "d90bcd529439a099": {
@@ -763,8 +768,8 @@
   "key": "d90bcd529439a099",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 9,
-  "title_zh": "FuelEU Maritime在挪威可能不会在2028年前生效"
+  "times_seen": 10,
+  "title_zh": "FuelEU Maritime在挪威或于2028年前不生效"
  },
  "1e526c0a4998363c": {
   "org": "IMO",
@@ -773,8 +778,8 @@
   "link": "https://www.hellenicshippingnews.com/the-imo-nzf-as-agreed-upon-in-2025-still-remains-the-most-likely-way-to-achieve-the-imo-2023-ghg-strategy/",
   "summary": "MEPC 85 is coming up fast, and negotiations for what the Net Zero Framework will look like are increasing in intensity. With several proposals on the table, it is likely that the outcome will be a composite, blending together different aspects of each proposal – although none of the new ideas have i",
   "pub": "2026-11-08",
-  "eif": "2026-11-09",
-  "eif_prec": "day",
+  "eif": "",
+  "eif_prec": "",
   "type": "行业动态",
   "tags": [
    "温室气体"
@@ -783,13 +788,12 @@
   "origin": "行业",
   "official": false,
   "favicon": "",
-  "score": 85,
+  "score": 63,
   "key": "1e526c0a4998363c",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 8,
-  "eif_src": "page",
-  "title_zh": "2025年达成的IMO净零框架仍是实现IMO 2023温室气体战略的最可能路径"
+  "times_seen": 9,
+  "title_zh": "2025年达成的IMO NZF仍是实现IMO 2023温室气体战略最可能路径"
  },
  "c3285f3b72c2dfa9": {
   "org": "IMO",
@@ -810,7 +814,7 @@
   "key": "c3285f3b72c2dfa9",
   "first_seen": "2026-11-09",
   "status": "本期新增",
-  "times_seen": 8,
+  "times_seen": 9,
   "title_zh": "IMO秘书长：更多造船产能可支撑航运绿色转型"
  }
 }
