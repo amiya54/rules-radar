@@ -208,6 +208,95 @@
       "official": false,
       "limit": 15,
       "url": "https://news.google.com/rss/search?q=(%E4%B8%AD%E5%9B%BD%E6%B5%B7%E4%BA%8B%E5%B1%80%20OR%20%E6%B5%B7%E4%BA%8B%E5%B1%80)%20(%E9%80%9A%E5%91%8A%20OR%20%E8%A7%84%E5%AE%9A%20OR%20%E7%94%9F%E6%95%88)%20(%E8%88%B9%E8%88%B6%20OR%20%E8%88%AA%E8%BF%90)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans"
+    },
+    {
+      "id": "imo-official",
+      "org": "IMO",
+      "org_cn": "国际海事组织",
+      "name": "IMO 新闻中心（官方列表）",
+      "type": "html",
+      "official": true,
+      "limit": 15,
+      "url": "https://www.imo.org/en/MediaCentre/Pages/default.aspx",
+      "href_include": [
+        "/en/MediaCentre/PressBriefings/"
+      ],
+      "keyword_gate": [
+        "rule",
+        "regulation",
+        "amendment",
+        "code",
+        "mandatory",
+        "convention",
+        "circular",
+        "ship",
+        "shipping",
+        "safety",
+        "environment"
+      ]
+    },
+    {
+      "id": "emsa-official",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "EMSA 最新动态（官方列表）",
+      "type": "html",
+      "official": true,
+      "limit": 15,
+      "url": "https://www.emsa.europa.eu/newsroom/latest-news.html",
+      "href_include": [
+        "/newsroom/latest-news/item/"
+      ],
+      "keyword_gate": [
+        "regulation",
+        "directive",
+        "rule",
+        "imo",
+        "fuel",
+        "emission",
+        "safety",
+        "alternative"
+      ]
+    },
+    {
+      "id": "gnews-solas-marpol",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · SOLAS/MARPOL 公约修正",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(SOLAS%20OR%20MARPOL)%20(amendment%20OR%20%22enter%20into%20force%22%20OR%20revised%20OR%20mandatory)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-eu-carbon",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · FuelEU/EU ETS 航运碳法规",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%22FuelEU%22%20OR%20%22EU%20ETS%22)%20(shipping%20OR%20maritime%20OR%20vessel)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-other-class",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · KR/IRS/RS/RINA 船级社",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%22Korean%20Register%22%20OR%20%22Indian%20Register%22%20OR%20%22Russian%20Maritime%20Register%22%20OR%20%22RINA%22)%20(rules%20OR%20amendment%20OR%20circular%20OR%20guidance)%20(ship%20OR%20marine%20OR%20maritime)&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "id": "gnews-uscg",
+      "org": "行业",
+      "org_cn": "行业媒体",
+      "name": "Google News · USCG 安全通告",
+      "type": "rss",
+      "official": false,
+      "limit": 15,
+      "url": "https://news.google.com/rss/search?q=(%22coast%20guard%22%20OR%20USCG)%20(%22final%20rule%22%20OR%20%22marine%20safety%20alert%22%20OR%20%22safety%20alert%22)%20(vessel%20OR%20ship%20OR%20maritime)&hl=en-US&gl=US&ceid=US:en"
     }
   ]
 }
