@@ -614,9 +614,19 @@ def merge_ledger(fresh):
             print(f"    - ({d['reason']}) {d['title'][:70]}")
     if rekeyed:
         print(f"[台账] 校正机构归属 {rekeyed} 条")
-    # 清理 120 天没再出现的
+    # 清理 120 天没再出现的；但尚未生效的条目一律保留——远期生效的规则往往只被提一次，
+    # 按 "没再出现就删" 会在生效前把它清掉，倒计时区因此越跑越空
     cut = (TODAY - timedelta(days=120)).isoformat()
-    ledger = {k: v for k, v in ledger.items() if v.get("last_seen", today_s) >= cut}
+    kept = {}
+    for k, v in ledger.items():
+        if v.get("last_seen", today_s) >= cut:
+            kept[k] = v
+        elif (v.get("eif") or "") >= today_s:
+            kept[k] = v
+    pruned = len(ledger) - len(kept)
+    if pruned:
+        print(f"[台账] 清理 {pruned} 条 120 天未再现且已生效/无日期的条目")
+    ledger = kept
     ITEMS_FILE.parent.mkdir(parents=True, exist_ok=True)
     ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
     return ledger, fresh
@@ -1293,6 +1303,67 @@ def backfill_eif(ledger):
         print(f"[回填] 正则补出生效日期 {n} 条")
 
 
+def _page_text(raw):
+    """从 HTML 粗取正文文本：去脚本/样式/标签，压空白。"""
+    s = raw.decode("utf-8", "ignore") if isinstance(raw, bytes) else str(raw)
+    s = re.sub(r"(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>", " ", s)
+    s = re.sub(r"(?s)<[^>]+>", " ", s)
+    s = unescape(s)
+    return re.sub(r"\s+", " ", s)[:20000]
+
+
+def resolve_link(url):
+    """Google News 编码链接尝试解析成发布方真实地址，失败原样返回。"""
+    if "news.google.com" not in (url or ""):
+        return url
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
+    px = proxies()
+    opener = urllib.request.build_opener(
+        urllib.request.ProxyHandler(px) if px else urllib.request.ProxyHandler({}))
+    try:
+        with opener.open(req, timeout=15) as r:
+            final = r.geturl()
+        if "news.google.com" not in final:
+            return final
+    except Exception:  # noqa: BLE001
+        pass
+    return url
+
+
+def deep_fetch_dates(ledger, limit=10):
+    """没识别到日期的条目，抓原文正文再找一遍日期（Google News 链接先尝试解跳转）。
+
+    列表页 RSS 的描述往往只有标题+来源名，光靠标题找日期必然漏；真正写明
+    "enters into force on ..." 的句子基本都在正文里。
+    """
+    cands = [v for v in ledger.values() if not v.get("eif")]
+    cands.sort(key=lambda x: -x.get("score", 0))
+    n = 0
+    for v in cands[:limit]:
+        try:
+            link = resolve_link(v.get("link") or "")
+            if "news.google.com" in link:
+                continue
+            st, raw = fetch(link, timeout=20, retries=0)
+            if st != 200 or not raw:
+                continue
+            text = _page_text(raw)
+            eif, prec = find_eif(text, ref=v.get("pub"))
+            if not eif:
+                continue
+            v.update({"eif": eif.isoformat(), "eif_prec": prec, "eif_src": "page"})
+            v["score"] = score({**v, "eif": eif})
+            n += 1
+            print(f"  + 正文挖到 {eif}（{prec}）| {v['title'][:55]}")
+        except Exception as e:  # noqa: BLE001
+            print(f"    ! 正文抓取异常 {type(e).__name__}: {str(e)[:60]}")
+            continue
+    if n:
+        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"[正文] 挖出生效日期 {n} 条")
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline-test", action="store_true")
@@ -1307,6 +1378,8 @@ def main():
     fresh, health = collect(cfg, offline=args.offline_test)
     ledger, fresh = merge_ledger(fresh)
     backfill_eif(ledger)
+    if not args.offline_test:
+        deep_fetch_dates(ledger)
     ai = None if args.offline_test else ai_enhance(fresh, ledger)
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
