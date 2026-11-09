@@ -544,6 +544,15 @@ def merge_ledger(fresh):
     today_s = TODAY.isoformat()
     for it in fresh:
         k = it["key"]
+        if k not in ledger:
+            # 跨期近似合并：同一条新闻被不同媒体转述时标题有差异，按相似度挂到台账已有条目上，
+            # 避免"同一事件每周换个标题重新入库"
+            old = next((v for v in ledger.values()
+                        if similar(v.get("title", ""), it["title"])), None)
+            if old:
+                k = old["key"]
+                it["key"] = k
+                it["also"] = (it.get("also") or []) + (old.get("also") or [])
         if k in ledger:
             old = ledger[k]
             old["last_seen"] = today_s
@@ -551,7 +560,13 @@ def merge_ledger(fresh):
             old["score"] = max(old.get("score", 0), it["score"])
             if it.get("eif") and not old.get("eif"):
                 old["eif"] = it["eif"]
+                old["eif_prec"] = it.get("eif_prec", "")
             old["tags"] = sorted(set(old.get("tags", [])) | set(it["tags"]))
+            # 各期采集到的其他来源链接持续归并到同一条目下
+            if it.get("also"):
+                oa = old.setdefault("also", [])
+                known = {a.get("link") for a in oa} | {old.get("link")}
+                oa.extend(a for a in it["also"] if a.get("link") and a["link"] not in known)
             it["first_seen"] = old.get("first_seen", today_s)
             it["status"] = "持续跟踪" if old.get("first_seen") != today_s else "本期新增"
             it["times_seen"] = old["times_seen"]
@@ -923,6 +938,9 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 .foot-meta dt{color:var(--ink3)}
 .foot-meta dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
 .empty{padding:30px;text-align:center;color:var(--ink3);font-size:13px}
+.arch{display:flex;flex-wrap:wrap;gap:8px;padding:16px 18px}
+.arch-l{font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink2);background:#f4f7fb;border:1px solid var(--line);border-radius:8px;padding:4px 11px;text-decoration:none;transition:all .15s}
+.arch-l:hover{color:var(--accent);border-color:var(--accent);background:#fff}
 
 .zh{margin-top:2px;font-size:12px;color:var(--ink2)}
 .eif-card .tz{margin-top:2px;font-size:12px;color:var(--ink2)}
@@ -1054,6 +1072,21 @@ def render(ledger, fresh, health, ai=None):
     chips = "".join(f'<button class="chip" data-org="{o}">{o}</button>' for o in orgs)
     ok_src = sum(1 for h in health if h["status"] == "OK")
 
+    # 往期报告入口：扫描归档目录（本期文件在渲染之后才写入，不会出现在链接里）
+    arch_block = ""
+    try:
+        issues = sorted(ARCHIVE.glob("*.html")) if ARCHIVE.exists() else []
+    except Exception:  # noqa: BLE001
+        issues = []
+    if issues:
+        arch_links = "".join(f'<a class="arch-l" href="archive/{p.name}">{p.stem}</a>'
+                             for p in reversed(issues))
+        arch_block = (f'  <section class="sec" id="arch">\n'
+                      f'    <div class="sec-h"><span class="num">06</span><h2>往期报告</h2>'
+                      f'<span class="note">共 {len(issues)} 期存档</span></div>\n'
+                      f'    <div class="card arch">{arch_links}</div>\n'
+                      f'  </section>\n')
+
     ai_section = ""
     if ai:
         points_html = ""
@@ -1156,6 +1189,7 @@ def render(ledger, fresh, health, ai=None):
     </div>
   </section>
 
+{arch_block}
   <footer class="foot">
     <div class="foot-box">
       <h3>使用说明</h3>
