@@ -1032,8 +1032,23 @@ JS = """
 })();
 """
 
+_EIF_GENERIC = ("生效", "施行", "实施", "将于", "年生效", "规定", "要求", "规范", "规则",
+                "新规", "指南", "修正", "船舶", "海事", "海运", "国际")
+
+
+def _sig_terms(it):
+    """取标题/中文映照里去掉通用规范词后的汉字二元组，用于判断是否同一事件。"""
+    txt = (it.get("title") or "") + " " + (it.get("title_zh") or "")
+    cjk = "".join(ch for ch in txt if "\u4e00" <= ch <= "\u9fa5")
+    grams = {cjk[i:i + 2] for i in range(max(0, len(cjk) - 1))}
+    return {g for g in grams if not any(g in w or w in g for w in _EIF_GENERIC)}
+
+
 def _same_event(x, y):
-    """同一事件判定：中英文标题两两比对（标题/中文映照各取一种组合）。"""
+    """同一事件判定：同一天生效且显著词重合≥2，或标题/中文映照高度相似。"""
+    if x.get("eif") and x.get("eif") == y.get("eif"):
+        if len(_sig_terms(x) & _sig_terms(y)) >= 2:
+            return True
     xs = [t for t in (x.get("title"), x.get("title_zh")) if t]
     ys = [t for t in (y.get("title"), y.get("title_zh")) if t]
     return any(similar(a, b) for a in xs for b in ys)
@@ -1043,7 +1058,7 @@ def render(ledger, fresh, health, ai=None):
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
     upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
-                      key=lambda x: x["eif"])
+                      key=lambda x: (x["eif"], -x["score"]))
     # 同一事件多源收录时只保留一张卡（否则同一条约中英文两条会各占一格）
     _shown = []
     deduped = []
