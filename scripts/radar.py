@@ -840,6 +840,9 @@ def merge_ledger(fresh):
             closed_n += 1
     if closed_n:
         print(f"[结案] {closed_n} 条连续 6 期无生效日的条目移出跟踪区（台账保留，出现新进展可复活）")
+    # 收尾再并一轮：开跑前的自愈只覆盖历史台账，本期刚收进来的重复条目要在这一步才归并，
+    # 否则"被并掉的 key 下期又会从新条目里长回来"
+    _consolidate(ledger)
     # 现行规则复核：过滤规则每期都在收紧，老条目必须跟着重判，否则报告里会一直挂着早期漏网的内容
     dropped, rekeyed = [], 0
     for k, v in list(ledger.items()):
