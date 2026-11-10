@@ -1748,6 +1748,11 @@ def main():
     if not args.offline_test:
         deep_fetch_dates(ledger)
     ai = None if args.offline_test else ai_enhance(fresh, ledger)
+    if ai:
+        # AI 中文映照写入后再并一轮：合并判据依赖 title_zh，前两轮合并时英文条还没有中文题，
+        # 这轮补上才能把"英文原题 + 中文转述"当期彻底归并
+        if _consolidate(ledger):
+            ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     ARCHIVE.mkdir(parents=True, exist_ok=True)
