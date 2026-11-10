@@ -191,6 +191,8 @@ def proxies():
 
 
 def fetch(url, timeout=25, retries=2):
+    # 源页面偶尔会带进不可见控制字符，直接丢给 urllib 会抛 InvalidURL
+    url = re.sub(r"[\x00-\x1f\x7f\u200b-\u200d\ufeff\s]", "", url)
     """返回 (status, bytes)。失败重试，最终返回 (0, b\"\")。"""
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
@@ -588,6 +590,22 @@ def similar(a, b):
     return inter / len(ta | tb) >= 0.5
 
 
+# 船级社规范按版本年月发布、当月 1 日生效是行业惯例（如 "DNV 2026 年 7 月版…入级规范"）。
+# 必须同时命中"规范/规则"类词，防止把《LR 船级新闻 07/2026》这类期刊期号当成生效日。
+RE_VER_EIF = re.compile(r"(\d{4})\s*年\s*(1[0-2]|[1-9])\s*月版")
+RE_VER_GATE = re.compile(r"(规范|规则|标准|指南|入级|rules|standards|guidelines)", re.I)
+
+
+def eif_from_version(title):
+    m = RE_VER_EIF.search(title or "")
+    if not m or not RE_VER_GATE.search(title or ""):
+        return None
+    try:
+        return date(int(m.group(1)), int(m.group(2)), 1)
+    except ValueError:
+        return None
+
+
 def collect(cfg, offline=False):
     items, health = [], []
     for src in cfg["sources"]:
@@ -632,6 +650,10 @@ def collect(cfg, offline=False):
                 eif_prec = "day"
             else:
                 eif, eif_prec = find_eif(title + " " + r.get("summary", ""), ref=pub)
+                if not eif:
+                    veif = eif_from_version(title)
+                    if veif:
+                        eif, eif_prec = veif, "month"
                 if not is_maritime(title + " " + r.get("summary", "")):
                     continue
                 if is_offtopic(title + " " + r.get("summary", "")):
@@ -706,9 +728,70 @@ def collect(cfg, offline=False):
 
 
 
+# 英文标题比对用的停用词：都是规范新闻里的框架词，不构成事件区分度
+_EN_STOP = {"into", "force", "enters", "entry", "effect", "take", "takes", "will",
+            "from", "have", "been", "that", "this", "with", "under", "about",
+            "amendments", "amendment", "code", "rules", "rule", "maritime",
+            "international", "organisation", "organization", "ships", "ship",
+            "marine", "regulation", "regulations", "measures", "measure"}
+
+
+def _en_terms(title):
+    return {w for w in re.findall(r"[a-z]{4,}", (title or "").lower()) if w not in _EN_STOP}
+
+
+def _consolidate(ledger):
+    """台账自愈：同生效日且显著词重合≥2 的历史条目一次性归并（如同一条约的英文原题+两个中文译法）。
+
+    贪心聚类：新条目跟组内任一成员命中即并入，避免「英文原题没中文映照、
+    两条中文译法互相对不上第一条」时漏并。
+    """
+    groups = {}
+    for k, v in ledger.items():
+        if v.get("eif") and v.get("eif_src") != "list":
+            groups.setdefault(v["eif"], []).append((k, v))
+    n = 0
+    for arr in groups.values():
+        keep_k, keep = arr[0]
+        members = [keep]
+        # 多轮扫描：第 1 轮并进来的成员可能恰好是另一条待并条目的命中对象
+        pending = arr[1:]
+        for _ in range(len(pending) + 1):
+            rest = []
+            progressed = False
+            for k, v in pending:
+                hit = any((len(_sig_terms(m) & _sig_terms(v)) >= 2) or
+                          (len(_en_terms(m.get("title", "")) & _en_terms(v.get("title", ""))) >= 2)
+                          for m in members)
+                if not hit:
+                    rest.append((k, v))
+                    continue
+                keep["times_seen"] = max(keep.get("times_seen", 1), v.get("times_seen", 1))
+                keep["score"] = max(keep.get("score", 0), v.get("score", 0))
+                if not keep.get("title_zh") and v.get("title_zh"):
+                    keep["title_zh"] = v["title_zh"]
+                oa = keep.setdefault("also", [])
+                known = {a.get("link") for a in oa} | {keep.get("link")}
+                if v.get("link") and v["link"] not in known:
+                    oa.append({"org": v.get("org", ""), "source": v.get("source", ""), "link": v["link"]})
+                oa.extend(a for a in (v.get("also") or [])
+                          if a.get("link") and a["link"] not in known)
+                del ledger[k]
+                members.append(v)
+                n += 1
+                progressed = True
+            pending = rest
+            if not progressed:
+                break
+    if n:
+        print(f"[合并] 同事件台账条目归并 {n} 条")
+    return n
+
+
 def merge_ledger(fresh):
     ledger = load_json(ITEMS_FILE, {})
     today_s = TODAY.isoformat()
+    _consolidate(ledger)
     for it in fresh:
         k = it["key"]
         if k not in ledger and not it.get("fixed_org"):
@@ -740,11 +823,23 @@ def merge_ledger(fresh):
             it["first_seen"] = old.get("first_seen", today_s)
             it["status"] = "持续跟踪" if old.get("first_seen") != today_s else "本期新增"
             it["times_seen"] = old["times_seen"]
+            if old.get("closed"):
+                it["closed"] = True
         else:
             it["first_seen"] = today_s
             it["status"] = "本期新增"
             it["times_seen"] = 1
         ledger[k] = it
+    # 观察池结案：连续 6 期仍挖不到生效日的普通媒体稿自动归档，不再长期占着跟踪区
+    # （官方清单/固定机构条目豁免；有生效日的条目走倒计时，也无需结案）
+    closed_n = 0
+    for v in ledger.values():
+        if (not v.get("eif") and not v.get("fixed_org")
+                and v.get("times_seen", 1) >= 6 and not v.get("closed")):
+            v["closed"] = True
+            closed_n += 1
+    if closed_n:
+        print(f"[结案] {closed_n} 条连续 6 期无生效日的条目移出跟踪区（台账保留，出现新进展可复活）")
     # 现行规则复核：过滤规则每期都在收紧，老条目必须跟着重判，否则报告里会一直挂着早期漏网的内容
     dropped, rekeyed = [], 0
     for k, v in list(ledger.items()):
@@ -1260,8 +1355,13 @@ def render(ledger, fresh, health, ai=None):
         deduped.append(it)
     upcoming = deduped
     soon90 = [i for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 90]
-    tracked = [i for i in ledger.values() if i["status"] != "本期新增"]
+    tracked_all = [i for i in ledger.values() if i["status"] != "本期新增"]
+    closed_cnt = sum(1 for i in tracked_all if i.get("closed"))
+    tracked = [i for i in tracked_all if not i.get("closed")]
     tracked.sort(key=lambda x: (-x["score"], x.get("last_seen", "")))
+    track_note = "往期已收录 · 本期仍有回响"
+    if closed_cnt:
+        track_note += f" · 已结案 {closed_cnt} 条"
 
     by_org = {}
     for it in fresh:
@@ -1451,7 +1551,7 @@ def render(ledger, fresh, health, ai=None):
   </section>
 
   <section class="sec" id="track">
-    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响</span></div>
+    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">{track_note}</span></div>
     <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
     <div class="card">
 {rows_tracked}
@@ -1523,6 +1623,10 @@ def backfill_eif(ledger):
         if v.get("eif"):
             continue
         eif, prec = find_eif((v.get("title") or "") + " " + (v.get("summary") or ""), ref=v.get("pub"))
+        if not eif:
+            veif = eif_from_version(v.get("title") or "")
+            if veif:
+                eif, prec = veif, "month"
         if eif:
             v["eif"] = eif.isoformat()
             v["eif_prec"] = prec
