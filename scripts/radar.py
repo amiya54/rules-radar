@@ -1343,7 +1343,10 @@ def _same_event(x, y):
 
 def render(ledger, fresh, health, ai=None):
     # 清单里早已生效的条目只做索引，不参与「本期新增」
-    fresh = [i for i in fresh if not i.get("suppress")]
+    # 「本期新增」只放真正的新条目：官方清单源和关键词订阅每期都会原样带回同一批旧条目，
+    # 它们已在 04 持续跟踪展示；这里不滤掉的话 03 章会被回访条目刷屏（实测 46 行里 41 行是旧的）
+    fresh = [i for i in fresh if not i.get("suppress")
+             and i.get("status", "本期新增") == "本期新增"]
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
     with_eif = [i for i in ledger.values() if i.get("eif")]
     upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
@@ -1548,7 +1551,7 @@ def render(ledger, fresh, health, ai=None):
         {chips}
         <input class="search" id="q" placeholder="筛选关键词，例：ammonia / 消防 / entry into force">
       </div>
-{groups_html if groups_html else '<div class="empty">本期未采到有效条目，见文末抓取状态。</div>'}
+{groups_html if groups_html else '<div class="empty">本期没有全新条目；往期条目的最新动向见下方「持续跟踪」。</div>'}
       <div class="empty" id="fempty" style="display:none">没有匹配的条目，换个关键词试试。</div>
     </div>
   </section>
