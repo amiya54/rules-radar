@@ -643,7 +643,11 @@ def collect(cfg, offline=False):
             if is_noise(title):
                 continue
             pub = parse_pubdate(r.get("date_raw", ""))
-            if pub and (TODAY - pub).days > int(src.get("max_age_days", 240)):
+            # 「新增」必须是新近报道：240 天宽门曾让半年前的文章顶着"本期新增"进场
+            if pub and (TODAY - pub).days > int(src.get("max_age_days", 60)):
+                continue
+            if src["type"] == "rss" and pub is None:
+                # rss 一定带 pubDate，解析不出来说明条目异常，宁缺毋滥
                 continue
             if hard:
                 eif = date.fromisoformat(r["eif_hard"])
@@ -708,7 +712,8 @@ def collect(cfg, offline=False):
             continue
         # 跨机构也要合并：同一条新闻常被多家媒体转述，落进不同查询源就会重复出现
         dup = next((m for m in merged
-                    if m.get("eif_src") != "list" and similar(m["title"], it["title"])), None)
+                    if m.get("eif_src") != "list"
+                    and (similar(m["title"], it["title"]) or _variant_same(m, it))), None)
         if dup:
             dup["tags"] = sorted(set(dup["tags"]) | set(it["tags"]))
             if not dup.get("eif") and it.get("eif"):
@@ -738,6 +743,18 @@ _EN_STOP = {"into", "force", "enters", "entry", "effect", "take", "takes", "will
 
 def _en_terms(title):
     return {w for w in re.findall(r"[a-z]{4,}", (title or "").lower()) if w not in _EN_STOP}
+
+
+def _variant_same(m, it):
+    """同事件变体判定：同生效日且英文内容词/中文显著词重合≥2。
+
+    用于抓"同一新闻换媒体、换措辞重新出现"的场景——标题不同导致 key 不同，
+    similar() 的 0.5 阈值对中英混合、改写标题抓不住，得靠内容词兜底。
+    """
+    if not (m.get("eif") and m.get("eif") == it.get("eif")):
+        return False
+    return (len(_en_terms(m.get("title", "")) & _en_terms(it.get("title", ""))) >= 2
+            or len(_sig_terms(m) & _sig_terms(it)) >= 2)
 
 
 def _consolidate(ledger):
@@ -798,7 +815,9 @@ def merge_ledger(fresh):
             # 跨期近似合并：同一条新闻被不同媒体转述时标题有差异，按相似度挂到台账已有条目上，
             # 避免"同一事件每周换个标题重新入库"。清单条目一条对一条规则，不能这样并。
             old = next((v for v in ledger.values()
-                        if similar(v.get("title", ""), it["title"])), None)
+                        if similar(v.get("title", ""), it["title"])
+                        or (not v.get("eif_src") == "list" and not v.get("fixed_org")
+                            and _variant_same(v, it))), None)
             if old:
                 k = old["key"]
                 it["key"] = k
@@ -1335,6 +1354,8 @@ def _same_event(x, y):
     """同一事件判定：同一天生效且显著词重合≥2，或标题/中文映照高度相似。"""
     if x.get("eif") and x.get("eif") == y.get("eif"):
         if len(_sig_terms(x) & _sig_terms(y)) >= 2:
+            return True
+        if len(_en_terms(x.get("title", "")) & _en_terms(y.get("title", ""))) >= 2:
             return True
     xs = [t for t in (x.get("title"), x.get("title_zh")) if t]
     ys = [t for t in (y.get("title"), y.get("title_zh")) if t]
