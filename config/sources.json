@@ -20,7 +20,7 @@
       "type": "csv",
       "official": true,
       "limit": 20,
-      "max_age_days": 420,
+      "max_age_days": 120,
       "note": "data.gov.hk 官方 CSV，简体中文，含编号/标题/事项/PDF 链接；本身就是「仍然生效」清单，时间窗放宽到 420 天",
       "url": "https://www.mardep.gov.hk/filemanager/notice/sc/hong_kong_merchant_shipping_information_notes_sc.csv",
       "columns": {
