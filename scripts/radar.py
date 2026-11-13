@@ -941,12 +941,17 @@ def ai_enhance(fresh, ledger):
         lines.append(f"[{i}] org={it['org']} | type={it['type']} | eif={it.get('eif') or '-'}{tag}\n"
                      f"title: {it['title']}\nsummary: {summ}")
     listing = "\n".join(lines)
+    # 把台账倒计时区也喂给 AI，解读"生效节点"段才有据可依
+    up = sorted((v for v in ledger.values() if v.get("eif") and v["eif"] >= TODAY.isoformat()),
+                key=lambda x: x["eif"])[:15]
+    up_lines = [f"- {v['eif']}（剩 {(date.fromisoformat(v['eif']) - TODAY).days} 天）"
+                f"[{v.get('org')}] {v.get('title_zh') or v.get('title', '')}" for v in up]
     user_prompt = f"""以下是本期自动采集的船级社/IMO 规范动态条目（按相关度排序，fresh=1 为本期新增，fresh=0 为往期跟踪条目）。请完成三件事：
 
 1. 给每个条目的英文标题写一个简洁的中文映照标题（zh）。要求：机构缩写（CCS/DNV/ABS/LR/BV/IMO）与文件编号保留原文；
    只翻译标题本身，不要加解释。
-2. 从中挑出 3~6 条最值得船厂技术部门注意的条目（优先：即将生效的强制要求、影响船型广的规范改版、
-   涉及新燃料/安全的修正案），写 1~2 句理由（落到具体条款、船型、时间点或影响面）。不要选纯新闻类条目。
+2. 从中挑出 4~8 条最值得船厂技术部门注意的条目（优先：即将生效的强制要求、影响船型广的规范改版、
+   涉及新燃料/安全的修正案），写 2~3 句理由（落到具体条款、船型、时间点或影响面）。不要选纯新闻类条目。
    【highlights 只能从 fresh=1 的条目里选】，不要选往期条目。
 3. 从条目的标题/摘要中提取明确的生效/施行日期（dates）。【只允许提取原文中明确写出的日期】，
    原文没有具体日期就绝对不要输出该条目，禁止推测或编造。eif 已有日期的条目（eif != '-'）跳过。
@@ -956,8 +961,18 @@ def ai_enhance(fresh, ledger):
 条目列表：
 {listing}
 
+台账生效倒计时现状（写【生效节点】段时以此为依据，highlights 仍只能从上面 fresh=1 的条目里选）：
+{chr(10).join(up_lines) or '-（暂无未来生效条目）'}
+
+【overall 的写作要求】600~800 字中文深度解读，必须分四段，段首分别用【本期主线】【生效节点】【机构动向】【建议关注】标注，段与段之间用空行分隔：
+- 【本期主线】2~3 句概括本期规范动态的整体走向；
+- 【生效节点】结合倒计时现状，讲清最近半年到一年内的关键生效时间点、涉及哪些船型/系统、留给大家的反应窗口有多久；
+- 【机构动向】按机构（IMO/CCS/DNV/ABS/LR/BV 等）分别归纳本期新条目的要点；
+- 【建议关注】给船厂技术部门 2~4 条可操作建议（设计输入、检验计划、材料与系统选型、排期等），只基于上面给出的事实。
+【硬性约束】所有日期、决议号、条款必须来自给定条目，禁止编造条目里没有的数字、日期、船型或规范名称。
+
 只输出 JSON，格式：
-{{"overall": "2~3 句中文总述，概括本期规范动态主线",
+{{"overall": "按上述要求写成的四段长文",
  "highlights": [{{"i": 0, "why": "理由"}}],
  "translations": [{{"i": 0, "zh": "中文映照标题"}}],
  "dates": [{{"i": 5, "date": "2027-01-01"}}]}}"""
@@ -1271,6 +1286,9 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 .ai-card{padding:18px 20px}
 .ai-overall{font-size:13.5px;line-height:1.8;color:var(--ink);border-left:3px solid var(--accent);
 padding:2px 0 2px 14px;margin-bottom:14px}
+.ai-p{margin:0 0 12px}
+.ai-p:last-child{margin-bottom:0}
+.ai-p b{color:var(--accent);font-weight:700}
 .ai-points{display:grid;gap:10px}
 .ai-point{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
 background:#fbfcff;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
@@ -1506,13 +1524,17 @@ def render(ledger, fresh, health, ai=None):
 """
         if not points_html:
             points_html = '<div class="empty">本期没有选出重点条目。</div>'
-        overall = esc(ai.get("overall") or "")
+        # 四段式长文按空行拆段，段首【小标题】加粗
+        paras = [p.strip() for p in (ai.get("overall") or "").split("\n\n") if p.strip()]
+        paras_html = "".join(
+            "<p class='ai-p'>" + re.sub(r"(【[^】]{2,12}】)", r"<b>\1</b>", esc(p)) + "</p>"
+            for p in paras) or "<p class='ai-p'>（本期无解读）</p>"
         ai_section = f"""
   <section class="sec" id="ai">
     <div class="sec-h"><span class="num">02</span><h2>AI 本期解读</h2><span class="note">DeepSeek 生成 · 仅供参考</span></div>
-    <p class="lead">由 AI 基于本期条目自动归纳主线并挑出值得注意的改动，帮助快速定位重点；结论务必回原文核对。</p>
+    <p class="lead">由 AI 基于本期条目与台账倒计时自动归纳主线、生效节点与关注建议；结论务必回原文核对。</p>
     <div class="card ai-card">
-      <div class="ai-overall">{overall}</div>
+      <div class="ai-overall">{paras_html}</div>
 {points_html}      <div class="ai-note">解读由 DeepSeek（{esc(ai.get('model', ''))}）自动生成，可能存在误读，不构成规范解释或合规结论。</div>
     </div>
   </section>
