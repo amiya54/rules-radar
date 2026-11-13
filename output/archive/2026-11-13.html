@@ -149,6 +149,9 @@ font-size:12px;color:var(--ink2);line-height:1.75;box-shadow:var(--sh-sm)}
 .ai-card{padding:18px 20px}
 .ai-overall{font-size:13.5px;line-height:1.8;color:var(--ink);border-left:3px solid var(--accent);
 padding:2px 0 2px 14px;margin-bottom:14px}
+.ai-p{margin:0 0 12px}
+.ai-p:last-child{margin-bottom:0}
+.ai-p b{color:var(--accent);font-weight:700}
 .ai-points{display:grid;gap:10px}
 .ai-point{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
 background:#fbfcff;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
@@ -225,7 +228,7 @@ padding:1px 7px;border-radius:6px}
         <div class="dn ok"><b>108</b><i>天后</i></div>
         <div class="body">
           <div class="t">Amendments to the NOx Technical Code 2008 (Use of multiple engine operational profiles for a marine </div>
-          <div class="tz">《2008年NOx技术规则》修正案（船用柴油机使用多发动机运行模式，包括澄清发动机试验循环）（MEPC.397(83)）</div>
+          <div class="tz">《2008年NOx技术规则》修正案（船用柴油机使用多发动机运行工况曲线，包括澄清发动机试验循环）（MEPC.397(83)）</div>
           <div class="m"><span class="badge" style="--c:#0369a1">IMO</span><span>2027-03-01</span><span class="list-tag">官方清单</span></div>
         </div>
       </a>
@@ -257,7 +260,7 @@ padding:1px 7px;border-radius:6px}
         <div class="dn ok"><b>414</b><i>天后</i></div>
         <div class="body">
           <div class="t">Amendments to the International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (</div>
-          <div class="tz">《国际使用气体或其他低闪点燃料船舶安全规则》（IGF 规则）修正案（MSC.567(109)）</div>
+          <div class="tz">《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.567(109)）</div>
           <div class="m"><span class="badge" style="--c:#0369a1">IMO</span><span>2028-01-01</span><span class="list-tag">官方清单</span></div>
         </div>
       </a>
@@ -282,44 +285,50 @@ padding:1px 7px;border-radius:6px}
 
   <section class="sec" id="ai">
     <div class="sec-h"><span class="num">02</span><h2>AI 本期解读</h2><span class="note">DeepSeek 生成 · 仅供参考</span></div>
-    <p class="lead">由 AI 基于本期条目自动归纳主线并挑出值得注意的改动，帮助快速定位重点；结论务必回原文核对。</p>
+    <p class="lead">由 AI 基于本期条目与台账倒计时自动归纳主线、生效节点与关注建议；结论务必回原文核对。</p>
     <div class="card ai-card">
-      <div class="ai-overall">本期以 IMO 大批修正案集中生效为主线，多数条目将于 2026-01-01 生效，涉及 SOLAS、FSS/LSA/IGF/IGC、MARPOL 及 NOx 技术规则等；同时出现新燃料（甲醇、氨）船员培训、电子记录簿等船级社指南。船厂需重点关注涂层性能标准、气体燃料安全规则及排放控制区划定对设计与建造的影响。</div>
+      <div class="ai-overall"><p class='ai-p'><b>【本期主线】</b>本期动态几乎全部由 IMO 海上安全委员会（MSC）与海上环境保护委员会（MEPC）的决议修正案构成，覆盖涂层性能标准、消防、救生、IGF/IGC 气体燃料、NOx 技术规则、MARPOL 附则 VI 与压载水/电子记录等，呈现“2026 年集中生效、2027—2028 年分批落地”的节奏。多数条目 eif 为 2026-01-01，意味着设计输入与图纸审查必须按已生效文本执行；同时新燃料（氨、甲醇、气体燃料）与 NOx 多工况认证是本期技术含量最高的方向。</p><p class='ai-p'><b>【生效节点】</b>最近半年到一年内，2026-01-01 是最大节点：FSS Code（MSC.555(108)）、LSA Code（MSC.554(108)）、SOLAS II-2 闪点（MSC.520(106)）、SOLAS II-2/V（MSC.550(108)）、IGF Code（MSC.551(108)）、压载舱涂层（MSC.557(108)）、原油船货油舱涂层（MSC.558(108)）、救生艇维护要求（MSC.559(108)）、IMSBC 07-23（MSC.535(107)）、极地规则（MSC.538(107)）、高速船 1994/2000 HSC Code（MSC.536/537(107)）等同时生效，涉及所有船型的消防、救生与涂层系统。2026-03-01 加拿大北极与挪威海成为 NOx/SOx/颗粒物排放控制区（MEPC.392(82)），2026-07-01 IGC Code（MSC.566(109)）生效，2026-09-01 NOx 技术规则重大改装认证（MEPC.398(83)）生效。台账中 2027-03-01 的 NOx 多工况认证（MEPC.397(83)）剩 108 天，2028-01-01 的 SOLAS II-1（MSC.549(108)）与 IGF Code（MSC.567(109)）剩 414 天，反应窗口相对充裕但需提前排入设计计划。</p><p class='ai-p'><b>【机构动向】</b>IMO 是绝对主力：MSC.520/522/523/532—538/549—559/566/567 系列与 MEPC.384/392/397/398 系列密集出台，重点在消防安全、救生设备、气体与低闪点燃料、NOx 认证及排放控制区。ABS 本期两条为要求/指南类：MARPOL 与 BWM 公约下的电子记录簿、SOLAS 对起重设备与锚机绞车的要求，偏操作与检验执行层面。HKMD 发布 STCW 规则相关 MSIN 7/2026（甲醇/乙醇与氨燃料船舶海员培训临时指南）及《2006 年海事劳工公约》2025 年修正案（MSIN 14/2026）。LR、DNV 本期新增条目多为行业动态或规则改版新闻（如 DNV 获日本浮式海上风电规则授权），技术条款价值有限。</p><p class='ai-p'><b>【建议关注】</b>一是立即核对 2026-01-01 生效的 FSS/LSA/SOLAS II-2 修正案对在建船消防布置、救生设备选型与图纸的影响，把 MSC.555(108)、MSC.554(108)、MSC.550(108) 纳入设计输入清单。二是针对 2026-03-01 生效的加拿大北极与挪威海排放控制区（MEPC.392(82)），提前确认主机/辅机 NOx 与 SOx 合规方案及燃油切换程序。三是新燃料项目按 IGF/IGC 修正案（MSC.551(108)、MSC.566(109)、MSC.567(109)）复核气体燃料系统布置与通风、消防设计，并结合 HKMD 甲醇/氨培训指南安排船员培训接口。四是把 2027-03-01 的 NOx 多工况认证（MEPC.397(83)）与 2026-09-01 的重大改装认证（MEPC.398(83)）纳入发动机台架试验与交船排期，避免认证节点与试航冲突。</p></div>
         <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">1</span>
           <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
-            <span class="ai-zh">MARPOL 附则 VI 修正案（将加拿大北极和挪威海指定为氮氧化物、硫氧化物和颗粒物排放控制区）（MEPC.392(82)）</span><span class="ai-title">Amendments to MARPOL Annex VI (Designation of the Canadian Arctic and the Norwegian Sea as Emission Control Areas for… (MEPC.392(82))</span>
-            <span class="ai-why">MARPOL 附则 VI 将加拿大北极和挪威海划为 NOx/SOx/颗粒物排放控制区，2026-03-01 生效，直接影响该航区营运船舶的发动机与燃油系统设计选型。</span></span>
+            <span class="ai-zh">《国际消防安全系统规则》（FSS Code）修正案（MSC.555(108)）</span><span class="ai-title">Amendments to the International Code for Fire Safety Systems (FSS Code) (MSC.555(108))</span>
+            <span class="ai-why">FSS Code 修正案（MSC.555(108)）2026-01-01 生效，直接影响所有船型消防系统设计与设备选型，属于全船型强制要求，需立即核对图纸与设备证书。</span></span>
         </a>
         <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">2</span>
           <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
-            <span class="ai-zh">《国际使用气体或其他低闪点燃料船舶安全规则》（IGF 规则）修正案（MSC.551(108)）</span><span class="ai-title">Amendments to the International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code) (MSC.551(108))</span>
-            <span class="ai-why">IGF 规则 2026-01-01 生效修正案，涉及气体/低闪点燃料船舶安全，对双燃料及氨/甲醇燃料新造船的布置与安全系统设计影响面广。</span></span>
+            <span class="ai-zh">《国际救生设备规则》（LSA Code）修正案（MSC.554(108)）</span><span class="ai-title">Amendments to the International Life-Saving Appliance Code (LSA Code) (MSC.554(108))</span>
+            <span class="ai-why">LSA Code 修正案（MSC.554(108)）2026-01-01 生效，涉及救生设备配备与型式认可，与同期的救生艇维护要求（MSC.559(108)）叠加，影响面覆盖全部新建船。</span></span>
         </a>
         <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">3</span>
           <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
-            <span class="ai-zh">所有类型船舶专用海水压载舱及散货船双舷侧处所保护涂层性能标准修正案（MSC.557(108)）</span><span class="ai-title">Amendments to the performance standard for protective coatings for dedicated seawater ballast tanks in all types of… (MSC.557(108))</span>
-            <span class="ai-why">专用海水压载舱涂层性能标准修正案 2026-01-01 生效，覆盖所有船型，直接关系压载舱涂装工艺与检验要求。</span></span>
+            <span class="ai-zh">《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.551(108)）</span><span class="ai-title">Amendments to the International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code) (MSC.551(108))</span>
+            <span class="ai-why">IGF Code 修正案（MSC.551(108)）2026-01-01 生效，直接约束气体/低闪点燃料船舶的布置与安全设计，是甲醇、氨等新燃料船型的关键设计依据。</span></span>
         </a>
         <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">4</span>
           <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
-            <span class="ai-zh">《国际散装运输液化气体船舶构造和设备规则》（IGC 规则）修正案（MSC.566(109)）</span><span class="ai-title">Amendments to the International Code for the Construction and Equipment of Ships Carrying Liquefied Gases in Bulk (IGC… (MSC.566(109))</span>
-            <span class="ai-why">IGC 规则 2026-07-01 生效修正案，涉及液化气体运输船构造与设备，对气体船新建项目设计与审图时间节点有直接影响。</span></span>
+            <span class="ai-zh">MARPOL 附则 VI 修正案（指定加拿大北极和挪威海为氮氧化物、硫氧化物和颗粒物排放控制区）（MEPC.392(82)）</span><span class="ai-title">Amendments to MARPOL Annex VI (Designation of the Canadian Arctic and the Norwegian Sea as Emission Control Areas for… (MEPC.392(82))</span>
+            <span class="ai-why">MARPOL 附则 VI 修正案（MEPC.392(82)）2026-03-01 将加拿大北极与挪威海设为 NOx/SOx/颗粒物排放控制区，影响该航线船型的主机排放合规与燃油切换策略。</span></span>
         </a>
         <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">5</span>
           <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
-            <span class="ai-zh">《2008年NOx技术规则》修正案（重大改装或未按原认证等级认证发动机的认证）（MEPC.398(83)）</span><span class="ai-title">Amendments to the NOx Technical Code 2008 (Certification of an engine subject to substantial modification or being… (MEPC.398(83))</span>
-            <span class="ai-why">NOx 技术规则 2026-09-01 生效，明确重大改装或重新认证发动机的认证要求，影响发动机选型与后期改装合规路径。</span></span>
+            <span class="ai-zh">《2008年NOx技术规则》修正案（船用柴油机使用多发动机运行工况曲线，包括澄清发动机试验循环）（MEPC.397(83)）</span><span class="ai-title">Amendments to the NOx Technical Code 2008 (Use of multiple engine operational profiles for a marine diesel engine,… (MEPC.397(83))</span>
+            <span class="ai-why">NOx 技术规则修正案（MEPC.397(83)）2027-03-01 生效，允许多发动机运行工况曲线并澄清试验循环，直接影响发动机认证与台架试验安排，倒计时仅 108 天。</span></span>
         </a>
-        <a class="ai-point" href="https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2607c.pdf" target="_blank" rel="noopener">
+        <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
           <span class="ai-no">6</span>
-          <span class="ai-body"><span class="ai-org" style="background:#0e7490">HKMD</span>
-            <span class="ai-zh">海员培训、发证和值班标准规则《STCW规则》（MSIN 7/2026）</span><span class="ai-title">海员培训、发证和值班标准规则《STCW规则》（MSIN 7/2026）</span>
-            <span class="ai-why">香港海事处发布甲醇/乙醇及氨燃料船舶船员培训临时指南，新燃料船型建造需同步考虑船员培训与操作布置要求。</span></span>
+          <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
+            <span class="ai-zh">《国际散装运输液化气体船舶构造和设备规则》（IGC Code）修正案（MSC.566(109)）</span><span class="ai-title">Amendments to the International Code for the Construction and Equipment of Ships Carrying Liquefied Gases in Bulk (IGC… (MSC.566(109))</span>
+            <span class="ai-why">IGC Code 修正案（MSC.566(109)）2026-07-01 生效，涉及液化气体船货物围护与设备要求，对气体运输船新建项目影响直接。</span></span>
+        </a>
+        <a class="ai-point" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">
+          <span class="ai-no">7</span>
+          <span class="ai-body"><span class="ai-org" style="background:#0369a1">IMO</span>
+            <span class="ai-zh">1974年 SOLAS 第 II-1 章修正案（MSC.549(108)）</span><span class="ai-title">Amendments to Chapter II-1 of SOLAS 1974 (MSC.549(108))</span>
+            <span class="ai-why">SOLAS II-1 修正案（MSC.549(108)）2028-01-01 生效，涉及分舱与结构安全，影响所有新建船型的总体设计输入，需提前纳入合同技术规格。</span></span>
         </a>
       <div class="ai-note">解读由 DeepSeek（deepseek-chat）自动生成，可能存在误读，不构成规范解释或合规结论。</div>
     </div>
@@ -398,13 +407,13 @@ padding:1px 7px;border-radius:6px}
   </section>
 
   <section class="sec" id="track">
-    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响 · 已结案 20 条</span></div>
+    <div class="sec-h"><span class="num">04</span><h2>持续跟踪</h2><span class="note">往期已收录 · 本期仍有回响 · 已结案 21 条</span></div>
     <p class="lead">同一事项在多期出现即留在台账里，直到 120 天不再出现才自动清理，避免「看过就丢」。</p>
     <div class="card">
         <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the performance standard for protective coatings for dedicated seawater ballast tanks in all types of… (msc.557(108)) 散货船 压载水">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the performance standard for protective coatings for dedicated seawater ballast tanks in all types of… (MSC.557(108))</a>
-            <div class="zh">所有类型船舶专用海水压载舱及散货船双舷侧处所保护涂层性能标准修正案（MSC.557(108)）</div>
+            <div class="zh">《所有船型专用海水压载舱保护涂层性能标准》修正案（MSC.557(108)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -436,7 +445,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to marpol annex vi (designation of the canadian arctic and the norwegian sea as emission control areas for… (mepc.392(82)) 防污染 温室气体">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to MARPOL Annex VI (Designation of the Canadian Arctic and the Norwegian Sea as Emission Control Areas for… (MEPC.392(82))</a>
-            <div class="zh">MARPOL 附则 VI 修正案（将加拿大北极和挪威海指定为氮氧化物、硫氧化物和颗粒物排放控制区）（MEPC.392(82)）</div>
+            <div class="zh">MARPOL 附则 VI 修正案（指定加拿大北极和挪威海为氮氧化物、硫氧化物和颗粒物排放控制区）（MEPC.392(82)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -468,7 +477,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the nox technical code 2008 (use of multiple engine operational profiles for a marine diesel engine,… (mepc.397(83)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the NOx Technical Code 2008 (Use of multiple engine operational profiles for a marine diesel engine,… (MEPC.397(83))</a>
-            <div class="zh">《2008年NOx技术规则》修正案（船用柴油机使用多发动机运行模式，包括澄清发动机试验循环）（MEPC.397(83)）</div>
+            <div class="zh">《2008年NOx技术规则》修正案（船用柴油机使用多发动机运行工况曲线，包括澄清发动机试验循环）（MEPC.397(83)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -484,7 +493,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code for fire safety systems (fss code) (msc.555(108)) 消防">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code for Fire Safety Systems (FSS Code) (MSC.555(108))</a>
-            <div class="zh">《国际消防安全系统规则》（FSS 规则）修正案（MSC.555(108)）</div>
+            <div class="zh">《国际消防安全系统规则》（FSS Code）修正案（MSC.555(108)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -500,7 +509,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the performance standard for protective coatings for cargo oil tanks of crude oil tankers (resolution… (msc.558(108)) 油轮">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the Performance standard for protective coatings for cargo oil tanks of crude oil tankers (Resolution… (MSC.558(108))</a>
-            <div class="zh">原油船货油舱保护涂层性能标准修正案（MSC.558(108)）</div>
+            <div class="zh">《原油船货油舱保护涂层性能标准》修正案（MSC.558(108)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -516,7 +525,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international life-saving appliance code (lsa code) (msc.554(108)) 救生">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Life-Saving Appliance Code (LSA Code) (MSC.554(108))</a>
-            <div class="zh">《国际救生设备规则》（LSA 规则）修正案（MSC.554(108)）</div>
+            <div class="zh">《国际救生设备规则》（LSA Code）修正案（MSC.554(108)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -612,7 +621,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="igc and igf code amendments: amendments to chapter 6 of the international code for the construction and equipment of… (msc.523(106)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">IGC and IGF Code amendments: amendments to chapter 6 of the International Code for the Construction and Equipment of… (MSC.523(106))</a>
-            <div class="zh">IGC 和 IGF 规则修正案：《国际散装运输液化气体船舶构造和设备规则》第6章修正案（MSC.523(106)）</div>
+            <div class="zh">IGC 与 IGF 规则修正案：IGC 规则第6章修正案（MSC.523(106)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -644,7 +653,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code of safety for ships using gases or other low-flashpoint fuels (igf code) (msc.551(108)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code) (MSC.551(108))</a>
-            <div class="zh">《国际使用气体或其他低闪点燃料船舶安全规则》（IGF 规则）修正案（MSC.551(108)）</div>
+            <div class="zh">《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.551(108)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -756,7 +765,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code of safety for high-speed craft, 1994 (1994 hsc code) (msc.536(107)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code of Safety for High-speed Craft, 1994 (1994 HSC Code) (MSC.536(107))</a>
-            <div class="zh">《1994年国际高速船安全规则》（1994 HSC 规则）修正案（MSC.536(107)）</div>
+            <div class="zh">《1994年高速船国际安全规则》（1994 HSC Code）修正案（MSC.536(107)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -772,7 +781,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code of safety for high-speed craft, 2000 (2000 hsc code) (msc.537(107)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code of Safety for High-speed Craft, 2000 (2000 HSC Code) (MSC.537(107))</a>
-            <div class="zh">《2000年国际高速船安全规则》（2000 HSC 规则）修正案（MSC.537(107)）</div>
+            <div class="zh">《2000年高速船国际安全规则》（2000 HSC Code）修正案（MSC.537(107)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -788,7 +797,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international maritime solid bulk cargoes (imsbc) code (amendment 07-23) (msc.535(107)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Maritime Solid Bulk Cargoes (IMSBC) Code (Amendment 07-23) (MSC.535(107))</a>
-            <div class="zh">《国际海运固体散装货物规则》（IMSBC 规则）修正案（07-23 修正案）（MSC.535(107)）</div>
+            <div class="zh">《国际海运固体散装货物规则》（IMSBC Code）修正案（07-23修正案）（MSC.535(107)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -820,7 +829,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code for the construction and equipment of ships carrying liquefied gases in bulk (igc… (msc.566(109)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code for the Construction and Equipment of Ships Carrying Liquefied Gases in Bulk (IGC… (MSC.566(109))</a>
-            <div class="zh">《国际散装运输液化气体船舶构造和设备规则》（IGC 规则）修正案（MSC.566(109)）</div>
+            <div class="zh">《国际散装运输液化气体船舶构造和设备规则》（IGC Code）修正案（MSC.566(109)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -836,7 +845,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the nox technical code 2008 (certification of an engine subject to substantial modification or being… (mepc.398(83)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the NOx Technical Code 2008 (Certification of an engine subject to substantial modification or being… (MEPC.398(83))</a>
-            <div class="zh">《2008年NOx技术规则》修正案（重大改装或未按原认证等级认证发动机的认证）（MEPC.398(83)）</div>
+            <div class="zh">《2008年NOx技术规则》修正案（经重大改装或按原未认证Tier认证的发动机的认证）（MEPC.398(83)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -868,7 +877,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0369a1" data-org="IMO" data-text="amendments to the international code of safety for ships using gases or other low-flashpoint fuels (igf code) (msc.567(109)) ">
           <div class="row-main">
             <a class="row-title" href="https://www.imo.org/en/About/Conventions/Pages/Amendments-to-IMO-instruments.aspx" target="_blank" rel="noopener">Amendments to the International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (IGF Code) (MSC.567(109))</a>
-            <div class="zh">《国际使用气体或其他低闪点燃料船舶安全规则》（IGF 规则）修正案（MSC.567(109)）</div>
+            <div class="zh">《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.567(109)）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0369a1">IMO</span>
               <span class="kind">修正案</span>
@@ -948,7 +957,7 @@ padding:1px 7px;border-radius:6px}
         </div>        <div class="row" style="--c:#0e7490" data-org="HKMD" data-text="海事劳工公约 经修订《2006年海事劳工公约》的2025年修正案（msin 14/2026） ">
           <div class="row-main">
             <a class="row-title" href="https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2614c.pdf" target="_blank" rel="noopener">海事劳工公约 经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）</a>
-            <div class="zh">海事劳工公约——经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）</div>
+            <div class="zh">海事劳工公约：经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）</div>
             <div class="row-meta">
               <span class="badge" style="--c:#0e7490">HKMD</span>
               <span class="kind">修正案</span>
@@ -1050,7 +1059,7 @@ padding:1px 7px;border-radius:6px}
     <div class="card">
       <table>
         <thead><tr><th>数据源</th><th>状态</th><th>条目</th></tr></thead>
-        <tbody><tr><td><span class="dot ok"></span>IMO 修正案生效日期表（官方）</td><td class='ok-s'>OK</td><td>27</td></tr><tr><td><span class="dot ok"></span>香港商船资讯（MSIN，政府开放数据）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 中国船级社</td><td class='ok-s'>OK</td><td>23</td></tr><tr><td><span class="dot ok"></span>Google News · DNV</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · ABS</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>Google News · Lloyd's Register</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · Bureau Veritas</td><td class='ok-s'>OK</td><td>14</td></tr><tr><td><span class="dot ok"></span>Google News · IMO 强制文件</td><td class='ok-s'>OK</td><td>33</td></tr><tr><td><span class="dot ok"></span>Google News · 中文规范动态</td><td class='ok-s'>OK</td><td>12</td></tr><tr><td><span class="dot ok"></span>Google News · 法规通报</td><td class='ok-s'>OK</td><td>14</td></tr><tr><td><span class="dot ok"></span>ABS Regulatory News（官方列表）</td><td class='ok-s'>OK</td><td>7</td></tr><tr><td><span class="dot ok"></span>LR 最新动态（官方列表）</td><td class='ok-s'>OK</td><td>4</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（英文）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（中文）</td><td class='ok-s'>OK</td><td>19</td></tr><tr><td><span class="dot ok"></span>Google News · 未来生效节点 2027/2028</td><td class='ok-s'>OK</td><td>8</td></tr><tr><td><span class="dot ok"></span>Google News · Statutory Alert / 技术通函</td><td class='ok-s'>OK</td><td>2</td></tr><tr><td><span class="dot ok"></span>Google News · ClassNK</td><td class='ok-s'>OK</td><td>15</td></tr><tr><td><span class="dot ok"></span>Google News · 中国海事局通告</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>IMO 新闻中心（官方列表）</td><td class='ok-s'>OK</td><td>2</td></tr><tr><td><span class="dot mid"></span>EMSA 最新动态（官方列表）</td><td class=''>空</td><td>0</td></tr><tr><td><span class="dot ok"></span>Google News · SOLAS/MARPOL 公约修正</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · FuelEU/EU ETS 航运碳法规</td><td class='ok-s'>OK</td><td>42</td></tr><tr><td><span class="dot ok"></span>Google News · KR/IRS/RS/RINA 船级社</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>Google News · USCG 安全通告</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>Splash247（行业 RSS）</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>gCaptain（行业 RSS）</td><td class='ok-s'>OK</td><td>12</td></tr><tr><td><span class="dot ok"></span>Offshore Energy（行业 RSS）</td><td class='ok-s'>OK</td><td>50</td></tr><tr><td><span class="dot ok"></span>Hellenic Shipping News（行业 RSS）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>信德海事（中文站列表）</td><td class='ok-s'>OK</td><td>3</td></tr><tr><td><span class="dot mid"></span>航运界（中文站列表）</td><td class=''>空</td><td>0</td></tr></tbody>
+        <tbody><tr><td><span class="dot ok"></span>IMO 修正案生效日期表（官方）</td><td class='ok-s'>OK</td><td>27</td></tr><tr><td><span class="dot ok"></span>香港商船资讯（MSIN，政府开放数据）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 中国船级社</td><td class='ok-s'>OK</td><td>25</td></tr><tr><td><span class="dot ok"></span>Google News · DNV</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · ABS</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>Google News · Lloyd's Register</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · Bureau Veritas</td><td class='ok-s'>OK</td><td>13</td></tr><tr><td><span class="dot ok"></span>Google News · IMO 强制文件</td><td class='ok-s'>OK</td><td>33</td></tr><tr><td><span class="dot ok"></span>Google News · 中文规范动态</td><td class='ok-s'>OK</td><td>11</td></tr><tr><td><span class="dot ok"></span>Google News · 法规通报</td><td class='ok-s'>OK</td><td>14</td></tr><tr><td><span class="dot ok"></span>ABS Regulatory News（官方列表）</td><td class='ok-s'>OK</td><td>7</td></tr><tr><td><span class="dot ok"></span>LR 最新动态（官方列表）</td><td class='ok-s'>OK</td><td>4</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（英文）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>Google News · 生效日期（中文）</td><td class='ok-s'>OK</td><td>19</td></tr><tr><td><span class="dot ok"></span>Google News · 未来生效节点 2027/2028</td><td class='ok-s'>OK</td><td>8</td></tr><tr><td><span class="dot ok"></span>Google News · Statutory Alert / 技术通函</td><td class='ok-s'>OK</td><td>2</td></tr><tr><td><span class="dot ok"></span>Google News · ClassNK</td><td class='ok-s'>OK</td><td>15</td></tr><tr><td><span class="dot ok"></span>Google News · 中国海事局通告</td><td class='ok-s'>OK</td><td>9</td></tr><tr><td><span class="dot ok"></span>IMO 新闻中心（官方列表）</td><td class='ok-s'>OK</td><td>2</td></tr><tr><td><span class="dot mid"></span>EMSA 最新动态（官方列表）</td><td class=''>空</td><td>0</td></tr><tr><td><span class="dot ok"></span>Google News · SOLAS/MARPOL 公约修正</td><td class='ok-s'>OK</td><td>29</td></tr><tr><td><span class="dot ok"></span>Google News · FuelEU/EU ETS 航运碳法规</td><td class='ok-s'>OK</td><td>42</td></tr><tr><td><span class="dot ok"></span>Google News · KR/IRS/RS/RINA 船级社</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>Google News · USCG 安全通告</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>Splash247（行业 RSS）</td><td class='ok-s'>OK</td><td>10</td></tr><tr><td><span class="dot ok"></span>gCaptain（行业 RSS）</td><td class='ok-s'>OK</td><td>12</td></tr><tr><td><span class="dot ok"></span>Offshore Energy（行业 RSS）</td><td class='ok-s'>OK</td><td>50</td></tr><tr><td><span class="dot ok"></span>Hellenic Shipping News（行业 RSS）</td><td class='ok-s'>OK</td><td>20</td></tr><tr><td><span class="dot ok"></span>信德海事（中文站列表）</td><td class='ok-s'>OK</td><td>3</td></tr><tr><td><span class="dot mid"></span>航运界（中文站列表）</td><td class=''>空</td><td>0</td></tr></tbody>
       </table>
     </div>
   </section>
