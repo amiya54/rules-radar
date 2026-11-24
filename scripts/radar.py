@@ -1385,12 +1385,14 @@ def _same_event(x, y):
 
 
 def render(ledger, fresh, health, ai=None):
-    # 清单里早已生效的条目只做索引，不参与「本期新增」
-    # 「本期新增」只放真正的新条目：官方清单源和关键词订阅每期都会原样带回同一批旧条目，
-    # 它们已在 04 持续跟踪展示；这里不滤掉的话 03 章会被回访条目刷屏（实测 46 行里 41 行是旧的）
-    fresh = [i for i in fresh if not i.get("suppress")
-             and i.get("status", "本期新增") == "本期新增"]
+    # 03 区放本期抓到的全部条目：新条目带 NEW 徽标，往期条目本期再次被抓到的也一并列出
+    # （双周窗口内"有动向"就值得看，否则新增太少）；已结案/清单早已生效的不进。
+    # 04 持续跟踪改为"本期没再出现"的旧条目，与 03 互斥不重复。
+    fresh = [i for i in fresh if not i.get("suppress") and not i.get("closed")]
     fresh.sort(key=lambda x: (-x["score"], x["pub"] or "", x["title"]))
+    new_cnt = sum(1 for i in fresh if i.get("status", "本期新增") == "本期新增")
+    follow_cnt = len(fresh) - new_cnt
+    today_s = TODAY.isoformat()
     with_eif = [i for i in ledger.values() if i.get("eif")]
     upcoming = sorted((i for i in with_eif if (date.fromisoformat(i["eif"]) - TODAY).days >= 0),
                       key=lambda x: (x["eif"], -x["score"]))
@@ -1404,11 +1406,12 @@ def render(ledger, fresh, health, ai=None):
         deduped.append(it)
     upcoming = deduped
     soon90 = [i for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 90]
-    tracked_all = [i for i in ledger.values() if i["status"] != "本期新增"]
+    tracked_all = [i for i in ledger.values()
+                   if i.get("last_seen", "") < today_s]
     closed_cnt = sum(1 for i in tracked_all if i.get("closed"))
     tracked = [i for i in tracked_all if not i.get("closed")]
     tracked.sort(key=lambda x: (-x["score"], x.get("last_seen", "")))
-    track_note = "往期已收录 · 本期仍有回响"
+    track_note = "往期收录 · 本期未再现"
     if closed_cnt:
         track_note += f" · 已结案 {closed_cnt} 条"
 
@@ -1564,7 +1567,7 @@ def render(ledger, fresh, health, ai=None):
     <h1>规范雷达 · 船级社规范与强制文件改版动态</h1>
     <p class="hero-sub">覆盖 CCS / DNV / ABS / LR / BV / IMO 六方公开信息 · 自动采集 · 只做线索整理，不做法律判断</p>
     <div class="stats">
-      <div class="stat"><i>本期新增</i><b>{len(fresh)}<small>条</small></b></div>
+      <div class="stat"><i>本期抓取</i><b>{len(fresh)}<small>条</small></b></div>
       <div class="stat"><i>90 天内生效</i><b>{len(soon90)}<small>条</small></b></div>
       <div class="stat"><i>一年内生效</i><b>{sum(1 for i in upcoming if (date.fromisoformat(i["eif"]) - TODAY).days <= 365)}<small>条</small></b></div>
       <div class="stat"><i>台账累计</i><b>{len(ledger)}<small>条</small></b></div>
@@ -1574,7 +1577,7 @@ def render(ledger, fresh, health, ai=None):
   <nav class="nav">
     <a href="#eif">生效倒计时</a>
     <a href="#ai">AI 解读</a>
-    <a href="#fresh">本期新增</a>
+    <a href="#fresh">本期动态</a>
     <a href="#track">持续跟踪</a>
     <a href="#cal">生效清单</a>
     <a href="#health">抓取状态</a>
@@ -1590,15 +1593,15 @@ def render(ledger, fresh, health, ai=None):
   </section>
 {ai_section}
   <section class="sec" id="fresh">
-    <div class="sec-h"><span class="num">03</span><h2>本期新增</h2><span class="note">共 {len(fresh)} 条 · 按机构分组</span></div>
-    <p class="lead">每条标注机构、类型、生效日与涉及领域；点标题跳原文。列表只做线索整理，具体条款需回原文核对。</p>
+    <div class="sec-h"><span class="num">03</span><h2>本期动态</h2><span class="note">新增 {new_cnt} 条（标 NEW） · 往期动向 {follow_cnt} 条 · 按机构分组</span></div>
+    <p class="lead">本期新抓取的条目标 NEW；双周窗口内再次被抓到的往期条目一并列出，便于看到同一条规范的持续进展。点标题跳原文，列表只做线索整理，具体条款需回原文核对。</p>
     <div class="card">
       <div class="tools">
         <button class="chip on" data-org="ALL">全部</button>
         {chips}
         <input class="search" id="q" placeholder="筛选关键词，例：ammonia / 消防 / entry into force">
       </div>
-{groups_html if groups_html else '<div class="empty">本期没有全新条目；往期条目的最新动向见下方「持续跟踪」。</div>'}
+{groups_html if groups_html else '<div class="empty">本期没有抓到条目，可查看抓取状态排查数据源。</div>'}
       <div class="empty" id="fempty" style="display:none">没有匹配的条目，换个关键词试试。</div>
     </div>
   </section>
@@ -1633,7 +1636,7 @@ def render(ledger, fresh, health, ai=None):
       <h3>本期信息</h3>
       <dl>
         <dt>期次</dt><dd>{TODAY.isoformat()}</dd>
-        <dt>新增条目</dt><dd>{len(fresh)}</dd>
+        <dt>本期抓取</dt><dd>{len(fresh)}（新增 {new_cnt}）</dd>
         <dt>台账累计</dt><dd>{len(ledger)}</dd>
         <dt>数据源</dt><dd>{ok_src}/{len(health)}</dd>
       </dl>
