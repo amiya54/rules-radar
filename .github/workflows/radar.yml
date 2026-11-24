@@ -44,9 +44,6 @@ jobs:
     if: needs.gate.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -84,6 +81,22 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
+
+  # 部署独立成 job：artifact 只在 radar job 上传一次，deploy 失败（GitHub artifact API
+  # 瞬时故障 / "Found 0 artifact"）时重跑 deploy job 即可——不会重复抓取、不会产生
+  # 重复 artifact（2026-11-24 教训：单 job 重跑失败任务会堆出多个同名 artifact）。
+  deploy:
+    needs: radar
+    if: always() && needs.radar.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # artifact API 有索引延迟，上传完立刻查会拿不到（Found 0 artifact）；等一会再部署
+      - name: Wait for artifact indexing
+        run: sleep 20
 
       - name: Deploy to GitHub Pages
         id: deployment
