@@ -1110,6 +1110,7 @@ def eta_class(days):
 
 def item_row(it):
     tags = "".join(f'<span class="tag">{esc(t)}</span>' for t in it["tags"][:4])
+    new_tag = '<span class="new-tag">NEW</span>' if it["status"] == "本期新增" else ""
     eif = ""
     if it.get("eif"):
         d = (date.fromisoformat(it["eif"]) - TODAY).days
@@ -1126,6 +1127,7 @@ def item_row(it):
     return f"""        <div class="row" style="--c:{color}" data-org="{esc(it['org'])}" data-text="{esc((it['title'] + ' ' + ' '.join(it['tags'])).lower())}">
           <div class="row-main">
             <a class="row-title" href="{esc(it['link'])}" target="_blank" rel="noopener">{esc(it['title'])}</a>
+            {new_tag}
             {zh}
             <div class="row-meta">
               <span class="badge" style="--c:{color}">{esc(it['org'])}</span>
@@ -1233,6 +1235,8 @@ background:var(--c,#cbd5e1);opacity:0;transition:opacity .15s}
 .badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--c);padding:1px 7px;border-radius:6px}
 .ai-tag{font-size:10.5px;color:#7c3aed;background:#f3efff;border:1px solid #e2d8fb;padding:0 6px;border-radius:6px}
 .list-tag{font-size:10.5px;color:#0f766e;background:#effcf9;border:1px solid #c8ece4;padding:0 6px;border-radius:6px}
+.new-tag{display:inline-block;font-size:10px;font-weight:700;color:#b91c1c;background:#fcebeb;
+border:1px solid #f09595;padding:0 6px;border-radius:5px;letter-spacing:.5px;vertical-align:middle}
 .cal{overflow:hidden}
 .cal-h,.cal-r{display:grid;grid-template-columns:112px 1fr 128px;gap:14px;align-items:baseline;padding:10px 15px}
 .cal-h{font-size:11.5px;letter-spacing:.04em;color:var(--ink3);background:#f8fafc;border-bottom:1px solid var(--line)}
