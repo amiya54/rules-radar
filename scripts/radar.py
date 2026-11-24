@@ -567,6 +567,32 @@ def load_json(p, default):
         return default
 
 
+def load_ledger():
+    """台账是核心资产：文件损坏时宁可让本次运行失败，也不能静默当空表——
+    空表起步会把全部抓到的条目当新条目重录，直接覆盖掉整个历史台账
+    （2026-11-24 事故：上游截断的 items.json 让 112 条台账缩成 52 条全新条目）。"""
+    p = Path(ITEMS_FILE)
+    if not p.exists():
+        return {}
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise SystemExit(
+            f"[致命] 台账 {p} JSON 损坏（{e}）。拒绝以空台账覆盖历史；"
+            f"请从仓库最近一次完好提交恢复该文件后再跑。")
+    if not isinstance(data, dict):
+        raise SystemExit(f"[致命] 台账 {p} 结构异常（非对象），拒绝覆盖。")
+    return data
+
+
+def save_ledger(ledger):
+    """原子写台账：先写临时文件再替换，进程中断不会留下截断的 JSON。"""
+    ITEMS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ITEMS_FILE.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, ITEMS_FILE)
+
+
 def key_of(org, title):
     norm = re.sub(r"[^0-9a-z\u4e00-\u9fa5]+", "", title.lower())[:90]
     return hashlib.md5((org + "|" + norm).encode()).hexdigest()[:16]
@@ -806,7 +832,7 @@ def _consolidate(ledger):
 
 
 def merge_ledger(fresh):
-    ledger = load_json(ITEMS_FILE, {})
+    ledger = load_ledger()
     today_s = TODAY.isoformat()
     _consolidate(ledger)
     for it in fresh:
@@ -906,8 +932,7 @@ def merge_ledger(fresh):
     if pruned:
         print(f"[台账] 清理 {pruned} 条 120 天未再现且已生效/无日期的条目")
     ledger = kept
-    ITEMS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+    save_ledger(ledger)
     return ledger, fresh
 
 
@@ -1016,7 +1041,7 @@ def ai_enhance(fresh, ledger):
             if k in ledger:
                 ledger[k]["title_zh"] = zh
     if zh_map:
-        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        save_ledger(ledger)
         print(f"[AI] 中文映照 {len(zh_map)}/{len(targets)} 条，已写入台账")
 
     points = []
@@ -1062,7 +1087,7 @@ def ai_enhance(fresh, ledger):
                               "score": it["score"]})
         n_date += 1
     if n_date:
-        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        save_ledger(ledger)
         print(f"[AI] 挖出生效日期 {n_date} 条，已写入台账")
 
     print(f"[AI] 完成：重点 {len(points)} 条")
@@ -1690,7 +1715,7 @@ def backfill_eif(ledger):
             v["score"] = score({**v, "eif": eif})
             n += 1
     if n:
-        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        save_ledger(ledger)
         print(f"[回填] 正则补出生效日期 {n} 条")
 
 
@@ -1779,7 +1804,7 @@ def deep_fetch_dates(ledger, limit=10):
             print(f"    ! 正文抓取异常 {type(e).__name__}: {str(e)[:60]}")
             continue
     if n:
-        ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+        save_ledger(ledger)
     print(f"[正文] 尝试抓正文 {tried} 篇（Google News 编码链接跳过 {skipped} 条），挖出生效日期 {n} 条")
     return n
 
@@ -1805,7 +1830,7 @@ def main():
         # AI 中文映照写入后再并一轮：合并判据依赖 title_zh，前两轮合并时英文条还没有中文题，
         # 这轮补上才能把"英文原题 + 中文转述"当期彻底归并
         if _consolidate(ledger):
-            ITEMS_FILE.write_text(json.dumps(ledger, ensure_ascii=False, indent=1), encoding="utf-8")
+            save_ledger(ledger)
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
     ARCHIVE.mkdir(parents=True, exist_ok=True)
