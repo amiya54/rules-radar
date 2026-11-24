@@ -6981,11 +6981,16 @@
  {
   "date": "2026-11-24",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "ts": "2026-11-24T02:15:16+00:00",
   "collected": 51,
 =======
   "ts": "2026-11-24T02:19:47+00:00",
   "collected": 52,
+>>>>>>> Stashed changes
+=======
+  "ts": "2026-11-24T02:22:35+00:00",
+  "collected": 51,
 >>>>>>> Stashed changes
   "sources": [
    {
@@ -7014,9 +7019,13 @@
     "name": "Google News · DNV",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 28,
 =======
     "count": 50,
+>>>>>>> Stashed changes
+=======
+    "count": 28,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7024,7 +7033,11 @@
     "id": "gnews-abs",
     "name": "Google News · ABS",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 26,
+=======
+    "count": 9,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7032,9 +7045,13 @@
     "name": "Google News · Lloyd's Register",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 31,
 =======
     "count": 55,
+>>>>>>> Stashed changes
+=======
+    "count": 54,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7043,7 +7060,11 @@
     "name": "Google News · Bureau Veritas",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 12,
+=======
+    "count": 48,
+>>>>>>> Stashed changes
 =======
     "count": 48,
 >>>>>>> Stashed changes
@@ -7061,7 +7082,11 @@
     "name": "Google News · 中文规范动态",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 10,
+=======
+    "count": 47,
+>>>>>>> Stashed changes
 =======
     "count": 47,
 >>>>>>> Stashed changes
@@ -7072,9 +7097,13 @@
     "name": "Google News · 法规通报",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 59,
 =======
     "count": 15,
+>>>>>>> Stashed changes
+=======
+    "count": 59,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7097,9 +7126,13 @@
     "name": "Google News · 生效日期（英文）",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 23,
 =======
     "count": 67,
+>>>>>>> Stashed changes
+=======
+    "count": 23,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7114,7 +7147,11 @@
     "id": "gnews-eif-future",
     "name": "Google News · 未来生效节点 2027/2028",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 44,
+=======
+    "count": 16,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7136,7 +7173,11 @@
     "name": "Google News · 中国海事局通告",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 42,
+=======
+    "count": 5,
+>>>>>>> Stashed changes
 =======
     "count": 5,
 >>>>>>> Stashed changes
@@ -7160,7 +7201,11 @@
     "id": "gnews-solas-marpol",
     "name": "Google News · SOLAS/MARPOL 公约修正",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 28,
+=======
+    "count": 53,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7168,9 +7213,13 @@
     "name": "Google News · FuelEU/EU ETS 航运碳法规",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 100,
 =======
     "count": 39,
+>>>>>>> Stashed changes
+=======
+    "count": 100,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7179,9 +7228,13 @@
     "name": "Google News · KR/IRS/RS/RINA 船级社",
     "status": "OK",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "count": 49,
 =======
     "count": 13,
+>>>>>>> Stashed changes
+=======
+    "count": 49,
 >>>>>>> Stashed changes
     "note": ""
    },
@@ -7189,7 +7242,11 @@
     "id": "gnews-uscg",
     "name": "Google News · USCG 安全通告",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 53,
+=======
+    "count": 11,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
