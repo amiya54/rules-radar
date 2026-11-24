@@ -1,13 +1,15 @@
 name: Rules Radar
 
 # 规范雷达：定期抓取船级社规范改版与 IMO 强制文件生效动态，产出静态报告并归档
-# 每周一、周四 UTC 00:30（北京时间周一、周四 08:30）运行一次
-# 手动触发：Actions 页面 "Run workflow"
+# 双周报（对齐船舶低碳情报）：每周五 UTC 00:30 触发，偶数周（发布周）真正执行，
+#   北京时间周五 08:30 出刊；间隔周的运行直接跳过，不消耗 Actions 分钟数。
+#   周界沿用低碳的 epoch 周四界（WEEK_INDEX = epoch/604800），两个雷达同一天发刊。
+# 手动触发：Actions 页面 "Run workflow"（手动触发无视门控，可用于补跑/验证）
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 0 * * 1,4"
+    - cron: "30 0 * * 5"
 
 permissions:
   contents: write
@@ -19,7 +21,27 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
+  # 隔周门控：只有偶数周的周五才继续（与低碳情报 crawler.yml 同一套判据）
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: Check biweekly schedule
+        id: check
+        run: |
+          WEEK_INDEX=$(( $(date -u +%s) / 604800 ))
+          if [ $((WEEK_INDEX % 2)) -eq 0 ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "✅ 本周为发布周，继续执行双周报"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "⏭ 本周为间隔周，跳过本次运行"
+          fi
+
   radar:
+    needs: gate
+    if: needs.gate.outputs.run == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
