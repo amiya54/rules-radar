@@ -1,882 +1,4 @@
 {
- "50dab424f6fdc46d": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV: New EU marine equipment rules to enter into force on 31 August",
-  "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOW03ZnlaRFB4SDZRVmxWdDNnV0xEenJfcjNrMHp1Rm5sc1FuckVvMVJLeGpJZ0NLS1RwRXB5RDhkQUdUMnQxVV9RMTIyTWpkS0EwMDBwRFJQclVnVF9YeUJha1pmaXR5R2dmQ1RPWmF2MzlNWkpWY2xuS2pIay1ObzN3R1BjSlB0ZHlST2hUVFc3Qi10?oc=5",
-  "summary": "DNV: New EU marine equipment rules to enter into force on 31 August    safety4sea",
-  "pub": "2026-08-24",
-  "eif": "2027-08-31",
-  "eif_prec": "day",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 71,
-  "key": "50dab424f6fdc46d",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "title_zh": "DNV：欧盟船用设备新规将于8月31日生效"
- },
- "6053039b33a0e8bc": {
-  "org": "ABS",
-  "org_cn": "美国船级社",
-  "title": "Electronic Record Books Under MARPOL and BWM Conventions",
-  "link": "https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/electronic-record-books-under-marpol-and-bwm-conventions.html",
-  "summary": "",
-  "pub": "",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [
-   "防污染"
-  ],
-  "source": "ABS Regulatory News（官方列表）",
-  "origin": "ABS",
-  "official": true,
-  "favicon": "",
-  "score": 71,
-  "key": "6053039b33a0e8bc",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 42,
-<<<<<<< Updated upstream
-  "closed": true,
-  "title_zh": "MARPOL 与 BWM 公约下的电子记录簿"
-=======
-  "closed": true
->>>>>>> Stashed changes
- },
- "48a9a86531f3634a": {
-  "org": "LR",
-  "org_cn": "劳氏船级社",
-  "title": "Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships",
-  "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1QMHJOQVFqOFNKd29SS1YtcU5UeTJKcjk5czg3RDBvaWZRNkN6YW9IcHFzYlNZVHVVdkF0aHZEaTA4M2lHY2JBVnJlZW5wb1IwUmJPNUlOQnZPa2RjeVE?oc=5",
-  "summary": "Class News 07/2026: SOLAS amendments Fire Safety Requirements for ro-ro Passenger Ships    Lloyd's Register",
-  "pub": "2026-04-01",
-  "eif": "",
-  "eif_prec": "",
-  "type": "修正案",
-  "tags": [
-   "客船/邮轮",
-   "消防"
-  ],
-  "source": "Google News · Lloyd's Register",
-  "origin": "Lloyd's Register",
-  "official": false,
-  "favicon": "",
-  "score": 69,
-  "key": "48a9a86531f3634a",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "Class News 07/2026：SOLAS 修正案——滚装客船消防安全要求"
- },
- "0e288dcfc9994dac": {
-  "org": "ABS",
-  "org_cn": "美国船级社",
-  "title": "SOLAS Requirements for Lifting Appliances and Anchor Handling Winches",
-  "link": "https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/SOLAS-requirements-on-board-ships.html",
-  "summary": "",
-  "pub": "",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "ABS Regulatory News（官方列表）",
-  "origin": "ABS",
-  "official": true,
-  "favicon": "",
-  "score": 65,
-  "key": "0e288dcfc9994dac",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 42,
-<<<<<<< Updated upstream
-  "closed": true,
-<<<<<<< Updated upstream
-  "title_zh": "SOLAS 对起重设备和锚机的要求"
-=======
-  "title_zh": "SOLAS 对起重设备和锚机绞车的要求"
->>>>>>> Stashed changes
-=======
-  "closed": true
->>>>>>> Stashed changes
- },
- "e319602a0ffc3e57": {
-  "org": "CCS",
-  "org_cn": "中国船级社",
-  "title": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效",
-  "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE12YmJOWWQ1NmpNcmhNV3plb3lmQ05QR1lRY0NSMXNsS195bmZhNzVpdm43aTh0V1FaZmwxSldEYmRnREtodUJxRWpaRi0tRFIzOXB6RlNzQ0FSOUQ5OXY4Yg?oc=5",
-  "summary": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效    ThePaper.cn",
-  "pub": "2026-09-20",
-  "eif": "2026-10-01",
-  "eif_prec": "day",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 中国船级社",
-  "origin": "ThePaper.cn",
-  "official": false,
-  "favicon": "",
-  "score": 61,
-  "key": "e319602a0ffc3e57",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 18,
-  "title_zh": "中国船级社《基于粘流的船舶非线性波浪载荷计算指南》(2026) 10月1日生效"
- },
- "84e40f9100359bc7": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan",
-  "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVGN3ZXdmWXB4NWRIYUlEM0NZLXd5MGtzX0JaZ2FnY2NyMVJ4SF9uVzZ6cGFVcnRLSVJJYjQyS3FlekduZ3BBVlZkeVRicW55N0hKR0FNR3ZwQUEzVGlheHNnMTF4bEFTWlZrSVZ2NF82dG84Z2N4dVRLVkxlZnRsOHh5Zjh3czlvX0t2ZEVqdHJQWEx5SHhaRVRoTVN2WktHekxpVS1SN2U5bGF2RnNTVVhJWm1ocHVBb3R2ZDdaeGVaVFR3V2c?oc=5",
-  "summary": "DNV Becomes First Non-Japanese Body Authorized for Floating Offshore Wind Rules in Japan    Ocean News & Technology",
-  "pub": "2026-10-21",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Ocean News & Technology",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "84e40f9100359bc7",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 36,
-  "closed": true,
-<<<<<<< Updated upstream
-  "title_zh": "DNV 成为日本首家获授权开展浮式海上风电规则的境外机构"
-=======
-  "title_zh": "DNV 成为日本首家获浮式海上风电规则授权的非日本机构"
->>>>>>> Stashed changes
- },
- "052f897fa1225105": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV receives authorisation for floating offshore wind rules in Japan",
-  "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQVIyMzBTQW9kbndiMmFOdUl3S0NfVFlEb0M1ZTc2djFXOTlRWnZwRG5jekpGczJ4QW1sRU82OGVXcWRXWDNLcmhRMVdPZTNsRUpydk5MQkU0Yjh0VG0tMm1UQ0hJYTRsZExIaGp5ejExUW83S0hsVS11MWJGOVVoTG0wV0Jzd2doYUJDRElWSlg2RmUwakhTRjgtYzZDamJNcS02akI3cDJTWGliVkVzSEFB?oc=5",
-  "summary": "DNV receives authorisation for floating offshore wind rules in Japan    Energy Global",
-  "pub": "2026-10-19",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Energy Global",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "052f897fa1225105",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 17,
-<<<<<<< Updated upstream
-  "closed": true,
-  "title_zh": "DNV 获得日本浮式海上风电规则授权"
-=======
-  "closed": true
->>>>>>> Stashed changes
- },
- "7bebb8809533a6be": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV RuleAgent improves digital compliance",
-  "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNYkpGR3dfVzYtcE1EczZ2ZGVuZENqeHpSeDhVRVVhUTFLVXRRRVQyajhTZERCelJmbGlqbUFiNnpob0dyQ1RYSHBvb0JnM3JZUVVteWM1WEZaSW1EU1hJRUpMZ2JRUFRVYjZybkhoNVdlR0Z3TGZmYUVzSFhQMUt5MWIwMmVhYXRmaTdmelFwbUZ2NXVBRUow?oc=5",
-  "summary": "DNV RuleAgent improves digital compliance    Digital Ship",
-  "pub": "2026-03-24",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Digital Ship",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "7bebb8809533a6be",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "DNV RuleAgent提升数字化合规能力"
- },
- "d2854b2d7078a038": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV launches AI tool to cut through 30,000 pages of maritime rules",
-  "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYmJ1Ui12Z2JvbTI3OHBjWjFya2N1T2F6T05rY3lNOGt0SVM0SzJvdTVoa2xsa3BOaS10VlZPdmc4cGp4N0twa0tlbmZwQTZTNUdjbkZpeFNHaDlrblNmX2FvQ05FVFhCa0FjQ1ZHQXZ4VU5HR1FlcWw0eEt0RjNTMHl4T2JkUjlyUFJ1Y3REV00yUQ?oc=5",
-  "summary": "DNV launches AI tool to cut through 30,000 pages of maritime rules    Splash247",
-  "pub": "2026-03-23",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Splash247",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "d2854b2d7078a038",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 29,
-  "closed": true,
-  "title_zh": "DNV 推出 AI 工具以梳理3万页海事规则"
- },
- "36c7967fa2d41cab": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "The July 2026 edition of the DNV class rules and standards for ship and offshore",
-  "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQMlNrSkMwSUczeDNrWEx4bml2NnZDUXNfMUprMVpPTHlxSUMxZjZBSmNDTjVhcnpvN1pkUTY4TFRRbVgyWFktUktQeFJxWGdfM2w0cU9ReEpITnlOUmNNVktlV3ZOMUp0bDVKX21pVW85cUZiVFhEcHk1ejE1czJEbk1PSHQtdzBzVWs4TGUwck9aNmN4MVF4b05GWTNURDl5RVZqRTZ0R0ZKOTUyMjZZdEY2N1VPeXdSOGJZU1VYa0o?oc=5",
-  "summary": "The July 2026 edition of the DNV class rules and standards for ship and offshore    Cyprus Shipping News",
-  "pub": "2026-07-08",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Cyprus Shipping News",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "36c7967fa2d41cab",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "DNV 2026年7月版船舶与海工入级规则和标准"
- },
- "5736fd9dc66fc241": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures",
-  "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPM3NIdzZUa0JMZDNYU3gyNzJsVG5CWXlrRXFiYUYtblZlTWV5R2lmdEZTRDFZNWJJb1hmdjRXUUFjZWpUWFFMaGpDb0dtTXZ4NXc0cXNQNG9tTlhic0RlQWdicVZNRTV5VjR4RVJYNllPTFNTWTlBbGkzbkNzYVRMZmlzQ2pRY05QZVhGM1l0QmhZZzlkREpUUjRUcUsxVjcyLVRIaXNCZS0ySU5aQWFDWXJmaDRIUFdUMmxxQndWa1BLQ3o1aVlWM3BBY2ZzcTdSRzBYUkNSZTRvYjJx?oc=5",
-  "summary": "Uncertainty rules: DNV urges shipowners to plan for multiple regulatory futures    Riviera Maritime Media",
-  "pub": "2026-09-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · DNV",
-  "origin": "Riviera Maritime Media",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "5736fd9dc66fc241",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "不确定性主导：DNV 敦促船东为多种监管前景做规划"
- },
- "409c5ca53e9d4d48": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Hazardous cargo compensation regime enters into force in 2027",
-  "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcXdiRWd3YXVoRFVzUlZaVVFubTVqNENEYlpMZXpFNFhLSWkwaUZ2Rml0d1dyRWRQR1VzMTNTU0dIbnpLMk5NZlBvUVhmLWZHWG9ZYlI2VUxtV1RkTnY1MXN2UjRiVWZSNDNUa1RSSDNzcnc3aEc4b3ZnNkZ0YzB1REVaaWYwbl8tRTlkN0RUelZtT3Njak5WMWJPbUt4eEtjdmEwSi0ydXQ4LWNobmc?oc=5",
-  "summary": "Hazardous cargo compensation regime enters into force in 2027    Shipping Telegraph",
-  "pub": "2026-06-03",
-  "eif": "2027-01-01",
-  "eif_prec": "year",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 未来生效节点 2027/2028",
-  "origin": "Shipping Telegraph",
-  "official": false,
-  "favicon": "",
-  "score": 79,
-  "key": "409c5ca53e9d4d48",
-  "also": [
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · 生效日期（英文）",
-    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM2FqSmZhdTJBVzFYRzJReDJoRjlvODk3cl9GMUxuZkJmdTdGS1VyU1FlSGVlTnliNWRyWGpobWNqSXBEQk92RnBXQ0dhRHY2a0tKMGtFLW1uVGRtUnZBU0ZuTk5RWjVrc0s1VmF3ZEhMck1pNXZZaDdpT2hUMUo4cGF3NHJQVy03cTFFMEg0Njl2QVZMaXJIM08wSFgxeEQzcDhOYkhhRDk5eC10TF9HVmtfV1VjRE5aT1dBTFNmaDloV201aTdZ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · 生效日期（英文）",
-    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM2FqSmZhdTJBVzFYRzJReDJoRjlvODk3cl9GMUxuZkJmdTdGS1VyU1FlSGVlTnliNWRyWGpobWNqSXBEQk92RnBXQ0dhRHY2a0tKMGtFLW1uVGRtUnZBU0ZuTk5RWjVrc0s1VmF3ZEhMck1pNXZZaDdpT2hUMUo4cGF3NHJQVy03cTFFMEg0Njl2QVZMaXJIM08wSFgxeEQzcDhOYkhhRDk5eC10TF9HVmtfV1VjRE5aT1dBTFNmaDloV201aTdZ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · IMO 强制文件",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5"
-   },
-   {
-    "org": "行业",
-    "source": "Google News · 未来生效节点 2027/2028",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcXdiRWd3YXVoRFVzUlZaVVFubTVqNENEYlpMZXpFNFhLSWkwaUZ2Rml0d1dyRWRQR1VzMTNTU0dIbnpLMk5NZlBvUVhmLWZHWG9ZYlI2VUxtV1RkTnY1MXN2UjRiVWZSNDNUa1RSSDNzcnc3aEc4b3ZnNkZ0YzB1REVaaWYwbl8tRTlkN0RUelZtT3Njak5WMWJPbUt4eEtjdmEwSi0ydXQ4LWNobmc?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · 生效日期（英文）",
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM21OVGF5TnRuek5GeXo0X213cml0ZkYwLVhkWjNCekI5SmNGaTI0VVY1aVhyUzhGRkljeUxOTk44QkY5T2JVa2VCaDE5c1NrYUpueE0wMnpVMHdxdXVmbXBPOE9JMVZqUzdkZ3pkcmVORkRCWjBTRGxRSUF5SFF3XzUzOTVZd2ZCOWY5MEhGdktrZVZRaVhCOWE5UmpHWlF1WldhVTVBRQ?oc=5"
-   },
-   {
-    "org": "IMO",
-    "source": "Google News · 生效日期（中文）",
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPQjB1dXVERk9GTzRrNklGRk1BOTNpbVhDbUNGS2dTS3BrRWlMVDRCLXNYOGJVaWN2MlVaX3FlaGVSdTlYMmxpd053UTdMQ3p3S2VmcE9NSVpoVkxJV3ZaUWlKanZfYlEwVjZMQmkyNEoxVFZjSTdHQ2JQa1FUc3EwQjc0aUVaUDc4dlJFOGVRVzdxTEVXMUg2U0RNdXI5T0VEQzliWlZQcw?oc=5"
-   }
-  ],
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "title_zh": "有害货物赔偿制度将于2027年生效"
- },
- "ca1495ca2bc6de9e": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "珠海市水上安全监管新规即将施行，“三无”船舶、无人艇监管有法可依",
-  "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9RektOeXNlRjZBdEs4N3FmMzNNTGRiZUdjQmQ5dW5lRzdrZUVQXzhoQkg3b19VLXpPaF96S2ZuMEFtSDk1Ti0zSnhfWDRqa0JIZmZRQlF3ZTZqQk8zRzQ3eUMwQ28tbXdtSEpUUHI3N1E2NGwxTWh3?oc=5",
-  "summary": "珠海市水上安全监管新规即将施行，“三无”船舶、无人艇监管有法可依    珠海网",
-  "pub": "2026-03-25",
-  "eif": "",
-  "eif_prec": "",
-  "type": "生效提醒",
-  "tags": [
-   "自主船"
-  ],
-  "source": "Google News · 中文规范动态",
-  "origin": "珠海网",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "ca1495ca2bc6de9e",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 21,
-  "closed": true,
-  "title_zh": "珠海市水上安全监管新规即将施行，“三无”船舶、无人艇监管有法可依"
- },
- "359e20615c5d135a": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "绿色智能船舶将有全新技术规范体系",
-  "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNU3JxTTlXdm9Rb2MyWk5OLWhPNldSamY4d2piSlM4V3VXRkQyVW5ZSFhPSGRWRDcwUEQ4clNLOU1tX2dlRTFOQ0J5QzFvcGNwSnNmVHQ1ellNT3BZLXRuQTJidjZQUHJQUDZyUWpXZ3FoQWdyZjNDRFlPeXdZNVBoUQ?oc=5",
-  "summary": "绿色智能船舶将有全新技术规范体系    人民日报",
-  "pub": "2026-04-15",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · 中文规范动态",
-  "origin": "人民日报",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "359e20615c5d135a",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "绿色智能船舶将有全新技术规范体系"
- },
- "36174960c0596632": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "IMO引水梯强制新规2028年生效",
-  "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Fc29xUG80akJMTjZMQ3Jac0VJSWVJSERJLVM1TkFrdGctdi12bllFanBkRUFxYVl0eW4yTDc1TTlzZ1Q5RDhadXN0MG5PWVVrV2dtUFpXYlZ0cjFuMU1rQ3JRWXY3WHNQRThBRkJNTEc?oc=5",
-  "summary": "IMO引水梯强制新规2028年生效    航运在线",
-  "pub": "2026-08-10",
-  "eif": "2028-01-01",
-  "eif_prec": "year",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 生效日期（中文）",
-  "origin": "航运在线",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "36174960c0596632",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "title_zh": "IMO引水梯强制新规2028年生效"
- },
- "cc448daec7047790": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "Update: Brazil – Biofouling Regulations Effective June 2026",
-  "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQzQ2cDdhNEdjVGdDbTl4S0U4cG1ZbzVwYUVZOTg3a2laTTd2VmQ1dEUxbVZuYTBEdDJVM194RHloOXRnd2s0M2tmQjc1NmE2amI5SVItYWJTZnRxVWdOOUNHMjVlY3lES3VzQUhPLVVIeEM1dTUyeHBaN0l2TjF5QmpueS1GaElNSElBSHIxaw?oc=5",
-  "summary": "Update: Brazil – Biofouling Regulations Effective June 2026   Inchcape Shipping Services",
-  "pub": "2026-06-02",
-  "eif": "2026-06-01",
-  "eif_prec": "month",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · IMO 强制文件",
-  "origin": "Inchcape Shipping Services",
-  "official": false,
-  "favicon": "",
-  "score": 66,
-  "key": "cc448daec7047790",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "更新：巴西——生物污损法规将于2026年6月生效"
- },
- "35b4d74f2da6087e": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO adopts Singapore-Led resolution on protection of vital shipping lanes",
-  "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNemhycExCV3V2cDFCQ210SExMWEZ5ZmM0VW8wV3pvbEZyckhuOGI0akRtTlE3ejB3Tlg3Z0RZbUxLWUN0bU5QZmEwejdNOWh1a1I0ZDFBWUxJWm5VQWVBUXktWTQ1RlRmYkZIMWtlak0zN3c0ckFOb0IzeGQ0Uk1NQVRWMmJUaVVrU3VsMUZBblRWQ0pHSHFCTndqM0VXeTA1Wi1z?oc=5",
-  "summary": "IMO adopts Singapore-Led resolution on protection of vital shipping lanes   Container News",
-  "pub": "2026-07-13",
-  "eif": "",
-  "eif_prec": "",
-  "type": "决议/通函",
-  "tags": [
-   "集装箱船"
-  ],
-  "source": "Google News · IMO 强制文件",
-  "origin": "Container News",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "35b4d74f2da6087e",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "IMO 通过新加坡主导的关于保护重要航道的决议"
- },
- "dc5047b4880b358a": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO adopts resolution on promoting safe navigation in the Gulf region",
-  "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaWJDYUxXMU4xdWZaUGdFYk45VlFOVDNlMElNcUFXM1RCNl8wa3hTT0ZvUFpKTHBiNW5CMDcwTG9uR1JRNmY0cUtZb1VWQUNPQklRUUduTWw5NXFvWEtUay1qRXgtRHAzQld0UnV3SmlvYS1yX2J0NXV6WW9nS2lwcWFvSWp3blV2SHJvMnZtUFl1WHRtcEhLWg?oc=5",
-  "summary": "IMO adopts resolution on promoting safe navigation in the Gulf region   safety4sea",
-  "pub": "2026-05-27",
-  "eif": "",
-  "eif_prec": "",
-  "type": "决议/通函",
-  "tags": [],
-  "source": "Google News · IMO 强制文件",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "dc5047b4880b358a",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "IMO通过促进海湾地区安全航行的决议"
- },
- "c2ec3f24c2c65b35": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO Council adopts resolution to protect vital shipping lanes amid rising security concerns",
-  "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOd1NnaDh1SXEwc0xVcDJOT1VVcHBKUXhPaHJaVTNMeE1KTWFtbnlPci1QQ3E0RHF5ZEo2TmRJUU9JMmRNM3d5WWhzWFFBanY2UkpiVll5c3BwMDBGMGUtTVJSZHRjelRzaWtYLVV2c2JTWkxMeHFuQnpFNlhiSDktaEhGUU05S0VwVXZKalFYRnpZYmFNcEhCT0xrS0tvTVFRclJ0ZUNDd2RsaVdsVWphb2pMWEozdw?oc=5",
-  "summary": "IMO Council adopts resolution to protect vital shipping lanes amid rising security concerns   safety4sea",
-  "pub": "2026-07-13",
-  "eif": "",
-  "eif_prec": "",
-  "type": "决议/通函",
-  "tags": [],
-  "source": "Google News · IMO 强制文件",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "c2ec3f24c2c65b35",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "IMO理事会通过决议，在安全担忧上升之际保护重要航道"
- },
- "62f72f91c629e6a8": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "FuelEU Maritime’s entry into force delayed in Norway until at least 2028",
-  "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPeVQzLWd6R1hGRE1IMGVHQllmSGdXQ3dIMnlzTG1aeGQtUkNvNnZtbURlTV84RlRFN0hQdHhVTS1rR0NEVkFpQm9MWHkyWmpBdjFYVFlzWEN3RWtjR1ctMUlnMUlDbGtIZi1icFNweXRha3ZfSFhkbk9VeHpfM2hiNTZRRDY3WkJ2QlNxSkNPdkl6OFJYNzEzWWprLXJyMjVXSkNEXy1DdV9lYS15UGJCV1ZlSW9tdkduT2JDSjl3ck1JZUp3V3NmQko5Y2pPZXNiQktj?oc=5",
-  "summary": "News Content Hub - FuelEU Maritime’s entry into force delayed in Norway until at least 2028    Riviera Maritime Media",
-  "pub": "2026-08-19",
-  "eif": "2028-01-01",
-  "eif_prec": "year",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 未来生效节点 2027/2028",
-  "origin": "Riviera Maritime Media",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "62f72f91c629e6a8",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 24,
-  "title_zh": "FuelEU Maritime在挪威的生效时间推迟至最早2028年"
- },
- "d2d4ad52fb62e9d0": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "BIMSTEC Agreement on Maritime Transport Cooperation enters into force",
-  "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOd2M5YVA4SWJMaVB2RDZKQnVQQkJ4d1l1Q0hqOV84TFJCNXMzMTRZWmRKdEhma0tzSjI3d011bGt5UUdELXViUHo0bDJISGNGVXAzeGxrZjVGUk5abmJ2NWFqUjlxWTByV2ZaTnBsT3BYUF9DR3ptMTBXMGFhcklybzluVHR5cGlVT0ZQeGJ5ODktU1R3M2JocjkxajZRUnpKdDBMRFpqNGliQVZLYTM1Rw?oc=5",
-  "summary": "BIMSTEC Agreement on Maritime Transport Cooperation enters into force   Daily Sun",
-  "pub": "2026-05-16",
-  "eif": "",
-  "eif_prec": "",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 生效日期（英文）",
-  "origin": "Daily Sun",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "d2d4ad52fb62e9d0",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 3,
-  "title_zh": "BIMSTEC海上运输合作协定生效"
- },
- "a85f2e41e59993ca": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Hazardous cargo compensation regime moves to entry into force",
-  "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNTNaOXRrR0ZwU28ybE1KVnBobUtFX01mcUMwUUsxX3BvaTFsa1MyVm5DeHJlZVZLa2c2ZEJYRmdYMnJPZDdESFEzOXE1bDhpOGFfWHYyRW95WTRPTUl5ci1TR2dmb2Q4a3lhQjBDMURfYjhFVGJWZ08xaUhJT0ZHVHZ6RkNGaC1fTGM0c0dyREpPZ191cVF5anVwakZjQQ?oc=5",
-  "summary": "Hazardous cargo compensation regime moves to entry into force    International Maritime Organization",
-  "pub": "2026-04-14",
-  "eif": "",
-  "eif_prec": "",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 生效日期（英文）",
-  "origin": "International Maritime Organization",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "a85f2e41e59993ca",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 10,
-  "title_zh": "有害货物赔偿机制进入生效阶段",
-  "closed": true
- },
- "ddac135cd2f7979f": {
-  "org": "LR",
-  "org_cn": "劳氏船级社",
-  "title": "Lloyd's Register in 2026: Cyber Rules and New Fuels",
-  "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5BVFZwUS1YVF8yYi03eEZhbUVNSWVYdkZhNXRKUXc0Qk55aXgtRFBIenhPYm8tMl9QYWVhbXR3WDR2WnhYLXNmUlY1WFMyTzY1S1huZVJHRTk?oc=5",
-  "summary": "Lloyd's Register in 2026: Cyber Rules and New Fuels   Shipfinex.com",
-  "pub": "2026-07-17",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "网络安全"
-  ],
-  "source": "Google News · Lloyd's Register",
-  "origin": "Shipfinex.com",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "ddac135cd2f7979f",
-  "first_seen": "2026-11-04",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "劳氏船级社 2026 展望：网络规则与新燃料"
- },
- "924883bfc48bc94d": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知",
-  "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hQW5DcXZXcmtTSkdabGhpTlJ1RDdyZ2ItR3J3YkFhdkpUMzJDdkk4U1dfcVJxZXRNSzBsYmQ2NmJSeDY2YTMwLVNiRGROT0h0dVZwQlVEVUJkVlplWVJtR1NSdEQ0UlptaURj?oc=5",
-  "summary": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知    财富号",
-  "pub": "2026-04-16",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · 中文规范动态",
-  "origin": "财富号",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "924883bfc48bc94d",
-  "first_seen": "2026-11-05",
-  "status": "持续跟踪",
-  "times_seen": 23,
-  "closed": true,
-  "title_zh": "交通运输部海事局关于印发《加快绿色智能船舶技术规范体系建设行动计划（2026—2030年）》的通知"
- },
- "092450bd750153aa": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV：IMO MASS规则推动船舶远程控制与自主航行迈向规范化",
-  "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUmQ4dTVidkZfVFZuRGI3c0pnTkR2V1BmVjBJVmsxdEdtOTlkOXNyRm0zZE9rM1NHTWZfSkMzaUNEYUVlYWJRV1hld2F0N2p3dTc5M3V2UEdIWVE3V0hldS05Y2EteW1QU21uTUhTX2t3VzQ5clZxMDBUZFRtaGNGdXlB?oc=5",
-  "summary": "DNV：IMO MASS规则推动船舶远程控制与自主航行迈向规范化- 船级社    国际船舶网",
-  "pub": "2026-08-20",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "自主船"
-  ],
-  "source": "Google News · 中国船级社",
-  "origin": "国际船舶网",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "776f29fb957f79f2",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 5,
-  "title_zh": "DNV：IMO MASS 规则推动船舶远程控制与自主航行迈向规范化"
- },
- "98fe6c8929054c04": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范",
-  "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUTJ0YzdndHVuQ2hNdk5Ld1NwNTh1b2N2V3hlUU1wXzBqUmdnTmZCSUNHeGFadUYwWGtBYnRhYlMwUWpyenZmV1hiNHR6R0dxckV3WkxzRGloUldWY1piN1doRW13Z1FJaWkyM19abGQwS2NHSW1WMU8tcWZISGJGSE45OWhtR1N2?oc=5",
-  "summary": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范    International Maritime Organization",
-  "pub": "2026-05-22",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · 中文规范动态",
-  "origin": "International Maritime Organization",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "98fe6c8929054c04",
-  "first_seen": "2026-11-04",
-  "status": "持续跟踪",
-  "times_seen": 31,
-  "closed": true,
-  "title_zh": "国际海事组织（IMO）通过首个全球自动驾驶船舶规范"
- },
- "ec6a3f5837761cb3": {
-  "org": "CCS",
-  "org_cn": "中国船级社",
-  "title": "中国船级社《智能船舶规范》(2026) 将于6月1日生效",
-  "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1ETEJyWVcxTmphanRubmFUbUZpS3RoOW9uQ3VBRzVmY08tbVZGU1dDN21QS1UxVC1ZWl9SUFBPNHVJMjdCVEZmSy1pakZHVWthOHNXcy0td1drY2NWamhLSQ?oc=5",
-  "summary": "中国船级社《智能船舶规范》(2026) 将于6月1日生效    ThePaper.cn",
-  "pub": "2026-05-25",
-  "eif": "2027-06-01",
-  "eif_prec": "day",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "Google News · 中国船级社",
-  "origin": "ThePaper.cn",
-  "official": false,
-  "favicon": "",
-  "score": 71,
-  "key": "ec6a3f5837761cb3",
-  "first_seen": "2026-11-06",
-  "status": "持续跟踪",
-  "times_seen": 20,
-  "title_zh": "中国船级社《智能船舶规范》(2026) 将于6月1日生效"
- },
- "ffa6b3994f9ef853": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "Maritime leaders push for stronger action on global shipping rules in Busan",
-  "link": "https://www.imo.org/en/MediaCentre/PressBriefings/pages/Maritime leaders push for stronger action on global shipping rules in Busan.aspx",
-  "summary": "",
-  "pub": "",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "IMO 新闻中心（官方列表）",
-  "origin": "IMO",
-  "official": true,
-  "favicon": "",
-  "score": 65,
-  "key": "ffa6b3994f9ef853",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 17,
-  "closed": true,
-<<<<<<< Updated upstream
-  "title_zh": "海事界领袖在釜山呼吁加强全球航运规则执行"
-=======
-  "title_zh": "海事领导人在釜山呼吁就全球航运规则采取更强行动"
->>>>>>> Stashed changes
- },
- "79a299cd906a7e60": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "MARPOL Annex VI (Prevention of Air Pollution from Ships) – Key Developments for 2026",
-  "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNWmxqVGNaWW5uTUdGUFlFRzBPZkxFZTJ0MWFhUzFsR1FRa3pPRTAyaUM2anhpM1BDNzN4UnFUWkY3TUxFTVF5WGlVYnpycGZQZ0tzVU0zdUVmeXlia0cwdmVsSEswQjQ5Nk9tc2ZfN3BKc3VsTXRnNFJyTDh0ZkNiMnBjNVRqaE9CUy1ENXR2WkQ1Zw?oc=5",
-  "summary": "MARPOL Annex VI (Prevention of Air Pollution from Ships) – Key Developments for 2026    Clyde & Co",
-  "pub": "2026-04-28",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [
-   "防污染"
-  ],
-  "source": "Google News · SOLAS/MARPOL 公约修正",
-  "origin": "Clyde & Co",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "79a299cd906a7e60",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 18,
-  "closed": true,
-  "title_zh": "MARPOL附则VI（防止船舶造成空气污染）——2026年关键进展"
- },
- "c8b3b1a55e5b8f20": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "FuelEU Maritime: early lessons from the first year of compliance",
-  "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNTdGOUJXX3hNUWFLSDRXZlZidFNwa3RTemYzMWN1N3lQVG1TemVKRjRqRXJlVy1uWDV4MzFDbGhoVVhpRHMxcGowMFZWeTJuQWJOTWs0MUI0T2h3YUdST3IzVTMtWDhLR1ozSzVabV9KVGlzOFUwb2g0Y0IyY1lBYXBfRTlpdG4xRVN2c0NVS3RaRVFJcXhHb0FzQ1NLX3hxanJvSWdzdkQyUmpqZkx3M2JLS3VYU21pTkJjeUJHX2didzB3?oc=5",
-  "summary": "FuelEU Maritime: early lessons from the first year of compliance    Skuld",
-  "pub": "2026-08-06",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Skuld",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "c8b3b1a55e5b8f20",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 18,
-  "closed": true,
-  "title_zh": "FuelEU Maritime：合规首年的早期经验教训"
- },
- "d90bcd529439a099": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "FuelEU Maritime May Not Enter into Force in Norway Before 2028",
-  "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNb2NXMDdpb1J4dlY1Smdibks5dlpNbTR2ajBEQWJ6NkUwaHNfN21QbGxzY2tOZ19mclZXbmxzUlp2dDEzX1Bqa1FHWFdHaEZFd2V3VzZiQkd0R3lOdFhTd2VESk1ibHRMY3lCR2h3X2w2a1lHM2pnTENqdUU1RnRQM3JsbDhhZ1dKTjJ1ZFczX0dWQ2F6bzdYdWFqMDFJN1VhUHJvNERHVUQ?oc=5",
-  "summary": "FuelEU Maritime May Not Enter into Force in Norway Before 2028    Ship & Bunker",
-  "pub": "2026-08-12",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Ship & Bunker",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "d90bcd529439a099",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 12,
-  "closed": true,
-  "title_zh": "FuelEU Maritime在挪威可能要到2028年才会生效"
- },
- "1e526c0a4998363c": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "The IMO NZF as agreed upon in 2025 still remains the most likely way to achieve the IMO 2023 GHG strategy",
-  "link": "https://www.hellenicshippingnews.com/the-imo-nzf-as-agreed-upon-in-2025-still-remains-the-most-likely-way-to-achieve-the-imo-2023-ghg-strategy/",
-  "summary": "MEPC 85 is coming up fast, and negotiations for what the Net Zero Framework will look like are increasing in intensity. With several proposals on the table, it is likely that the outcome will be a composite, blending together different aspects of each proposal – although none of the new ideas have i",
-  "pub": "2026-11-08",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "1e526c0a4998363c",
-  "first_seen": "2026-11-09",
-  "status": "本期新增",
-  "times_seen": 10,
-  "title_zh": "2025 年商定的 IMO NZF 仍是实现 IMO 2023 温室气体战略最可能的途径",
-  "closed": true
- },
- "c3285f3b72c2dfa9": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "People IMO Secretary-General: More Shipbuilding Capacity Could Support Shipping’s Green Transition 2026-10-30 17:13",
-  "link": "https://www.xindemarinenews.com/news/2116096265977901058",
-  "summary": "",
-  "pub": "",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "信德海事（中文站列表）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 27,
-  "key": "c3285f3b72c2dfa9",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 27,
-  "closed": true
- },
  "b1d3523830d286aa": {
   "org": "IMO",
   "org_cn": "国际海事组织",
@@ -900,18 +22,10 @@
   "suppress": true,
   "score": 81,
   "key": "b1d3523830d286aa",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《所有船型专用海水压载舱及散货船双舷侧处所保护涂层性能标准》修正案（MSC.557(108)）"
-=======
-  "title_zh": "所有类型船舶专用海水压载舱保护涂层性能标准修正案（MSC.557(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《所有类型船舶专用海水压载舱保护涂层性能标准》修正案（MSC.557(108)）"
  },
  "c65cfd914602fe59": {
   "org": "IMO",
@@ -936,18 +50,10 @@
   "suppress": true,
   "score": 81,
   "key": "c65cfd914602fe59",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《2011年散货船和油船检验期间加强检验计划国际规则》修正案（MSC.553(108)）"
-=======
-  "title_zh": "《2011年散货船和油船检验加强计划国际代码》修正案（MSC.553(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《散货船和油船检验期间加强检验程序国际规则》修正案（MSC.553(108)）"
  },
  "9fc80e76ad147bc1": {
   "org": "IMO",
@@ -972,14 +78,10 @@
   "suppress": true,
   "score": 81,
   "key": "9fc80e76ad147bc1",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "MARPOL 附则 VI 修正案（将加拿大北极和挪威海指定为氮氧化物、硫氧化物和颗粒物排放控制区）（MEPC.392(82)）"
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
  },
  "ee0adce83707cac3": {
   "org": "IMO",
@@ -1000,18 +102,10 @@
   "fixed_org": true,
   "score": 79,
   "key": "ee0adce83707cac3",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《2008年NOx技术规则》修正案（船用柴油机采用多运行模式，含试验循环澄清）（MEPC.397(83)）"
-=======
-  "title_zh": "《2008年NOx技术规则》修正案（船用柴油机采用多运行工况，包括澄清发动机试验循环）（MEPC.397(83)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《2008 年 NOx 技术规则》修正案（船用柴油机采用多运行工况，包括澄清发动机试验循环）（MEPC.397(83)）"
  },
  "c68fc7e79d340c76": {
   "org": "IMO",
@@ -1035,18 +129,10 @@
   "suppress": true,
   "score": 75,
   "key": "c68fc7e79d340c76",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际消防安全系统规则》（FSS规则）修正案（MSC.555(108)）"
-=======
-  "title_zh": "《国际消防安全系统代码》（FSS 代码）修正案（MSC.555(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际消防安全系统规则》（FSS Code）修正案（MSC.555(108)）"
  },
  "2040627677432893": {
   "org": "IMO",
@@ -1070,18 +156,10 @@
   "suppress": true,
   "score": 75,
   "key": "2040627677432893",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "《原油船货油舱保护涂层性能标准》修正案（MSC.558(108)）"
-=======
-  "title_zh": "原油船货油舱保护涂层性能标准修正案（MSC.558(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
  },
  "0784cfa0d9b3ec84": {
   "org": "IMO",
@@ -1105,18 +183,10 @@
   "suppress": true,
   "score": 75,
   "key": "0784cfa0d9b3ec84",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际救生设备规则》（LSA规则）修正案（MSC.554(108)）"
-=======
-  "title_zh": "《国际救生设备代码》（LSA 代码）修正案（MSC.554(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际救生设备规则》（LSA Code）修正案（MSC.554(108)）"
  },
  "a87298379e6d413c": {
   "org": "IMO",
@@ -1140,14 +210,34 @@
   "suppress": true,
   "score": 75,
   "key": "a87298379e6d413c",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-  "title_zh": "MARPOL 公约议定书 I 修正案（MEPC.384(81)）"
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《MARPOL 公约议定书 I》修正案（MEPC.384(81)）"
+ },
+ "6053039b33a0e8bc": {
+  "org": "ABS",
+  "org_cn": "美国船级社",
+  "title": "Electronic Record Books Under MARPOL and BWM Conventions",
+  "link": "https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/electronic-record-books-under-marpol-and-bwm-conventions.html",
+  "summary": "",
+  "pub": "",
+  "eif": "",
+  "eif_prec": "",
+  "type": "要求/指南",
+  "tags": [
+   "防污染"
+  ],
+  "source": "ABS Regulatory News（官方列表）",
+  "origin": "ABS",
+  "official": true,
+  "favicon": "",
+  "score": 71,
+  "key": "6053039b33a0e8bc",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "MARPOL 与 BWM 公约下的电子记录簿"
  },
  "69adde203dd739c3": {
   "org": "IMO",
@@ -1169,14 +259,10 @@
   "suppress": true,
   "score": 69,
   "key": "69adde203dd739c3",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-  "title_zh": "SOLAS 第 II-2 章关于闪点的修正案（MSC.520(106)）"
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "SOLAS 第 II-2 章关于闪点的规定（MSC.520(106)）"
  },
  "d36aff0cb8ec09bf": {
   "org": "IMO",
@@ -1198,18 +284,10 @@
   "suppress": true,
   "score": 69,
   "key": "d36aff0cb8ec09bf",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1978年SOLAS议定书修正案（MSC.522(106)）"
-=======
-  "title_zh": "1978 年 SOLAS 议定书修正案（MSC.522(106)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1978 年 SOLAS 议定书》（MSC.522(106)）"
  },
  "65ff2df25e46a758": {
   "org": "IMO",
@@ -1231,18 +309,10 @@
   "suppress": true,
   "score": 69,
   "key": "65ff2df25e46a758",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "IGC与IGF规则修正案：《国际散装运输液化气体船舶构造和设备规则》第6章修正案（MSC.523(106)）"
-=======
-  "title_zh": "IGC 与 IGF 代码修正案：IGC 代码第 6 章修正案（MSC.523(106)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "IGC 与 IGF 规则修正案：《国际散装运输液化气体船舶构造和设备规则》第 6 章修正案（MSC.523(106)）"
  },
  "b8e087d7d0bc7371": {
   "org": "IMO",
@@ -1264,18 +334,10 @@
   "suppress": true,
   "score": 69,
   "key": "b8e087d7d0bc7371",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1974年SOLAS公约第II-2章和第V章修正案（MSC.550(108)）"
-=======
-  "title_zh": "1974 年 SOLAS 第 II-2 章和第 V 章修正案（MSC.550(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1974 年 SOLAS 公约》第 II-2 章和第 V 章修正案（MSC.550(108)）"
  },
  "dab18fe761c1f9e4": {
   "org": "IMO",
@@ -1297,18 +359,10 @@
   "suppress": true,
   "score": 69,
   "key": "dab18fe761c1f9e4",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF规则）修正案（MSC.551(108)）"
-=======
-  "title_zh": "《使用气体或其他低闪点燃料船舶安全国际代码》（IGF 代码）修正案（MSC.551(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.551(108)）"
  },
  "0bf16259a4a1a795": {
   "org": "IMO",
@@ -1330,18 +384,10 @@
   "suppress": true,
   "score": 69,
   "key": "0bf16259a4a1a795",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "《国际海运危险货物规则》修正案（MSC.556(109)）"
-=======
-  "title_zh": "《国际海运危险货物代码》修正案（MSC.556(109)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
  },
  "a70f248fd35b6921": {
   "org": "IMO",
@@ -1363,14 +409,10 @@
   "suppress": true,
   "score": 69,
   "key": "a70f248fd35b6921",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "救生艇和救助艇、降落装置等维护、彻底检查、操作试验、大修和修理要求修正案（MSC.559(108)）"
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
  },
  "44d86ca85833608a": {
   "org": "IMO",
@@ -1392,18 +434,10 @@
   "suppress": true,
   "score": 69,
   "key": "44d86ca85833608a",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际散装谷物安全运输规则》（MSC.23(59)号决议）修正案（MSC.552(108)）"
-=======
-  "title_zh": "《国际散装谷物安全运输代码》修正案（MSC.552(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际散装谷物安全运输规则》（第 MSC.23(59) 号决议）修正案（MSC.552(108)）"
  },
  "5ca652a8c9c1cc04": {
   "org": "IMO",
@@ -1425,18 +459,10 @@
   "suppress": true,
   "score": 69,
   "key": "5ca652a8c9c1cc04",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1974年SOLAS公约第II-1、II-2、V、XIV章及附录修正案（MSC.532(107)）"
-=======
-  "title_zh": "1974 年 SOLAS 第 II-1、II-2、V、XIV 章及附录修正案（MSC.532(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1974 年 SOLAS 公约》第 II-1、II-2、V、XIV 章及附录修正案（MSC.532(107)）"
  },
  "6f2a502de5c932f0": {
   "org": "IMO",
@@ -1458,18 +484,10 @@
   "suppress": true,
   "score": 69,
   "key": "6f2a502de5c932f0",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1978年SOLAS议定书附录修正案（MSC.533(107)）"
-=======
-  "title_zh": "1978 年 SOLAS 议定书附录修正案（MSC.533(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1978 年 SOLAS 议定书》附录修正案（MSC.533(107)）"
  },
  "9d206564bdca9bbf": {
   "org": "IMO",
@@ -1491,18 +509,10 @@
   "suppress": true,
   "score": 69,
   "key": "9d206564bdca9bbf",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1988年SOLAS议定书附录修正案（MSC.534(107)）"
-=======
-  "title_zh": "1988 年 SOLAS 议定书附录修正案（MSC.534(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1988 年 SOLAS 议定书》附录修正案（MSC.534(107)）"
  },
  "b72c22342117a540": {
   "org": "IMO",
@@ -1524,18 +534,10 @@
   "suppress": true,
   "score": 69,
   "key": "b72c22342117a540",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《1994年高速船安全国际规则》（1994 HSC规则）修正案（MSC.536(107)）"
-=======
-  "title_zh": "《1994年高速船安全国际代码》（1994 HSC 代码）修正案（MSC.536(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1994 年国际高速船安全规则》（1994 HSC Code）修正案（MSC.536(107)）"
  },
  "01e8e5fbf1547c02": {
   "org": "IMO",
@@ -1557,18 +559,10 @@
   "suppress": true,
   "score": 69,
   "key": "01e8e5fbf1547c02",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《2000年高速船安全国际规则》（2000 HSC规则）修正案（MSC.537(107)）"
-=======
-  "title_zh": "《2000年高速船安全国际代码》（2000 HSC 代码）修正案（MSC.537(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《2000 年国际高速船安全规则》（2000 HSC Code）修正案（MSC.537(107)）"
  },
  "15b62aca5d8f721f": {
   "org": "IMO",
@@ -1590,18 +584,10 @@
   "suppress": true,
   "score": 69,
   "key": "15b62aca5d8f721f",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际海运固体散装货物规则》（IMSBC规则）修正案（07-23修正案）（MSC.535(107)）"
-=======
-  "title_zh": "《国际海运固体散装货物代码》（IMSBC 代码）修正案（07-23 修正案）（MSC.535(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际海运固体散装货物规则》（IMSBC Code）修正案（07-23 修正案）（MSC.535(107)）"
  },
  "65c72fe198dde226": {
   "org": "IMO",
@@ -1623,18 +609,10 @@
   "suppress": true,
   "score": 69,
   "key": "65c72fe198dde226",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际极地水域营运船舶规则》（极地规则）修正案（MSC.538(107)）"
-=======
-  "title_zh": "《极地水域营运船舶国际代码》（极地代码）修正案（MSC.538(107)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际极地水域营运船舶规则》（Polar Code）修正案（MSC.538(107)）"
  },
  "4d79f26b014ec842": {
   "org": "IMO",
@@ -1655,18 +633,10 @@
   "fixed_org": true,
   "score": 69,
   "key": "4d79f26b014ec842",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《国际散装运输液化气体船舶构造和设备规则》（IGC规则）修正案（MSC.566(109)）"
-=======
-  "title_zh": "《国际散装运输液化气体船舶构造与设备代码》（IGC 代码）修正案（MSC.566(109)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《国际散装运输液化气体船舶构造和设备规则》（IGC Code）修正案（MSC.566(109)）"
  },
  "2b68832cd908dc85": {
   "org": "IMO",
@@ -1687,18 +657,10 @@
   "fixed_org": true,
   "score": 69,
   "key": "2b68832cd908dc85",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《2008年NOx技术规则》修正案（对重大修改或按原未适用Tier认证的发动机的认证）（MEPC.398(83)）"
-=======
-  "title_zh": "《2008年NOx技术规则》修正案（对重大改装或认证至原未认证Tier的发动机的认证）（MEPC.398(83)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《2008 年 NOx 技术规则》修正案（对重大改装或按未认证 Tier 认证发动机的认证）（MEPC.398(83)）"
  },
  "73995feb652e0212": {
   "org": "IMO",
@@ -1719,18 +681,10 @@
   "fixed_org": true,
   "score": 65,
   "key": "73995feb652e0212",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "1974年SOLAS公约第II-1章修正案（MSC.549(108)）"
-=======
-  "title_zh": "1974 年 SOLAS 第 II-1 章修正案（MSC.549(108)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《1974 年 SOLAS 公约》第 II-1 章修正案（MSC.549(108)）"
  },
  "a4f168fabeaac05c": {
   "org": "IMO",
@@ -1751,18 +705,10 @@
   "fixed_org": true,
   "score": 65,
   "key": "a4f168fabeaac05c",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF规则）修正案（MSC.567(109)）"
-=======
-  "title_zh": "《使用气体或其他低闪点燃料船舶安全国际代码》（IGF 代码）修正案（MSC.567(109)）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF Code）修正案（MSC.567(109)）"
  },
  "0df1d5ad62cc5393": {
   "org": "HKMD",
@@ -1785,518 +731,32 @@
   "fixed_org": true,
   "score": 65,
   "key": "0df1d5ad62cc5393",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "海员培训、发证和值班标准规则《STCW规则》（MSIN 7/2026）"
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
  },
- "64360f7fe080c24b": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "海事劳工公约 经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2614c.pdf",
-  "summary": "经修订《2006年海事劳工公约》的2025年修正案",
-  "pub": "2026-09-28",
-  "eif": "",
-  "eif_prec": "",
-  "type": "修正案",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 58,
-  "key": "64360f7fe080c24b",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 18,
-<<<<<<< Updated upstream
-  "title_zh": "海事劳工公约：经修订《2006年海事劳工公约》2025年修正案（MSIN 14/2026）"
-=======
-  "title_zh": "海事劳工公约——经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）"
->>>>>>> Stashed changes
-=======
-  "times_seen": 18
->>>>>>> Stashed changes
- },
- "5a7362d971498607": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "《国际海上人命安全公约》修正案（MSIN 80/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2580c.pdf",
-  "summary": "运载危险品 — 符合规定文件的经修订标准格式",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "修正案",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 58,
-  "key": "5a7362d971498607",
-  "also": [
-   {
-    "org": "HKMD",
-    "source": "香港商船资讯（MSIN，政府开放数据）",
-    "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2581c.pdf"
-   },
-   {
-    "org": "HKMD",
-    "source": "香港商船资讯（MSIN，政府开放数据）",
-    "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2574c.pdf"
-   },
-   {
-    "org": "HKMD",
-    "source": "香港商船资讯（MSIN，政府开放数据）",
-    "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2573c.pdf"
-   }
-  ],
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "《国际海上人命安全公约》修正案（MSIN 80/2025）"
- },
- "0bb25dd391cf939b": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "香港商船公告及商船资讯 截至2026 年1 月1 日仍然生效的香港商船资讯（MSIN 1/2026）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2601c.pdf",
-  "summary": "截至2026 年1 月1 日仍然生效的香港商船资讯",
-  "pub": "2026-01-01",
-  "eif": "2026-01-01",
-  "eif_prec": "day",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 57,
-  "key": "0bb25dd391cf939b",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "香港商船公告及商船资讯 截至2026 年1 月1 日仍然生效的香港商船资讯（MSIN 1/2026）"
- },
- "312c505b9f80feb5": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "《防污公约》修正案 为落实《防污公约》议定书I的规定的修正案而订立的香港法例生效（MSIN 82/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2582c.pdf",
-  "summary": "为落实《防污公约》议定书I的规定的修正案而订立的香港法例生效",
-  "pub": "2025-12-30",
-  "eif": "",
-  "eif_prec": "",
-  "type": "生效提醒",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 53,
-  "key": "312c505b9f80feb5",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "《防污公约》修正案 为落实《防污公约》议定书I的规定的修正案而订立的香港法例生效（MSIN 82/2025）"
- },
- "21aa565d19492215": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "海上保安 《关于防止偷渡者登船及明确责任分工以成功解决偷渡案件的修订指南》（MSIN 15/2026）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2615c.pdf",
-  "summary": "《关于防止偷渡者登船及明确责任分工以成功解决偷渡案件的修订指南》",
-  "pub": "2026-09-28",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "21aa565d19492215",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 18
- },
- "830651d65670eb1f": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 经修订的《关于船上安全使用杀虫剂进行货舱熏蒸的建议》和经修订的《关于船上安全使用杀虫剂的建议》（MSIN 79/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2579c.pdf",
-  "summary": "经修订的《关于船上安全使用杀虫剂进行货舱熏蒸的建议》和经修订的《关于船上安全使用杀虫剂的建议》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "830651d65670eb1f",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 经修订的《关于船上安全使用杀虫剂进行货舱熏蒸的建议》和经修订的《关于船上安全使用杀虫剂的建议》（MSIN 79/2025）"
- },
- "c76a7ce6cbf4a139": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "验船及检查 《经修订的在船长指导下进行货油舱边界压力测试指引》（MSIN 78/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2578c.pdf",
-  "summary": "《经修订的在船长指导下进行货油舱边界压力测试指引》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "c76a7ce6cbf4a139",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "验船及检查 《经修订的在船长指导下进行货油舱边界压力测试指引》（MSIN 78/2025）"
- },
- "aab7eee56fb7ef21": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《经修订的船上拖曳及系泊设备指引》（MSIN 76/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2576c.pdf",
-  "summary": "《经修订的船上拖曳及系泊设备指引》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "aab7eee56fb7ef21",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《经修订的船上拖曳及系泊设备指引》（MSIN 76/2025）"
- },
- "8e3d94f61ff7ca40": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《经修订的登离船设施的构造、安装、保养和检查／检验指南》（MSIN 72/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2572c.pdf",
-  "summary": "《经修订的登离船设施的构造、安装、保养和检查／检验指南》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "8e3d94f61ff7ca40",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《经修订的登离船设施的构造、安装、保养和检查／检验指南》（MSIN 72/2025）"
- },
- "e88dacce23c8b323": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《要求的领港员和其他人员往返装置》─修订海报内容（MSIN 71/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2571c.pdf",
-  "summary": "《要求的领港员和其他人员往返装置》─修订海报内容",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "e88dacce23c8b323",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《要求的领港员和其他人员往返装置》─修订海报内容（MSIN 71/2025）"
- },
- "13f7fa37e583127b": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《经修订的船东／操作者编制紧急拖曳程序指南》（MSIN 69/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2569c.pdf",
-  "summary": "《经修订的船东／操作者编制紧急拖曳程序指南》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "13f7fa37e583127b",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《经修订的船东／操作者编制紧急拖曳程序指南》（MSIN 69/2025）"
- },
- "507510ac4b484557": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《进入船上密闭场所的经修订建议》（MSIN 68/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2568c.pdf",
-  "summary": "《进入船上密闭场所的经修订建议》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 28,
-  "key": "507510ac4b484557",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《进入船上密闭场所的经修订建议》（MSIN 68/2025）"
- },
- "75eeec67d5585002": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "验船、检查及证书 2025年检验与发证协调系统（HSSC）的检验导则（MSIN 3/2026）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2603c.pdf",
-  "summary": "2025年检验与发证协调系统（HSSC）的检验导则",
-  "pub": "2026-02-12",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 23,
-  "key": "75eeec67d5585002",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "验船、检查及证书 2025年检验与发证协调系统（HSSC）的检验导则（MSIN 3/2026）"
- },
- "ade058f981d3f257": {
-  "org": "HKMD",
-  "org_cn": "中国香港海事处",
-  "title": "安全指引 《非液货船紧急拖曳布置临时指南》（MSIN 70/2025）",
-  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2570c.pdf",
-  "summary": "《非液货船紧急拖曳布置临时指南》",
-  "pub": "2025-12-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "香港商船资讯（MSIN，政府开放数据）",
-  "origin": "HKMD",
-  "official": true,
-  "favicon": "",
-  "fixed_org": true,
-  "score": 23,
-  "key": "ade058f981d3f257",
-  "first_seen": "2026-11-09",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "title_zh": "安全指引 《非液货船紧急拖曳布置临时指南》（MSIN 70/2025）"
- },
- "9038d41425e9940e": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "FuelEU Maritime: KR warns that cheap compliance may delay decarbonization investment",
-  "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObnhKcnZNa210elRwTjMyNzhMQnc2UndtLXNneXI0NFR4MlBaOEl0T3RyQW9OWkdoLUNrN0lmdXN3N3RaX1kwMUM2eVZwanRkSHpWTWhVeFRZa0gydTdGY21qY2swWXZjZFlZMS13U0plZXJLUjA3TGJSMFg2cG0wWUF3aUtVNlJlZlBPVHZsNnI0MExRZ3ZKNXUwemxVWHRhU2M5X19HVmNZU0k?oc=5",
-  "summary": "FuelEU Maritime: KR warns that cheap compliance may delay decarbonization investment    safety4sea",
-  "pub": "2026-11-09",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "9038d41425e9940e",
-  "first_seen": "2026-11-10",
-  "status": "持续跟踪",
-  "times_seen": 7,
-  "closed": true
- },
- "12282b764f06c861": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Ahead of MEPC85, IMarEST members highlight barriers to Net-Zero delivery",
-  "link": "https://www.hellenicshippingnews.com/ahead-of-mepc85-imarest-members-highlight-barriers-to-net-zero-delivery/",
-  "summary": "Ahead of MEPC85, the Institute of Marine Engineering, Science and Technology (IMarEST) says its members now identify delivery, infrastructure, and value-chain coordination as the sector’s biggest barriers when it comes to IMO 2023 Greenhouse Gas strategy. The Institute’s Ship Energy and Environment ",
-  "pub": "2026-11-09",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "12282b764f06c861",
-  "first_seen": "2026-11-10",
-  "status": "本期新增",
-  "times_seen": 3,
-  "title_zh": "MEPC85召开在即，IMarEST成员指出净零目标交付障碍"
- },
- "b5a572ba31e253f9": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO Council urges stronger protection of seafarers amid threats to global shipping",
-  "link": "https://www.imo.org/en/MediaCentre/PressBriefings/pages/IMO-Council-C138-urges-stronger-protection-of-seafarers-amid-threats-to-global-shipping-.aspx",
+ "0e288dcfc9994dac": {
+  "org": "ABS",
+  "org_cn": "美国船级社",
+  "title": "SOLAS Requirements for Lifting Appliances and Anchor Handling Winches",
+  "link": "https://ww2.eagle.org/en/rules-and-resources/regulatory-updates/SOLAS-requirements-on-board-ships.html",
   "summary": "",
   "pub": "",
   "eif": "",
   "eif_prec": "",
-  "type": "行业动态",
+  "type": "要求/指南",
   "tags": [],
-  "source": "IMO 新闻中心（官方列表）",
-  "origin": "IMO",
+  "source": "ABS Regulatory News（官方列表）",
+  "origin": "ABS",
   "official": true,
   "favicon": "",
-  "score": 35,
-  "key": "b5a572ba31e253f9",
-  "first_seen": "2026-11-10",
-  "status": "持续跟踪",
-  "times_seen": 17,
-  "closed": true
- },
- "bf1a5c257585c508": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "New UCL tool flags food security risks from shipping emissions rules",
-  "link": "https://splash247.com/new-ucl-tool-flags-food-security-risks-from-shipping-emissions-rules/",
-  "summary": "The International Maritime Organization’s proposed shipping decarbonisation measures could disproportionately increase the transport costs of essential food imports, particularly for countries dependent on shipments of bulk cereals, according to new research from University College London (UCL). Res",
-  "pub": "2026-11-10",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Splash247（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "bf1a5c257585c508",
-  "first_seen": "2026-11-11",
+  "score": 65,
+  "key": "0e288dcfc9994dac",
+  "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 2,
-  "title_zh": "UCL新工具揭示航运排放规则带来的粮食安全风险"
- },
- "516b7328ff2976e5": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "新能源船怎么检？证书谁发谁核？江西船检新规11月15日起试运行",
-  "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE4xWTF4Q0t4Mk51M1V0eDlSVjF0MGxTYkpHY1VnMnFqLUktRmpUYi1tZGVBLWwtU1VRTC1mQjRVTlBER2ZzSTA1SHdB?oc=5",
-  "summary": "新能源船怎么检？证书谁发谁核？江西船检新规11月15日起试运行    凤凰网",
-  "pub": "2026-11-10",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · 中文规范动态",
-  "origin": "凤凰网",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "516b7328ff2976e5",
-  "first_seen": "2026-11-11",
-  "status": "本期新增",
-  "times_seen": 2,
-  "title_zh": "新能源船怎么检？证书谁发谁核？江西船检新规11月15日起试运行"
- },
- "cf21e1acac20ee05": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "OceanScore Supporting Anglo-Eastern on EU ETS and Fuel EU Compliance",
-  "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSDhEMTFGQ2FLZGhPb0tqY3R4V0ZaZW9OSlpHSEtzNExray03V3BYUmNHM2t4YXFyaE5pazB2T0RzcEdfV3FfTnlIRll6NnNmamtSdnhzUThSN2R6VXRCSTZvWk5wMW81UUt2RUlxa1Q4NHpyR0V1T1hwWFpJS2lQR21ScTJOZFlMaUlmLVpSMko2WmJ1UWNOaDBCZnVqWmZpYUZ5eXljWHZSQVNYZTdWUw?oc=5",
-  "summary": "OceanScore Supporting Anglo-Eastern on EU ETS and Fuel EU Compliance    Ship & Bunker",
-  "pub": "2026-06-08",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Ship & Bunker",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "cf21e1acac20ee05",
-  "first_seen": "2026-11-11",
-  "status": "持续跟踪",
-  "times_seen": 3,
-  "title_zh": "OceanScore支持Anglo-Eastern应对EU ETS和FuelEU合规"
- },
- "842c7424c60ad0e0": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "People Yu Jiajia Becomes First Chinese Recipient of IMO Gender Equality Award 2026-11-10 17:31",
-  "link": "https://www.xindemarinenews.com/news/2120086906227458050",
-  "summary": "",
-  "pub": "",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "信德海事（中文站列表）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 27,
-  "key": "842c7424c60ad0e0",
-  "first_seen": "2026-11-11",
-  "status": "持续跟踪",
-  "times_seen": 14,
-  "closed": true
+  "times_seen": 1,
+  "title_zh": "SOLAS 对起重设备和锚机绞车的要求"
  },
  "a005392989fb64ba": {
   "org": "IMO",
@@ -2315,424 +775,10 @@
   "favicon": "",
   "score": 65,
   "key": "a005392989fb64ba",
-  "first_seen": "2026-11-12",
-  "status": "持续跟踪",
-  "times_seen": 12,
-<<<<<<< Updated upstream
-  "closed": true,
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
   "title_zh": "IMO 秘书长呼吁各国在霍尔木兹海峡执行海事规则"
-=======
-  "closed": true
->>>>>>> Stashed changes
- },
- "5c15016c854f1e70": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO Chief Calls for Strict Enforcement of SOLAS Rules in Strait of Hormuz",
-  "link": "https://gcaptain.com/imo-chief-calls-for-strict-enforcement-of-solas-rules-in-strait-of-hormuz/",
-  "summary": "International Maritime Organization (IMO) Secretary-General Arsenio Dominguez has called on governments to step up enforcement of international maritime regulations in the Strait of Hormuz, warning that unsafe shipping practices are...",
-  "pub": "2026-11-11",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "gCaptain（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "5c15016c854f1e70",
-  "first_seen": "2026-11-12",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "IMO负责人呼吁在霍尔木兹海峡严格执行SOLAS规则"
- },
- "add4cb4e7d367fc6": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Shipping and port groups seek changes to EU ETS transshipment rules",
-  "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORDlKSy1QMlZSVUlmQlNVRzh5WF9BMG1sNXFid0ZrU0s5OVR6cHlYRnAyWFUzSUQ5VTlXbm9DVUZJRTBsZ2dCbm51NkxOZHpRbEVQUGFJSlFhM1R5WS1vQlhwYklDSTVvN19aMWNzclZrd25RN29oN0NPbExBNEp1bU5RUXh6S3F4bXoxdVZRWE5yTmZVWlE?oc=5",
-  "summary": "Shipping and port groups seek changes to EU ETS transshipment rules    safety4sea",
-  "pub": "2026-11-11",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "add4cb4e7d367fc6",
-  "first_seen": "2026-11-12",
-  "status": "持续跟踪",
-  "times_seen": 4,
-  "title_zh": "航运和港口组织寻求修改EU ETS转运规则"
- },
- "abeeebe7c9e3bf75": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Hafnia pools meets compliance under FuelEU maritime for 2025",
-  "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUDA2Y2N2NmtCV3FkZTdaMXBmRmZOOGNtVndCcGxINTZWdkVselUzS2laQ2NfbTVKRE5CUkNCQ3BKNi1PSWRmWWdyQ1RUR2cxbGFpdXF3SkRUel9jV0U2bXRMRTVnUTQ0UFlXaXhpc1JwUmlmM0ZFTXREQjlPUmJ0YVNTSUFmT2gxVy1MSkhTOUNVTjFoVjRR?oc=5",
-  "summary": "Hafnia pools meets compliance under FuelEU maritime for 2025    https://www.engine.online/",
-  "pub": "2026-06-25",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "https://www.engine.online/",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "abeeebe7c9e3bf75",
-  "first_seen": "2026-11-12",
-  "status": "持续跟踪",
-  "times_seen": 2,
-  "title_zh": "Hafnia联营池满足2025年FuelEU Maritime合规要求"
- },
- "28b2c22a7e1f50a8": {
-  "org": "DNV",
-  "org_cn": "挪威船级社",
-  "title": "DNV推出RuleAgent智能工具助力更快速清晰查阅规范",
-  "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdWJ0MWh0b3FaRk1idWlBSGhCbE91SXVSYzl0QWhZYzZDOXBwa1RTX1dadG5pdFVLajB0VHpTOUVyWVRET1lOSDdGNmFwRHBselNUY0hjazFfYVF2MXMta0VBSlR1ODlULV9zZFRyRmV1anRjWjlnS3RqZXhtLWhpUk5R?oc=5",
-  "summary": "DNV推出RuleAgent智能工具助力更快速清晰查阅规范- 船级社    国际船舶网",
-  "pub": "2026-03-31",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · 中国船级社",
-  "origin": "国际船舶网",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "28b2c22a7e1f50a8",
-  "first_seen": "2026-11-13",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "DNV推出RuleAgent智能工具助力更快速清晰查阅规范"
- },
- "8602969e7c0ee0a3": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO may codify alternative net-zero bunker rules in 2027: US FMC",
-  "link": "https://www.hellenicshippingnews.com/imo-may-codify-alternative-net-zero-bunker-rules-in-2027-us-fmc/",
-  "summary": "The International Maritime Organization (IMO) may start forming consensus around an alternative Net-Zero Framework (NZF) in the coming weeks before hammering out its final text in 2027, US Federal Maritime Commission Chairman Laura DiBella said. The UN agency is due to hold meetings Nov. 23-Dec. 4 t",
-  "pub": "2026-11-12",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "8602969e7c0ee0a3",
-  "first_seen": "2026-11-13",
-  "status": "本期新增",
-  "times_seen": 3,
-  "title_zh": "美国FMC：IMO可能在2027年编纂替代净零船用燃料规则"
- },
- "78e99d2a824bf06f": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "MARPOL Convention: All 6 Annexes Explained (2026)",
-  "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1NSmZnUGlLcXJsZDhabUh4aUUxWDFMcXFxOVFCSFFUVldLNzJRSFF2T2xpT0dlcTRRUmw0T0pMLVJqS0ZZMG9Ga3lTbWpTdw?oc=5",
-  "summary": "MARPOL Convention: All 6 Annexes Explained (2026)    Shipfinex.com",
-  "pub": "2026-04-23",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [
-   "防污染"
-  ],
-  "source": "Google News · SOLAS/MARPOL 公约修正",
-  "origin": "Shipfinex.com",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "78e99d2a824bf06f",
-  "first_seen": "2026-11-13",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "MARPOL公约：全部6个附则详解（2026）"
- },
- "88db9834c13964fc": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Maersk’s cyber breach is a warning for every secondhand ship sale",
-  "link": "https://splash247.com/maersks-cyber-breach-is-a-warning-for-every-secondhand-ship-sale/",
-  "summary": "The door was a system that came with an acquisition. Every owner who buys a secondhand vessel takes the same risk on board, and few check for it at delivery. By Argyris Zafeiropoulos from Athens-based Resilience & Compliance Advisory. On November 11 Maersk confirmed that attackers had entered a loca",
-  "pub": "2026-11-13",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [
-   "网络安全"
-  ],
-  "source": "Splash247（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "88db9834c13964fc",
-  "first_seen": "2026-11-13",
-  "status": "本期新增",
-  "times_seen": 3,
-  "title_zh": "马士基网络泄露事件为每一笔二手船交易敲响警钟"
- },
- "54f8a6b44618c82e": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Skuld outlines EU ETS compliance requirements for offshore vessels ahead of 2027",
-  "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZUVueklGa3BGeDNNa2RrUExJYi0yRVdURmtUUzIyc3BDWGVWZGVQT2dKMGlfSTUtMmVlWkU2dllIdHd1OHJIMWZrZ0k2SHdVY0FMeS1wYjhVSVNndk9sUW9sTVhuRjZjWVFEVWowQ1llbVVYZmwtdmNoSmhZSGNHU1daZEFPSTVNaDE1Ymd3dVVfM1N2MEFjaWZjUnNnbmJneDI3NVQxaw?oc=5",
-  "summary": "Skuld outlines EU ETS compliance requirements for offshore vessels ahead of 2027    safety4sea",
-  "pub": "2026-11-12",
-  "eif": "",
-  "eif_prec": "",
-  "type": "要求/指南",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "safety4sea",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "54f8a6b44618c82e",
-  "first_seen": "2026-11-13",
-  "status": "本期新增",
-  "times_seen": 3,
-  "title_zh": "Skuld概述2027年前海工船舶EU ETS合规要求"
- },
- "1438fab837c767c5": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO faces challenges in net-zero framework compliance without emissions cost",
-  "link": "https://www.hellenicshippingnews.com/imo-faces-challenges-in-net-zero-framework-compliance-without-emissions-cost/",
-  "summary": "Countries are struggling to design rules to make shipping companies comply with a new bunker regulation designed to reduce greenhouse gas emissions, a senior International Bunker Industry Association official said Nov. 12, as Washington leads opposition to financial punitive measures. International ",
-  "pub": "2026-11-15",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "1438fab837c767c5",
-  "first_seen": "2026-11-16",
-  "status": "本期新增",
-  "times_seen": 1,
-<<<<<<< Updated upstream
-  "title_zh": "IMO 在无排放成本情况下推进净零框架合规面临挑战"
-=======
-  "title_zh": "IMO 在无排放成本情况下净零框架合规面临挑战"
->>>>>>> Stashed changes
- },
- "afb0e539d8f429bd": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "MSC Nears Deal To Buy Majority Stake In German Shipyard Meyer Werft",
-  "link": "https://gcaptain.com/msc-nears-deal-to-buy-majority-stake-in-german-shipyard-meyer-werft/",
-  "summary": "FRANKFURT, Nov 14 (Reuters) – The German government and regional state of Lower Saxony are nearing a deal that gives Geneva-based shipping group MSC the right to acquire about 80% of the shares in...",
-  "pub": "2026-11-14",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "gCaptain（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "afb0e539d8f429bd",
-  "first_seen": "2026-11-16",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "MSC接近达成收购德国Meyer Werft船厂多数股权协议"
- },
- "11b5dd75bd29b4a2": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Norway’s court invalidates approvals for three offshore developments",
-  "link": "https://splash247.com/norways-court-invalidates-approvals-for-three-offshore-developments/",
-  "summary": "Norway’s Supreme Court has ruled that government approvals for three major North Sea oil and gas developments are invalid because their environmental assessments failed to adequately account for greenhouse gas emissions. The ruling concerns Equinor’s Breidablikk field and Aker BP’s Tyrving and Yggdr",
-  "pub": "2026-11-16",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Splash247（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "11b5dd75bd29b4a2",
-  "first_seen": "2026-11-16",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "挪威法院裁定三个海上开发项目的批准无效"
- },
- "1bba5ad46e795a09": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "16/2026 Statutory Alert new channel requirements for VHF GMDSS radiocommunications equipment",
-  "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOb0IySUlVUTZodDFpUmx3S2ZVdW9sM3NqNXo5TDNKQkNwZ3o3S1BpQk1IUFFtUmJEU1JVbGs4T0V2cTZjc24wdnNTTXFidmhMRXJ2Rlh4MW5TcWJITFRycWFPRkV1ekNpTnMxT3FRbzVLTDhocTlYYXdCRGdyaGVXZG4wZ2NyamJoOXhnaVRUb3dQdE9yTlViY0R4RUZRTnZtbjk3M1dremppdTk2ci1hOXlCQUQwcm50UExpdmpheTRhOW9YcDNtVDBiOVV4TlIz?oc=5",
-  "summary": "16/2026 Statutory Alert new channel requirements for VHF GMDSS radiocommunications equipment    Cyprus Shipping News",
-  "pub": "2026-10-06",
-  "eif": "",
-  "eif_prec": "",
-  "type": "法规通报",
-  "tags": [],
-  "source": "Google News · Statutory Alert / 技术通函",
-  "origin": "Cyprus Shipping News",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "1bba5ad46e795a09",
-  "first_seen": "2026-11-16",
-  "status": "持续跟踪",
-  "times_seen": 8,
-  "closed": true
- },
- "46d908aa1d784ab6": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Bilbao Port Authority Chairs EU Group on FuelEU Maritime Shore Power Rules",
-  "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVU9HZkx5OU5faTVmUi1RbDhuTy0yeUF3N29maDR0X2tuMDNhTEp0MVR1cUpQWGU3Y3pBb1kxdENEMjBLXzNRcnZFQVZQaXpWeW1kWTl0eGZYUnBsMEo3SlFxZW5YSGVOMUc2Nllvd3lodGFPNEpPanpqTGcyV1JjODNfOHlhcUgtMUxWOFU3T3h6d1FWZUVIMmlPc05GUV91Ul96Y2EyNE4xV1NWNVhKcEVSU29PYUM2?oc=5",
-  "summary": "Bilbao Port Authority Chairs EU Group on FuelEU Maritime Shore Power Rules    Ship & Bunker",
-  "pub": "2026-11-02",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Ship & Bunker",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "46d908aa1d784ab6",
-  "first_seen": "2026-11-16",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "毕尔巴鄂港务局主持EU FuelEU Maritime岸电规则工作组"
- },
- "8b4587ea3a464704": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "India eases flag rules in push for more tonnage",
-  "link": "https://splash247.com/india-eases-flag-rules-in-push-for-more-tonnage/",
-  "summary": "India has relaxed its ship registration rules, allowing vessels with majority Indian ownership to qualify for the national flag in a move that opens the door to foreign minority investment. The Ministry of Ports, Shipping and Waterways has set the ownership threshold at more than 50%, replacing the ",
-  "pub": "2026-11-15",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [],
-  "source": "Splash247（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "8b4587ea3a464704",
-  "first_seen": "2026-11-16",
-  "status": "本期新增",
-  "times_seen": 1,
-  "title_zh": "印度放宽船旗规则以推动运力增长"
- },
- "29162f4da1942fc4": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "Shipping Industry Presses for Global IMO Climate Deal as Divisions Over Rules Persist",
-  "link": "https://gcaptain.com/shipping-industry-presses-for-global-imo-climate-deal-as-divisions-over-rules-persist/",
-  "summary": "Nine major shipping associations are urging governments to reach an agreement on global greenhouse gas regulations, warning that continued uncertainty threatens investment in cleaner ships and alternative fuels ahead of...",
-  "pub": "2026-11-18",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "替代燃料"
-  ],
-  "source": "gCaptain（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "29162f4da1942fc4",
-  "first_seen": "2026-11-19",
-  "status": "本期新增",
-  "times_seen": 2,
-  "title_zh": "航运业敦促达成全球 IMO 气候协议，规则分歧仍存"
- },
- "d43b13995cd8cd4b": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "Can an IMO Circular Override Basel Consent for Ship Recycling?",
-  "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbG1TbnlYR1F1aE1SRXE3VWRNeHpMd2lQZHJQcFBmZ0RIRFNOZHBVOV9Uc1NKZHlyYy12X2trLWlfZHJmTk5mREdaS1hMUUFxN2t4NXVQWmo4QVdHOVVNTlY4YXBxWWhWbVhua280NU95bE9SNWVvZFlONmFyTkkwZnBQUEdwRWVzSEZaN0dOY2VaRTZnUU1wYkd4UUFuQUExb0VFWXNkWHNzdm01TUJyX01KT3hidkU?oc=5",
-  "summary": "Can an IMO Circular Override Basel Consent for Ship Recycling?    The Maritime Executive",
-  "pub": "2026-11-18",
-  "eif": "",
-  "eif_prec": "",
-  "type": "决议/通函",
-  "tags": [],
-  "source": "Google News · IMO 强制文件",
-  "origin": "The Maritime Executive",
-  "official": false,
-  "favicon": "",
-  "score": 57,
-  "key": "d43b13995cd8cd4b",
-  "first_seen": "2026-11-19",
-  "status": "持续跟踪",
-  "times_seen": 4
- },
- "b021db39e97dd37d": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "Shipping industry urges governments to agree on global GHG regulations to provide regulatory certainty and incentivize maritime decarbonization",
-  "link": "https://www.hellenicshippingnews.com/shipping-industry-urges-governments-to-agree-on-global-ghg-regulations-to-provide-regulatory-certainty-and-incentivize-maritime-decarbonization/",
-  "summary": "In advance of the UN International Maritime Organization (IMO) Marine Environment Protection Committee (MEPC 85), which meets in London from 30 November to 4 December 2026, this statement is made jointly by BIMCO, CLIA, IBIA, ICS, INTERCARGO, INTERFERRY, INTERTANKO, IPTA and WSC representing the glo",
-  "pub": "2026-11-18",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 51,
-  "key": "b021db39e97dd37d",
-  "first_seen": "2026-11-19",
-  "status": "本期新增",
-  "times_seen": 2
- },
- "0835b9df7801a35e": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "UK Opens Consultation on New Maritime Fuel Regulation",
-  "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONndqcHV3eWFGdkEyQUVEZTFkMDItRHUwOUZPeWlTaEJnTlNvU2gwSHctWU04Q0JMVUJIUzE3dThlSUJmRDVhOGcyMG5rY29LWTh6SFFicGhiRGVYSDhGbUlHSWhWRTBQZm84M2d1ZGZqODRQdm9VejAtQWozYzFfVDkwU3R3Zk9rRkNKV2RXWXdMNktRR1ZNX0JUcGg?oc=5",
-  "summary": "UK Opens Consultation on New Maritime Fuel Regulation    Ship & Bunker",
-  "pub": "2026-11-17",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Ship & Bunker",
-  "official": false,
-  "favicon": "",
-  "score": 50,
-  "key": "0835b9df7801a35e",
-  "first_seen": "2026-11-19",
-  "status": "本期新增",
-  "times_seen": 2
  },
  "4279f6aeacbc189e": {
   "org": "LR",
@@ -2762,11 +808,6 @@
    {
     "org": "LR",
     "source": "Google News · Lloyd's Register",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQSDZHTzA1cGkwVVowV1U3eGJuMEVIeFJYRmdVMVo2VTQ1UWhIVGFYMlN0UXlON3E2R3pBcUhXNjgzWjBUa2VZa2lGalRERG9uMFR3U2xyekZPU05mb2wzcnZOT25Rd3doSi1Pa0xFcnRyWXVESllsVUoxUW5yNXp5U0xJalFfN0VQbV9nWEhvVl8wSXcwZ2lUcHNGc0JaU3FlLVRoeU9yR3k4bkhWcTZYUlpYaTFJbGw1bkR4MFoyUlZFanBkUzJuS3NqVmdJSUIwRWFLNEt3?oc=5"
-   },
-   {
-    "org": "LR",
-    "source": "Google News · Lloyd's Register",
     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeGxwRDJ1MWdpWFRad3RCR01hRUtjVE8wbWxjM1RfdDJrOFYtZXRzdTFsT1dOeU1fRTMxa3NnazBhQVljNjRiMzN5bUxZWjd2eVBHVVhfSF9kNWNYZVo0ME9rYzlvb2M3Tm9rRWowR0FSaWFCUVFLcm51czBUeE9iT2p0cUtNNG91ckJNcy1YblMwMUhhcEJSRlE2NkRvMUljLW9nS2dFOUh1M0lCVWh1Q25fQVBSdw?oc=5"
    },
    {
@@ -2780,14 +821,79 @@
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPdGlsZ3NQQ3dqMXRHSXgyMkc3czc1OFVMNlFfblFsYmtWU3ZnejRDWjlQdEgtNWNUNFg4alFlZ2NrTXd4aU41RkFXMmUxZFlWRXVoSkE2ZU96UjMxSFYwbi02c3MzbU0tRXlwbXk2cmtYVlA2dW16d0FURmVnZG1oTDdWUFNHdERNUWh2RTFQRGh0SURodUJmQm5RckxfVTJtdGhCYThPUGFhY0ZVLWNUUWFGYU9CVWVZS1l5cllSLU5tdXZ0LVVzZg?oc=5"
    }
   ],
-  "first_seen": "2026-11-23",
-  "status": "持续跟踪",
-<<<<<<< Updated upstream
-  "times_seen": 5,
-  "title_zh": "劳氏船级社批准核动力船舶新入级规范"
-=======
-  "times_seen": 5
->>>>>>> Stashed changes
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "劳氏船级社（LR）批准核动力船舶新入级规则"
+ },
+ "88c08df6f9f8c037": {
+  "org": "IMO",
+  "org_cn": "国际海事组织",
+  "title": "IMO faces tough compromise on shipping emissions rules amid US opposition",
+  "link": "https://www.hellenicshippingnews.com/imo-faces-tough-compromise-on-shipping-emissions-rules-amid-us-opposition/",
+  "summary": "The International Maritime Organization faces another difficult round of negotiations over the Net-Zero Framework from late November, with countries seeking a compromise on the contentious carbon pricing mechanism that could determine the pace of shipping’s transition to low-carbon fuels. While indu",
+  "pub": "2026-11-23",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [
+   "温室气体"
+  ],
+  "source": "Hellenic Shipping News（行业 RSS）",
+  "origin": "行业",
+  "official": false,
+  "favicon": "",
+  "score": 63,
+  "key": "88c08df6f9f8c037",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "IMO 在美国反对下面临航运排放规则的艰难妥协"
+ },
+ "64360f7fe080c24b": {
+  "org": "HKMD",
+  "org_cn": "中国香港海事处",
+  "title": "海事劳工公约 经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）",
+  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2614c.pdf",
+  "summary": "经修订《2006年海事劳工公约》的2025年修正案",
+  "pub": "2026-09-28",
+  "eif": "",
+  "eif_prec": "",
+  "type": "修正案",
+  "tags": [],
+  "source": "香港商船资讯（MSIN，政府开放数据）",
+  "origin": "HKMD",
+  "official": true,
+  "favicon": "",
+  "fixed_org": true,
+  "score": 58,
+  "key": "64360f7fe080c24b",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "《2006 年海事劳工公约》2025 年修正案（MSIN 14/2026）"
+ },
+ "052f897fa1225105": {
+  "org": "DNV",
+  "org_cn": "挪威船级社",
+  "title": "DNV receives authorisation for floating offshore wind rules in Japan",
+  "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQVIyMzBTQW9kbndiMmFOdUl3S0NfVFlEb0M1ZTc2djFXOTlRWnZwRG5jekpGczJ4QW1sRU82OGVXcWRXWDNLcmhRMVdPZTNsRUpydk5MQkU0Yjh0VG0tMm1UQ0hJYTRsZExIaGp5ejExUW83S0hsVS11MWJGOVVoTG0wV0Jzd2doYUJDRElWSlg2RmUwakhTRjgtYzZDamJNcS02akI3cDJTWGliVkVzSEFB?oc=5",
+  "summary": "DNV receives authorisation for floating offshore wind rules in Japan    Energy Global",
+  "pub": "2026-10-19",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [],
+  "source": "Google News · DNV",
+  "origin": "Energy Global",
+  "official": false,
+  "favicon": "",
+  "score": 57,
+  "key": "052f897fa1225105",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "DNV 获得日本浮式海上风电规则授权"
  },
  "24ceffbc81dc84b8": {
   "org": "LR",
@@ -2806,9 +912,32 @@
   "favicon": "",
   "score": 57,
   "key": "24ceffbc81dc84b8",
-  "first_seen": "2026-11-23",
-  "status": "持续跟踪",
-  "times_seen": 5
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "劳氏船级社（LR）批准海事核动力新规则"
+ },
+ "a8bafb34d05fe674": {
+  "org": "LR",
+  "org_cn": "劳氏船级社",
+  "title": "Lloyd’s Register approves rules to support assessment of nuclear tech for maritime use",
+  "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDNTeS15Nzl0NmdSV2k3U1YycGZ6X1NjTlNDdDRwSGNveXkzamZlRFJ2OHhHQjRSV2lNQUlmdnpmR2Q0M0s1ZjdINHNrU0FBSEU3MkJISGFRMnJ1anJIMS1tZ3JRTWg0clhhd1N5YlhTZFMzdUI1d2RDSmhYTVlBUFR3SFZzMmVtMW84Z0JFR3R0cTY4Q1F4b3lMU0RqdW14ZURJbVdDVjdIbVVwbTF3LWF2TQ?oc=5",
+  "summary": "Lloyd’s Register approves rules to support assessment of nuclear tech for maritime use    ship.energy",
+  "pub": "2026-11-23",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [],
+  "source": "Google News · Lloyd's Register",
+  "origin": "ship.energy",
+  "official": false,
+  "favicon": "",
+  "score": 57,
+  "key": "a8bafb34d05fe674",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "劳氏船级社（LR）批准支持海事核技术评估的规则"
  },
  "715ea2af0d01a992": {
   "org": "LR",
@@ -2834,83 +963,32 @@
     "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRmJNUFNhZ0RMb3MwUWJ6TkdwZ1QxcVZITUFadEVhTlZUcWZJd3VLOFBGRnJDLUVYSVVmS2VhcFhzTkphcW1kYm9oVjF3V2EyX2t2MkNzak91bmpoMTkyQzJMUGFlbTdEVGx1cDAzUnNkRWRyRXRvX0lzQlh6THc0ejRWRHNyRFFsWnJtVy1Ub0J1Q2YwZkpETTd5aHh5Z3QxYXlPOE1KMA?oc=5"
    }
   ],
-  "first_seen": "2026-11-23",
-  "status": "持续跟踪",
-  "times_seen": 5
- },
- "8c6bccb410cb53d0": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "FuelEU Maritime: compliance burden or opportunity?",
-  "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOXJhVjBRS3pwbFlaVC1tY2doSENhN3hJV1hMV1dQeVozeVd2UUJsR3BCMjB0bzM3QlphZDNZRFBBaWhKY3BKeHVGZVlkZjJqZ3B4N2NDM1VuZTFJWUV5WkU4SVNZWUJTR3J3QUNNR1pWNXVKYlZUZERlTWstYW43S3pvVVdqMGs?oc=5",
-  "summary": "FuelEU Maritime: compliance burden or opportunity?    Argus Media",
-  "pub": "2026-11-19",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · FuelEU/EU ETS 航运碳法规",
-  "origin": "Argus Media",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "8c6bccb410cb53d0",
-  "first_seen": "2026-11-23",
-  "status": "持续跟踪",
-  "times_seen": 4
- },
- "88c08df6f9f8c037": {
-  "org": "IMO",
-  "org_cn": "国际海事组织",
-  "title": "IMO faces tough compromise on shipping emissions rules amid US opposition",
-  "link": "https://www.hellenicshippingnews.com/imo-faces-tough-compromise-on-shipping-emissions-rules-amid-us-opposition/",
-  "summary": "The International Maritime Organization faces another difficult round of negotiations over the Net-Zero Framework from late November, with countries seeking a compromise on the contentious carbon pricing mechanism that could determine the pace of shipping’s transition to low-carbon fuels. While indu",
-  "pub": "2026-11-23",
-  "eif": "",
-  "eif_prec": "",
-  "type": "规则改版",
-  "tags": [
-   "温室气体"
-  ],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
-  "official": false,
-  "favicon": "",
-  "score": 63,
-  "key": "88c08df6f9f8c037",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-<<<<<<< Updated upstream
-  "times_seen": 3,
-<<<<<<< Updated upstream
-  "title_zh": "美国反对下 IMO 在航运排放规则上面临艰难妥协"
-=======
-  "title_zh": "美国反对下 IMO 就航运排放规则面临艰难妥协"
->>>>>>> Stashed changes
-=======
-  "times_seen": 3
->>>>>>> Stashed changes
+  "times_seen": 1,
+  "title_zh": "劳氏船级社（LR）批准涵盖核动力船舶的入级规则"
  },
- "a8bafb34d05fe674": {
-  "org": "LR",
-  "org_cn": "劳氏船级社",
-  "title": "Lloyd’s Register approves rules to support assessment of nuclear tech for maritime use",
-  "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDNTeS15Nzl0NmdSV2k3U1YycGZ6X1NjTlNDdDRwSGNveXkzamZlRFJ2OHhHQjRSV2lNQUlmdnpmR2Q0M0s1ZjdINHNrU0FBSEU3MkJISGFRMnJ1anJIMS1tZ3JRTWg0clhhd1N5YlhTZFMzdUI1d2RDSmhYTVlBUFR3SFZzMmVtMW84Z0JFR3R0cTY4Q1F4b3lMU0RqdW14ZURJbVdDVjdIbVVwbTF3LWF2TQ?oc=5",
-  "summary": "Lloyd’s Register approves rules to support assessment of nuclear tech for maritime use    ship.energy",
-  "pub": "2026-11-23",
+ "d43b13995cd8cd4b": {
+  "org": "IMO",
+  "org_cn": "国际海事组织",
+  "title": "Can an IMO Circular Override Basel Consent for Ship Recycling?",
+  "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbG1TbnlYR1F1aE1SRXE3VWRNeHpMd2lQZHJQcFBmZ0RIRFNOZHBVOV9Uc1NKZHlyYy12X2trLWlfZHJmTk5mREdaS1hMUUFxN2t4NXVQWmo4QVdHOVVNTlY4YXBxWWhWbVhua280NU95bE9SNWVvZFlONmFyTkkwZnBQUEdwRWVzSEZaN0dOY2VaRTZnUU1wYkd4UUFuQUExb0VFWXNkWHNzdm01TUJyX01KT3hidkU?oc=5",
+  "summary": "Can an IMO Circular Override Basel Consent for Ship Recycling?    The Maritime Executive",
+  "pub": "2026-11-18",
   "eif": "",
   "eif_prec": "",
-  "type": "规则改版",
+  "type": "决议/通函",
   "tags": [],
-  "source": "Google News · Lloyd's Register",
-  "origin": "ship.energy",
+  "source": "Google News · IMO 强制文件",
+  "origin": "The Maritime Executive",
   "official": false,
   "favicon": "",
   "score": 57,
-  "key": "a8bafb34d05fe674",
+  "key": "d43b13995cd8cd4b",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
+  "times_seen": 1,
+  "title_zh": "IMO 通函能否优先于《巴塞尔公约》的船舶回收同意？"
  },
  "383bc55c52623a63": {
   "org": "IMO",
@@ -2931,7 +1009,8 @@
   "key": "383bc55c52623a63",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
+  "times_seen": 1,
+  "title_zh": "IMO 净零框架：2027–2030 年航运合规成本"
  },
  "79b3d3bc35f09f8f": {
   "org": "IMO",
@@ -2952,7 +1031,32 @@
   "key": "79b3d3bc35f09f8f",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
+  "times_seen": 1,
+  "title_zh": "新闻：若 MEPC 85 未能达成成果，航运业将面临更多繁文缛节和更高成本"
+ },
+ "9038d41425e9940e": {
+  "org": "行业",
+  "org_cn": "行业媒体",
+  "title": "FuelEU Maritime: KR warns that cheap compliance may delay decarbonization investment",
+  "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObnhKcnZNa210elRwTjMyNzhMQnc2UndtLXNneXI0NFR4MlBaOEl0T3RyQW9OWkdoLUNrN0lmdXN3N3RaX1kwMUM2eVZwanRkSHpWTWhVeFRZa0gydTdGY21qY2swWXZjZFlZMS13U0plZXJLUjA3TGJSMFg2cG0wWUF3aUtVNlJlZlBPVHZsNnI0MExRZ3ZKNXUwemxVWHRhU2M5X19HVmNZU0k?oc=5",
+  "summary": "FuelEU Maritime: KR warns that cheap compliance may delay decarbonization investment    safety4sea",
+  "pub": "2026-11-09",
+  "eif": "",
+  "eif_prec": "",
+  "type": "行业动态",
+  "tags": [
+   "温室气体"
+  ],
+  "source": "Google News · FuelEU/EU ETS 航运碳法规",
+  "origin": "safety4sea",
+  "official": false,
+  "favicon": "",
+  "score": 51,
+  "key": "9038d41425e9940e",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1,
+  "title_zh": "FuelEU Maritime：KR 警告低成本合规可能延缓脱碳投资"
  },
  "740fe7434257d845": {
   "org": "行业",
@@ -2975,7 +1079,8 @@
   "key": "740fe7434257d845",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
+  "times_seen": 1,
+  "title_zh": "世界航运理事会呼吁就航运排放达成全球协议，行业投资已超 2000 亿美元"
  },
  "1ecae146bdcf8335": {
   "org": "行业",
@@ -2996,49 +1101,30 @@
   "key": "1ecae146bdcf8335",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
+  "times_seen": 1,
+  "title_zh": "海事燃料新规引发西班牙加注竞争力辩论"
  },
- "e8d5d5eb53ab5a86": {
+ "1bba5ad46e795a09": {
   "org": "行业",
   "org_cn": "行业媒体",
-  "title": "ATEX compliance doesn’t end at delivery, and neither does the liability",
-  "link": "https://www.hellenicshippingnews.com/atex-compliance-doesnt-end-at-delivery-and-neither-does-the-liability/",
-  "summary": "For vessel operators, a compliance certificate can feel like a closed chapter. Equipment is installed, paperwork is filed, and the assumption takes hold that the safety obligation has been met. In the case of ATEX-certified cargo handling systems, that assumption is one of the more persistent, and c",
-  "pub": "2026-11-23",
+  "title": "16/2026 Statutory Alert new channel requirements for VHF GMDSS radiocommunications equipment",
+  "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOb0IySUlVUTZodDFpUmx3S2ZVdW9sM3NqNXo5TDNKQkNwZ3o3S1BpQk1IUFFtUmJEU1JVbGs4T0V2cTZjc24wdnNTTXFidmhMRXJ2Rlh4MW5TcWJITFRycWFPRkV1ekNpTnMxT3FRbzVLTDhocTlYYXdCRGdyaGVXZG4wZ2NyamJoOXhnaVRUb3dQdE9yTlViY0R4RUZRTnZtbjk3M1dremppdTk2ci1hOXlCQUQwcm50UExpdmpheTRhOW9YcDNtVDBiOVV4TlIz?oc=5",
+  "summary": "16/2026 Statutory Alert new channel requirements for VHF GMDSS radiocommunications equipment    Cyprus Shipping News",
+  "pub": "2026-10-06",
   "eif": "",
   "eif_prec": "",
-  "type": "行业动态",
+  "type": "法规通报",
   "tags": [],
-  "source": "Hellenic Shipping News（行业 RSS）",
-  "origin": "行业",
+  "source": "Google News · Statutory Alert / 技术通函",
+  "origin": "Cyprus Shipping News",
   "official": false,
   "favicon": "",
   "score": 45,
-  "key": "e8d5d5eb53ab5a86",
+  "key": "1bba5ad46e795a09",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 3
- },
- "84d1184cd2191c69": {
-  "org": "行业",
-  "org_cn": "行业媒体",
-  "title": "广西出台“三无”船舶认定处置新规，明确拆解、拍卖等处理方式",
-  "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9nWHJ5T1VWeWhWakVBUEotc0xlM29tTkhYbXlkMUpCdEEyUlZBMTJKYlJkbFplalNrWUlNdmYtXzY1SDJ0Z1FQMjV2ckQ?oc=5",
-  "summary": "广西出台“三无”船舶认定处置新规，明确拆解、拍卖等处理方式    凤凰网",
-  "pub": "2026-11-19",
-  "eif": "",
-  "eif_prec": "",
-  "type": "行业动态",
-  "tags": [],
-  "source": "Google News · 中文规范动态",
-  "origin": "凤凰网",
-  "official": false,
-  "favicon": "",
-  "score": 45,
-  "key": "84d1184cd2191c69",
-  "first_seen": "2026-11-24",
-  "status": "本期新增",
-  "times_seen": 2
+  "times_seen": 1,
+  "title_zh": "16/2026 法定警报：VHF GMDSS 无线电通信设备新频道要求"
  },
  "45c3ed419836a2fd": {
   "org": "行业",
@@ -3059,55 +1145,133 @@
   "key": "45c3ed419836a2fd",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-<<<<<<< Updated upstream
-  "times_seen": 2
-=======
   "times_seen": 1
  },
- "64aa1bd1f4197602": {
-  "org": "LR",
-  "org_cn": "劳氏船级社",
-  "title": "Lloyd's Register Approves Nuclear Ship Classification Rules - News and Statistics",
-  "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS1l5S1BlbEh2LXN6MDA0R1NvSjRwQzY2aWpPOTlGNERabThpOGdjVC1oLXR0WkpXS1hUSlJsYXY4eGZuQ0kzTkFQY0lTNnJOdzVaQ0pxcnZncUpka0tmMEhuX0lrT0dFWUU5S2NpQmtEUVY0UU1iS0wxLUtlaUVzbWdRcGs4SVlnSzY3Unl6MlQ0MDZDQlJ2TVZ0R0F1SDhmU21yV2NZaUtMQVZsalZVQkNFN2R1U2Yxd0NGRg?oc=5",
-  "summary": "Lloyd's Register Approves Nuclear Ship Classification Rules - News and Statistics    IndexBox",
-  "pub": "2026-11-21",
+ "8c6bccb410cb53d0": {
+  "org": "行业",
+  "org_cn": "行业媒体",
+  "title": "FuelEU Maritime: compliance burden or opportunity?",
+  "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOXJhVjBRS3pwbFlaVC1tY2doSENhN3hJV1hMV1dQeVozeVd2UUJsR3BCMjB0bzM3QlphZDNZRFBBaWhKY3BKeHVGZVlkZjJqZ3B4N2NDM1VuZTFJWUV5WkU4SVNZWUJTR3J3QUNNR1pWNXVKYlZUZERlTWstYW43S3pvVVdqMGs?oc=5",
+  "summary": "FuelEU Maritime: compliance burden or opportunity?    Argus Media",
+  "pub": "2026-11-19",
   "eif": "",
   "eif_prec": "",
-  "type": "规则改版",
+  "type": "行业动态",
   "tags": [],
-  "source": "Google News · Lloyd's Register",
-  "origin": "IndexBox",
+  "source": "Google News · FuelEU/EU ETS 航运碳法规",
+  "origin": "Argus Media",
   "official": false,
   "favicon": "",
-  "score": 57,
-  "key": "64aa1bd1f4197602",
+  "score": 45,
+  "key": "8c6bccb410cb53d0",
   "first_seen": "2026-11-24",
   "status": "本期新增",
   "times_seen": 1
  },
- "b7a78c59d10ca507": {
-  "org": "LR",
-  "org_cn": "劳氏船级社",
-  "title": "Lloyd's Register Approves Rules for Integrating Nuclear Power into Ships",
-  "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNLWpXSmhIUVJiRlRNdVdOSWt4WG94aWZYV2hDNVlhUXlITzFjSXJDYnlaaEcwTkRhRXVoemgxalIzTjRiRnNYZFY1T2RBWEl0NVczeU5zcXU0MGNMVzlwOTloallnb0doeGZHWHd0S3BxQWhiX0VfTldHSEdoOUtHcW9CcVQ0VWhCZnJ6R0JBYVdsd05sb3A5NmNIWGx5TTc0VWVkclJXWW50R0tmeEg5UE1WYnJkcGh2Z3J3?oc=5",
-  "summary": "Lloyd's Register Approves Rules for Integrating Nuclear Power into Ships    Data Portuaria",
-  "pub": "2026-11-20",
+ "e8d5d5eb53ab5a86": {
+  "org": "行业",
+  "org_cn": "行业媒体",
+  "title": "ATEX compliance doesn’t end at delivery, and neither does the liability",
+  "link": "https://www.hellenicshippingnews.com/atex-compliance-doesnt-end-at-delivery-and-neither-does-the-liability/",
+  "summary": "For vessel operators, a compliance certificate can feel like a closed chapter. Equipment is installed, paperwork is filed, and the assumption takes hold that the safety obligation has been met. In the case of ATEX-certified cargo handling systems, that assumption is one of the more persistent, and c",
+  "pub": "2026-11-23",
   "eif": "",
   "eif_prec": "",
-  "type": "规则改版",
+  "type": "行业动态",
   "tags": [],
-  "source": "Google News · Lloyd's Register",
-  "origin": "Data Portuaria",
+  "source": "Hellenic Shipping News（行业 RSS）",
+  "origin": "行业",
   "official": false,
   "favicon": "",
-  "score": 57,
-  "key": "b7a78c59d10ca507",
+  "score": 45,
+  "key": "e8d5d5eb53ab5a86",
   "first_seen": "2026-11-24",
   "status": "本期新增",
   "times_seen": 1
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+ },
+ "b5a572ba31e253f9": {
+  "org": "IMO",
+  "org_cn": "国际海事组织",
+  "title": "IMO Council urges stronger protection of seafarers amid threats to global shipping",
+  "link": "https://www.imo.org/en/MediaCentre/PressBriefings/pages/IMO-Council-C138-urges-stronger-protection-of-seafarers-amid-threats-to-global-shipping-.aspx",
+  "summary": "",
+  "pub": "",
+  "eif": "",
+  "eif_prec": "",
+  "type": "行业动态",
+  "tags": [],
+  "source": "IMO 新闻中心（官方列表）",
+  "origin": "IMO",
+  "official": true,
+  "favicon": "",
+  "score": 35,
+  "key": "b5a572ba31e253f9",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
+ },
+ "21aa565d19492215": {
+  "org": "HKMD",
+  "org_cn": "中国香港海事处",
+  "title": "海上保安 《关于防止偷渡者登船及明确责任分工以成功解决偷渡案件的修订指南》（MSIN 15/2026）",
+  "link": "https://www.mardep.gov.hk/filemanager/sc/share/msnote/pdf/msin2615c.pdf",
+  "summary": "《关于防止偷渡者登船及明确责任分工以成功解决偷渡案件的修订指南》",
+  "pub": "2026-09-28",
+  "eif": "",
+  "eif_prec": "",
+  "type": "要求/指南",
+  "tags": [],
+  "source": "香港商船资讯（MSIN，政府开放数据）",
+  "origin": "HKMD",
+  "official": true,
+  "favicon": "",
+  "fixed_org": true,
+  "score": 28,
+  "key": "21aa565d19492215",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
+ },
+ "842c7424c60ad0e0": {
+  "org": "IMO",
+  "org_cn": "国际海事组织",
+  "title": "People Yu Jiajia Becomes First Chinese Recipient of IMO Gender Equality Award 2026-11-10 17:31",
+  "link": "https://www.xindemarinenews.com/news/2120086906227458050",
+  "summary": "",
+  "pub": "",
+  "eif": "",
+  "eif_prec": "",
+  "type": "行业动态",
+  "tags": [],
+  "source": "信德海事（中文站列表）",
+  "origin": "行业",
+  "official": false,
+  "favicon": "",
+  "score": 27,
+  "key": "842c7424c60ad0e0",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
+ },
+ "c3285f3b72c2dfa9": {
+  "org": "IMO",
+  "org_cn": "国际海事组织",
+  "title": "People IMO Secretary-General: More Shipbuilding Capacity Could Support Shipping’s Green Transition 2026-10-30 17:13",
+  "link": "https://www.xindemarinenews.com/news/2116096265977901058",
+  "summary": "",
+  "pub": "",
+  "eif": "",
+  "eif_prec": "",
+  "type": "行业动态",
+  "tags": [],
+  "source": "信德海事（中文站列表）",
+  "origin": "行业",
+  "official": false,
+  "favicon": "",
+  "score": 27,
+  "key": "c3285f3b72c2dfa9",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
  }
 }
