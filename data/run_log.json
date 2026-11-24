@@ -6980,8 +6980,13 @@
  },
  {
   "date": "2026-11-24",
+<<<<<<< Updated upstream
   "ts": "2026-11-24T02:15:16+00:00",
   "collected": 51,
+=======
+  "ts": "2026-11-24T02:19:47+00:00",
+  "collected": 52,
+>>>>>>> Stashed changes
   "sources": [
    {
     "id": "imo-eif-table",
@@ -7008,7 +7013,11 @@
     "id": "gnews-dnv",
     "name": "Google News · DNV",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 28,
+=======
+    "count": 50,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7022,14 +7031,22 @@
     "id": "gnews-lr",
     "name": "Google News · Lloyd's Register",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 31,
+=======
+    "count": 55,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
     "id": "gnews-bv",
     "name": "Google News · Bureau Veritas",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 12,
+=======
+    "count": 48,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7043,14 +7060,22 @@
     "id": "gnews-cn-reg",
     "name": "Google News · 中文规范动态",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 10,
+=======
+    "count": 47,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
     "id": "gnews-reg-note",
     "name": "Google News · 法规通报",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 59,
+=======
+    "count": 15,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7071,7 +7096,11 @@
     "id": "gnews-eif-en",
     "name": "Google News · 生效日期（英文）",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 23,
+=======
+    "count": 67,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7106,7 +7135,11 @@
     "id": "gnews-msa-cn",
     "name": "Google News · 中国海事局通告",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 42,
+=======
+    "count": 5,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
@@ -7134,14 +7167,22 @@
     "id": "gnews-eu-carbon",
     "name": "Google News · FuelEU/EU ETS 航运碳法规",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 100,
+=======
+    "count": 39,
+>>>>>>> Stashed changes
     "note": ""
    },
    {
     "id": "gnews-other-class",
     "name": "Google News · KR/IRS/RS/RINA 船级社",
     "status": "OK",
+<<<<<<< Updated upstream
     "count": 49,
+=======
+    "count": 13,
+>>>>>>> Stashed changes
     "note": ""
    },
    {

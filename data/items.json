@@ -70,7 +70,7 @@
   "status": "持续跟踪",
   "times_seen": 31,
   "closed": true,
-  "title_zh": "船级新闻 07/2026：SOLAS 修正案——滚装客船消防安全要求"
+  "title_zh": "Class News 07/2026：SOLAS 修正案——滚装客船消防安全要求"
  },
  "0e288dcfc9994dac": {
   "org": "ABS",
@@ -93,7 +93,11 @@
   "status": "持续跟踪",
   "times_seen": 42,
   "closed": true,
+<<<<<<< Updated upstream
   "title_zh": "SOLAS 对起重设备和锚机的要求"
+=======
+  "title_zh": "SOLAS 对起重设备和锚机绞车的要求"
+>>>>>>> Stashed changes
  },
  "e319602a0ffc3e57": {
   "org": "CCS",
@@ -138,7 +142,11 @@
   "status": "持续跟踪",
   "times_seen": 36,
   "closed": true,
+<<<<<<< Updated upstream
   "title_zh": "DNV 成为日本首家获授权开展浮式海上风电规则的境外机构"
+=======
+  "title_zh": "DNV 成为日本首家获浮式海上风电规则授权的非日本机构"
+>>>>>>> Stashed changes
  },
  "052f897fa1225105": {
   "org": "DNV",
@@ -733,7 +741,11 @@
   "status": "持续跟踪",
   "times_seen": 17,
   "closed": true,
+<<<<<<< Updated upstream
   "title_zh": "海事界领袖在釜山呼吁加强全球航运规则执行"
+=======
+  "title_zh": "海事领导人在釜山呼吁就全球航运规则采取更强行动"
+>>>>>>> Stashed changes
  },
  "79a299cd906a7e60": {
   "org": "行业",
@@ -828,7 +840,7 @@
   "first_seen": "2026-11-09",
   "status": "本期新增",
   "times_seen": 10,
-  "title_zh": "2025年达成的IMO净零框架仍是实现IMO 2023温室气体战略的最可能路径",
+  "title_zh": "2025 年商定的 IMO NZF 仍是实现 IMO 2023 温室气体战略最可能的途径",
   "closed": true
  },
  "c3285f3b72c2dfa9": {
@@ -879,7 +891,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《所有船型专用海水压载舱及散货船双舷侧处所保护涂层性能标准》修正案（MSC.557(108)）"
+=======
+  "title_zh": "所有类型船舶专用海水压载舱保护涂层性能标准修正案（MSC.557(108)）"
+>>>>>>> Stashed changes
  },
  "c65cfd914602fe59": {
   "org": "IMO",
@@ -907,7 +923,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《2011年散货船和油船检验期间加强检验计划国际规则》修正案（MSC.553(108)）"
+=======
+  "title_zh": "《2011年散货船和油船检验加强计划国际代码》修正案（MSC.553(108)）"
+>>>>>>> Stashed changes
  },
  "9fc80e76ad147bc1": {
   "org": "IMO",
@@ -959,7 +979,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《2008年NOx技术规则》修正案（船用柴油机采用多运行模式，含试验循环澄清）（MEPC.397(83)）"
+=======
+  "title_zh": "《2008年NOx技术规则》修正案（船用柴油机采用多运行工况，包括澄清发动机试验循环）（MEPC.397(83)）"
+>>>>>>> Stashed changes
  },
  "c68fc7e79d340c76": {
   "org": "IMO",
@@ -986,7 +1010,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际消防安全系统规则》（FSS规则）修正案（MSC.555(108)）"
+=======
+  "title_zh": "《国际消防安全系统代码》（FSS 代码）修正案（MSC.555(108)）"
+>>>>>>> Stashed changes
  },
  "2040627677432893": {
   "org": "IMO",
@@ -1013,7 +1041,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《原油船货油舱保护涂层性能标准》修正案（MSC.558(108)）"
+=======
+  "title_zh": "原油船货油舱保护涂层性能标准修正案（MSC.558(108)）"
+>>>>>>> Stashed changes
  },
  "0784cfa0d9b3ec84": {
   "org": "IMO",
@@ -1040,7 +1072,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际救生设备规则》（LSA规则）修正案（MSC.554(108)）"
+=======
+  "title_zh": "《国际救生设备代码》（LSA 代码）修正案（MSC.554(108)）"
+>>>>>>> Stashed changes
  },
  "a87298379e6d413c": {
   "org": "IMO",
@@ -1117,7 +1153,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1978年SOLAS议定书修正案（MSC.522(106)）"
+=======
+  "title_zh": "1978 年 SOLAS 议定书修正案（MSC.522(106)）"
+>>>>>>> Stashed changes
  },
  "65ff2df25e46a758": {
   "org": "IMO",
@@ -1142,7 +1182,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "IGC与IGF规则修正案：《国际散装运输液化气体船舶构造和设备规则》第6章修正案（MSC.523(106)）"
+=======
+  "title_zh": "IGC 与 IGF 代码修正案：IGC 代码第 6 章修正案（MSC.523(106)）"
+>>>>>>> Stashed changes
  },
  "b8e087d7d0bc7371": {
   "org": "IMO",
@@ -1167,7 +1211,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1974年SOLAS公约第II-2章和第V章修正案（MSC.550(108)）"
+=======
+  "title_zh": "1974 年 SOLAS 第 II-2 章和第 V 章修正案（MSC.550(108)）"
+>>>>>>> Stashed changes
  },
  "dab18fe761c1f9e4": {
   "org": "IMO",
@@ -1192,7 +1240,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF规则）修正案（MSC.551(108)）"
+=======
+  "title_zh": "《使用气体或其他低闪点燃料船舶安全国际代码》（IGF 代码）修正案（MSC.551(108)）"
+>>>>>>> Stashed changes
  },
  "0bf16259a4a1a795": {
   "org": "IMO",
@@ -1217,7 +1269,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际海运危险货物规则》修正案（MSC.556(109)）"
+=======
+  "title_zh": "《国际海运危险货物代码》修正案（MSC.556(109)）"
+>>>>>>> Stashed changes
  },
  "a70f248fd35b6921": {
   "org": "IMO",
@@ -1267,7 +1323,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际散装谷物安全运输规则》（MSC.23(59)号决议）修正案（MSC.552(108)）"
+=======
+  "title_zh": "《国际散装谷物安全运输代码》修正案（MSC.552(108)）"
+>>>>>>> Stashed changes
  },
  "5ca652a8c9c1cc04": {
   "org": "IMO",
@@ -1292,7 +1352,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1974年SOLAS公约第II-1、II-2、V、XIV章及附录修正案（MSC.532(107)）"
+=======
+  "title_zh": "1974 年 SOLAS 第 II-1、II-2、V、XIV 章及附录修正案（MSC.532(107)）"
+>>>>>>> Stashed changes
  },
  "6f2a502de5c932f0": {
   "org": "IMO",
@@ -1317,7 +1381,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1978年SOLAS议定书附录修正案（MSC.533(107)）"
+=======
+  "title_zh": "1978 年 SOLAS 议定书附录修正案（MSC.533(107)）"
+>>>>>>> Stashed changes
  },
  "9d206564bdca9bbf": {
   "org": "IMO",
@@ -1342,7 +1410,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1988年SOLAS议定书附录修正案（MSC.534(107)）"
+=======
+  "title_zh": "1988 年 SOLAS 议定书附录修正案（MSC.534(107)）"
+>>>>>>> Stashed changes
  },
  "b72c22342117a540": {
   "org": "IMO",
@@ -1367,7 +1439,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《1994年高速船安全国际规则》（1994 HSC规则）修正案（MSC.536(107)）"
+=======
+  "title_zh": "《1994年高速船安全国际代码》（1994 HSC 代码）修正案（MSC.536(107)）"
+>>>>>>> Stashed changes
  },
  "01e8e5fbf1547c02": {
   "org": "IMO",
@@ -1392,7 +1468,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《2000年高速船安全国际规则》（2000 HSC规则）修正案（MSC.537(107)）"
+=======
+  "title_zh": "《2000年高速船安全国际代码》（2000 HSC 代码）修正案（MSC.537(107)）"
+>>>>>>> Stashed changes
  },
  "15b62aca5d8f721f": {
   "org": "IMO",
@@ -1417,7 +1497,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际海运固体散装货物规则》（IMSBC规则）修正案（07-23修正案）（MSC.535(107)）"
+=======
+  "title_zh": "《国际海运固体散装货物代码》（IMSBC 代码）修正案（07-23 修正案）（MSC.535(107)）"
+>>>>>>> Stashed changes
  },
  "65c72fe198dde226": {
   "org": "IMO",
@@ -1442,7 +1526,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际极地水域营运船舶规则》（极地规则）修正案（MSC.538(107)）"
+=======
+  "title_zh": "《极地水域营运船舶国际代码》（极地代码）修正案（MSC.538(107)）"
+>>>>>>> Stashed changes
  },
  "4d79f26b014ec842": {
   "org": "IMO",
@@ -1466,7 +1554,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《国际散装运输液化气体船舶构造和设备规则》（IGC规则）修正案（MSC.566(109)）"
+=======
+  "title_zh": "《国际散装运输液化气体船舶构造与设备代码》（IGC 代码）修正案（MSC.566(109)）"
+>>>>>>> Stashed changes
  },
  "2b68832cd908dc85": {
   "org": "IMO",
@@ -1490,7 +1582,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《2008年NOx技术规则》修正案（对重大修改或按原未适用Tier认证的发动机的认证）（MEPC.398(83)）"
+=======
+  "title_zh": "《2008年NOx技术规则》修正案（对重大改装或认证至原未认证Tier的发动机的认证）（MEPC.398(83)）"
+>>>>>>> Stashed changes
  },
  "73995feb652e0212": {
   "org": "IMO",
@@ -1514,7 +1610,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "1974年SOLAS公约第II-1章修正案（MSC.549(108)）"
+=======
+  "title_zh": "1974 年 SOLAS 第 II-1 章修正案（MSC.549(108)）"
+>>>>>>> Stashed changes
  },
  "a4f168fabeaac05c": {
   "org": "IMO",
@@ -1538,7 +1638,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "《使用气体或其他低闪点燃料船舶国际安全规则》（IGF规则）修正案（MSC.567(109)）"
+=======
+  "title_zh": "《使用气体或其他低闪点燃料船舶安全国际代码》（IGF 代码）修正案（MSC.567(109)）"
+>>>>>>> Stashed changes
  },
  "0df1d5ad62cc5393": {
   "org": "HKMD",
@@ -1587,7 +1691,11 @@
   "first_seen": "2026-11-09",
   "status": "持续跟踪",
   "times_seen": 18,
+<<<<<<< Updated upstream
   "title_zh": "海事劳工公约：经修订《2006年海事劳工公约》2025年修正案（MSIN 14/2026）"
+=======
+  "title_zh": "海事劳工公约——经修订《2006年海事劳工公约》的2025年修正案（MSIN 14/2026）"
+>>>>>>> Stashed changes
  },
  "5a7362d971498607": {
   "org": "HKMD",
@@ -2287,7 +2395,11 @@
   "first_seen": "2026-11-16",
   "status": "本期新增",
   "times_seen": 1,
+<<<<<<< Updated upstream
   "title_zh": "IMO 在无排放成本情况下推进净零框架合规面临挑战"
+=======
+  "title_zh": "IMO 在无排放成本情况下净零框架合规面临挑战"
+>>>>>>> Stashed changes
  },
  "afb0e539d8f429bd": {
   "org": "IMO",
@@ -2423,7 +2535,7 @@
   "first_seen": "2026-11-19",
   "status": "本期新增",
   "times_seen": 2,
-  "title_zh": "航运业敦促达成全球IMO气候协议，规则分歧仍存"
+  "title_zh": "航运业敦促达成全球 IMO 气候协议，规则分歧仍存"
  },
  "d43b13995cd8cd4b": {
   "org": "IMO",
@@ -2514,6 +2626,11 @@
     "org": "LR",
     "source": "Google News · Lloyd's Register",
     "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOV2FOZGJUc0FOUXJBOUtpWUU1ZHBOY0FqenMyMXFqOGpCUmM3U2RpU25RNGdhQUsxRUpnRmtzdk11Y3k3WnVVa2NfQU1PQnhwVk1pT3A4MXRBSHFTblpQSDdVV0tTYnlQdTJsczdUY3dFcnk0d2MtMXBWR0t6c3FsbkJ2UVVZMGp2QVdJZUEyUUdwaG5xYWF3T1l1Q29rRU1aMkNMcGZ1ZG9jMkpGTHRQVl9zTERuNDUwWnhNMWhQeVEwR2Q2VldaQ1AwYy1WNXJudmc5R3R4emJZUnlJRFU5N3FQdGpvXzllVkhQSQ?oc=5"
+   },
+   {
+    "org": "LR",
+    "source": "Google News · Lloyd's Register",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQSDZHTzA1cGkwVVowV1U3eGJuMEVIeFJYRmdVMVo2VTQ1UWhIVGFYMlN0UXlON3E2R3pBcUhXNjgzWjBUa2VZa2lGalRERG9uMFR3U2xyekZPU05mb2wzcnZOT25Rd3doSi1Pa0xFcnRyWXVESllsVUoxUW5yNXp5U0xJalFfN0VQbV9nWEhvVl8wSXcwZ2lUcHNGc0JaU3FlLVRoeU9yR3k4bkhWcTZYUlpYaTFJbGw1bkR4MFoyUlZFanBkUzJuS3NqVmdJSUIwRWFLNEt3?oc=5"
    },
    {
     "org": "LR",
@@ -2628,7 +2745,11 @@
   "first_seen": "2026-11-24",
   "status": "本期新增",
   "times_seen": 3,
+<<<<<<< Updated upstream
   "title_zh": "美国反对下 IMO 在航运排放规则上面临艰难妥协"
+=======
+  "title_zh": "美国反对下 IMO 就航运排放规则面临艰难妥协"
+>>>>>>> Stashed changes
  },
  "a8bafb34d05fe674": {
   "org": "LR",
@@ -2777,7 +2898,7 @@
   "key": "84d1184cd2191c69",
   "first_seen": "2026-11-24",
   "status": "本期新增",
-  "times_seen": 1
+  "times_seen": 2
  },
  "45c3ed419836a2fd": {
   "org": "行业",
@@ -2798,6 +2919,52 @@
   "key": "45c3ed419836a2fd",
   "first_seen": "2026-11-24",
   "status": "本期新增",
+<<<<<<< Updated upstream
   "times_seen": 2
+=======
+  "times_seen": 1
+ },
+ "64aa1bd1f4197602": {
+  "org": "LR",
+  "org_cn": "劳氏船级社",
+  "title": "Lloyd's Register Approves Nuclear Ship Classification Rules - News and Statistics",
+  "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOS1l5S1BlbEh2LXN6MDA0R1NvSjRwQzY2aWpPOTlGNERabThpOGdjVC1oLXR0WkpXS1hUSlJsYXY4eGZuQ0kzTkFQY0lTNnJOdzVaQ0pxcnZncUpka0tmMEhuX0lrT0dFWUU5S2NpQmtEUVY0UU1iS0wxLUtlaUVzbWdRcGs4SVlnSzY3Unl6MlQ0MDZDQlJ2TVZ0R0F1SDhmU21yV2NZaUtMQVZsalZVQkNFN2R1U2Yxd0NGRg?oc=5",
+  "summary": "Lloyd's Register Approves Nuclear Ship Classification Rules - News and Statistics    IndexBox",
+  "pub": "2026-11-21",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [],
+  "source": "Google News · Lloyd's Register",
+  "origin": "IndexBox",
+  "official": false,
+  "favicon": "",
+  "score": 57,
+  "key": "64aa1bd1f4197602",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
+ },
+ "b7a78c59d10ca507": {
+  "org": "LR",
+  "org_cn": "劳氏船级社",
+  "title": "Lloyd's Register Approves Rules for Integrating Nuclear Power into Ships",
+  "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNLWpXSmhIUVJiRlRNdVdOSWt4WG94aWZYV2hDNVlhUXlITzFjSXJDYnlaaEcwTkRhRXVoemgxalIzTjRiRnNYZFY1T2RBWEl0NVczeU5zcXU0MGNMVzlwOTloallnb0doeGZHWHd0S3BxQWhiX0VfTldHSEdoOUtHcW9CcVQ0VWhCZnJ6R0JBYVdsd05sb3A5NmNIWGx5TTc0VWVkclJXWW50R0tmeEg5UE1WYnJkcGh2Z3J3?oc=5",
+  "summary": "Lloyd's Register Approves Rules for Integrating Nuclear Power into Ships    Data Portuaria",
+  "pub": "2026-11-20",
+  "eif": "",
+  "eif_prec": "",
+  "type": "规则改版",
+  "tags": [],
+  "source": "Google News · Lloyd's Register",
+  "origin": "Data Portuaria",
+  "official": false,
+  "favicon": "",
+  "score": 57,
+  "key": "b7a78c59d10ca507",
+  "first_seen": "2026-11-24",
+  "status": "本期新增",
+  "times_seen": 1
+>>>>>>> Stashed changes
  }
 }
